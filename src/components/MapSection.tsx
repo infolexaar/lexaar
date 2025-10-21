@@ -218,13 +218,20 @@ const MapSection: React.FC = () => {
               <img
                 src={mapImage}
                 alt="Harta locației LexAar Bucătării"
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                className="w-full h-full object-cover"
                 style={{
                   objectPosition: "right center",
-                  filter: "contrast(1.1) brightness(1.05)",
+                  filter:
+                    "contrast(1.5) brightness(1.2) saturate(1.3) sharpness(2)",
+                  imageRendering: "crisp-edges",
+                  transform: "scale(1)",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
                 }}
                 loading="eager"
-                decoding="async"
+                decoding="sync"
+                width="100%"
+                height="100%"
               />
             </div>
 
