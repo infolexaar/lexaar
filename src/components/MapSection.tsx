@@ -214,12 +214,17 @@ const MapSection: React.FC = () => {
           {/* Мобильная версия - карта и форма вертикально */}
           <div className="lg:hidden space-y-4 pb-8">
             {/* Карта */}
-            <div className="w-full h-64 rounded-2xl overflow-hidden shadow-lg">
+            <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden shadow-lg bg-gray-100">
               <img
                 src={mapImage}
                 alt="Harta locației LexAar Bucătării"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: "right center" }}
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                style={{
+                  objectPosition: "right center",
+                  filter: "contrast(1.1) brightness(1.05)",
+                }}
+                loading="eager"
+                decoding="async"
               />
             </div>
 
