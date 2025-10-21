@@ -34,7 +34,6 @@ const MapSection: React.FC = () => {
               src={mapImage}
               alt="Harta locației LexAar Bucătării"
               className="w-full h-full object-cover rounded-2xl"
-              style={{ objectPosition: "right center" }}
             />
 
             {/* Контактная форма слева - точно как на фото */}
