@@ -116,7 +116,7 @@ const Hero = () => {
 
             {/* Benefits Panel and SMS Button - Mobile/Tablet */}
             <div
-              className="lg:hidden flex justify-end relative pr-2"
+              className="lg:hidden flex justify-center relative"
               style={{ marginBottom: "120px" }}
             >
               <div

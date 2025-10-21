@@ -70,7 +70,7 @@ const generateEmailHTML = (data) => {
                 border: 1px solid #e1e8ed;
             }
             .header { 
-                background: linear-gradient(135deg, #BF1A1A, #d32f2f); 
+                background: linear-gradient(135deg, #6b7280, #9ca3af); 
                 color: white; 
                 padding: 24px 20px; 
                 text-align: center;
@@ -92,32 +92,33 @@ const generateEmailHTML = (data) => {
             }
             .info-grid {
                 display: grid;
-                gap: 12px;
+                gap: 16px;
                 margin-bottom: 20px;
             }
             .info-item {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 8px 0;
+                padding: 12px 0;
                 border-bottom: 1px solid #f0f0f0;
-                font-size: 13px;
+                font-size: 14px;
             }
             .info-item:last-child {
                 border-bottom: none;
             }
             .label { 
                 font-weight: 600; 
-                color: #7f8c8d;
-                font-size: 12px;
+                color: #6b7280;
+                font-size: 13px;
                 text-transform: uppercase;
                 letter-spacing: 0.3px;
+                min-width: 80px;
             }
             .value {
                 color: #2c3e50;
                 font-weight: 500;
                 text-align: right;
-                max-width: 200px;
+                max-width: 180px;
                 word-break: break-word;
             }
             .message-box {
@@ -125,11 +126,11 @@ const generateEmailHTML = (data) => {
                 border-radius: 12px;
                 padding: 16px;
                 margin-bottom: 16px;
-                border-left: 4px solid #BF1A1A;
+                border-left: 4px solid #6b7280;
             }
             .message-title {
                 font-weight: 600;
-                color: #BF1A1A;
+                color: #6b7280;
                 font-size: 12px;
                 margin-bottom: 8px;
                 text-transform: uppercase;
@@ -184,7 +185,7 @@ const generateEmailHTML = (data) => {
             }
             .footer-brand {
                 font-weight: 600;
-                color: #BF1A1A;
+                color: #6b7280;
                 margin-bottom: 4px;
                 font-size: 12px;
             }
@@ -216,7 +217,15 @@ const generateEmailHTML = (data) => {
                     </div>
                     <div class="info-item">
                         <span class="label">Data</span>
-                        <span class="value">${new Date().toLocaleDateString("ro-RO")}</span>
+                        <span class="value">${new Date().toLocaleDateString("ro-RO", { timeZone: "Europe/Chisinau" })}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Timp</span>
+                        <span class="value">${new Date().toLocaleTimeString("ro-RO", {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Europe/Chisinau"
+    })}</span>
                     </div>
                 </div>
                 
