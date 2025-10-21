@@ -5,6 +5,8 @@ import LGIcon from "../assets/icons/LG.svg";
 import arrowIcon from "../assets/icons/arrow.svg";
 import ContactModal from "./ContactModal";
 import Header from "./Header";
+import { trackButtonClick, trackFacebookEvent } from "../utils/analytics";
+import { BENEFITS } from "../constants";
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,13 +28,7 @@ const Hero = () => {
     }, 2000);
   };
 
-  const benefits = [
-    "10.000+ clienți mulțumiți",
-    "15+ ani experiență",
-    "Proiectare 3D",
-    "Garanție 5 ani",
-    "Montaj gratuit",
-  ];
+  const benefits = BENEFITS;
   return (
     <div
       className="w-screen relative overflow-x-hidden"
@@ -88,7 +84,16 @@ const Hero = () => {
                 padding: "20px 28px",
                 marginBottom: "32px",
               }}
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => {
+                trackButtonClick("request_quote_button");
+                trackFacebookEvent("InitiateCheckout", {
+                  content_name: "Request Quote Button",
+                  content_category: "Kitchen Furniture",
+                  value: 1,
+                  currency: "EUR",
+                });
+                setIsModalOpen(true);
+              }}
             >
               <span
                 className="text-white font-medium"

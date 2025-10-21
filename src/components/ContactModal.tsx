@@ -3,14 +3,12 @@ import arrowIcon from "../assets/icons/arrow.svg";
 import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
-
-interface ContactModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { trackFormSubmission, trackFacebookEvent } from "../utils/analytics";
+import type { ContactModalProps, FormData } from "../types";
+import { sendContactEmail } from "../services/firebaseEmailService";
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
     email: "",
@@ -23,19 +21,45 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Симуляция отправки формы
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Track form submission
+    trackFormSubmission("contact_form");
+    trackFacebookEvent("Lead", {
+      content_name: "Contact Form Submission",
+      content_category: "Kitchen Furniture",
+      value: 1,
+      currency: "EUR",
+    });
 
-    console.log("Form submitted:", formData);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    try {
+      // Отправляем email
+      const emailSent = await sendContactEmail({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        message: "Cerere de ofertă pentru bucătării la comandă",
+      });
 
-    // Автоматически закрыть модалку через 3 секунды
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", phone: "", email: "" });
-      onClose();
-    }, 3000);
+      if (emailSent) {
+        setIsSubmitted(true);
+
+        // Автоматически закрыть модалку через 3 секунды
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: "", phone: "", email: "" });
+          onClose();
+        }, 3000);
+      } else {
+        alert(
+          "A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou."
+        );
+      }
+    } catch {
+      alert(
+        "A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +85,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div
           className="relative rounded-2xl overflow-hidden"
           style={{
-            backgroundImage: "url('/src/assets/ backgrContact.svg')",
+            backgroundImage: "url('/src/assets/backgrContact.svg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -109,11 +133,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
               {/* Success Message */}
               {isSubmitted && (
-                <div className="absolute inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex flex-col items-center justify-center z-20 rounded-lg">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="absolute inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-20">
+                  {/* Compact Success Card */}
+                  <div className="bg-white rounded-2xl shadow-2xl p-6 mx-4 max-w-sm w-full text-center">
+                    {/* Success Icon */}
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg
-                        className="w-8 h-8 text-white"
+                        className="w-8 h-8 text-green-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -126,12 +152,46 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-white text-xl font-semibold mb-2">
-                      Mesajul dvs. a fost trimis!
+
+                    {/* Success Title */}
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      Mesajul a fost trimis!
                     </h3>
-                    <p className="text-white text-sm opacity-90">
-                      Vă mulțumim că ne-ați ales!
+
+                    {/* Success Message */}
+                    <p className="text-gray-600 text-sm mb-4">
+                      Vă mulțumim! Vă vom contacta în cel mai scurt timp
+                      posibil.
                     </p>
+
+                    {/* Compact Details */}
+                    <div className="bg-gray-50 rounded-lg p-3 text-left mb-4">
+                      <div className="space-y-1 text-xs">
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">De la:</span>
+                          <span className="font-medium text-gray-900">
+                            {formData.name}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Telefon:</span>
+                          <span className="font-medium text-gray-900">
+                            {formData.phone}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Data:</span>
+                          <span className="font-medium text-gray-900">
+                            {new Date().toLocaleDateString("ro-RO")}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Auto-close notice */}
+                    <div className="text-xs text-gray-500">
+                      Se va închide automat...
+                    </div>
                   </div>
                 </div>
               )}

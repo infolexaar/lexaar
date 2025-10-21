@@ -1,8 +1,6 @@
 import Logo from "../assets/icons/Logo.svg";
-
-interface HeaderProps {
-  onOpenModal: () => void;
-}
+import type { HeaderProps } from "../types";
+import { COMPANY_INFO } from "../constants";
 
 const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
   return (
@@ -35,15 +33,15 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
           <div className="flex items-center gap-2 sm:gap-4 xl:gap-5 xl:mr-[104px]">
             {/* Phone number - hidden on small screens, visible on xl+ */}
             <a
-              href="tel:+37378907007"
+              href={`tel:${COMPANY_INFO.phone.replace(/\s/g, "")}`}
               className="hidden xl:block text-white hover:text-primary transition-colors font-medium text-base"
             >
-              +373 78 90 70 07
+              {COMPANY_INFO.phone}
             </a>
 
             {/* Phone icon - visible on small screens */}
             <a
-              href="tel:+37378907007"
+              href={`tel:${COMPANY_INFO.phone.replace(/\s/g, "")}`}
               className="xl:hidden text-white hover:text-primary transition-colors"
               style={{ padding: "8px" }}
             >

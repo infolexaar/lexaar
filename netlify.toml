@@ -1,0 +1,38 @@
+[build]
+  # Директория для сборки
+  base = "."
+  # Команда для сборки
+  command = "npm run build"
+  # Директория с готовым сайтом
+  publish = "dist"
+
+[build.environment]
+  # Версия Node.js
+  NODE_VERSION = "18"
+
+# Перенаправления для SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Заголовки для безопасности
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Кэширование для статических файлов
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Заголовки для HTML файлов
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

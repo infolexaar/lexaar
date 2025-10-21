@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to contact_requests collection
+    match /contact_requests/{document} {
+      allow read, write: if true; // For demo purposes - in production, add proper authentication
+    }
+    
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
