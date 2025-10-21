@@ -11,7 +11,7 @@ export const BENEFITS = [
   "10.000+ clienți mulțumiți",
   "15+ ani experiență",
   "Proiectare 3D",
-  "Proiectare 3D",
+  "De 5 ani exportam mobilier in Europa",
   "Montaj gratuit",
 ] as const;
 
