@@ -34,6 +34,7 @@ const MapSection: React.FC = () => {
               src={mapImage}
               alt="Harta locației LexAar Bucătării"
               className="w-full h-full object-cover rounded-2xl"
+              style={{ objectPosition: "right center" }}
             />
 
             {/* Контактная форма слева - точно как на фото */}
@@ -212,13 +213,14 @@ const MapSection: React.FC = () => {
           </div>
 
           {/* Мобильная версия - карта и форма вертикально */}
-          <div className="lg:hidden space-y-4">
+          <div className="lg:hidden space-y-4 pb-8">
             {/* Карта */}
             <div className="w-full h-64 rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={mapImage}
                 alt="Harta locației LexAar Bucătării"
                 className="w-full h-full object-cover"
+                style={{ objectPosition: "right center" }}
               />
             </div>
 
