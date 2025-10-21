@@ -3,6 +3,7 @@ import arrowIcon from "../assets/icons/arrow.svg";
 import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
+import backgroundImage from "../assets/backgrContact.svg";
 import { trackFormSubmission, trackFacebookEvent } from "../utils/analytics";
 import type { ContactModalProps, FormData } from "../types";
 import { sendContactEmail } from "../services/firebaseEmailService";
@@ -85,7 +86,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div
           className="relative rounded-2xl overflow-hidden"
           style={{
-            backgroundImage: "url('/src/assets/backgrContact.svg')",
+            backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
