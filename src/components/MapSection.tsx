@@ -1,5 +1,5 @@
 import React from "react";
-import mapImage from "../assets/map.svg";
+import mapImage from "../assets/icons/map.png";
 import { COMPANY_INFO } from "../constants";
 
 const MapSection: React.FC = () => {
@@ -221,9 +221,8 @@ const MapSection: React.FC = () => {
                 className="w-full h-full object-cover"
                 style={{
                   objectPosition: "right center",
-                  filter:
-                    "contrast(1.5) brightness(1.2) saturate(1.3) sharpness(2)",
-                  imageRendering: "crisp-edges",
+                  filter: "contrast(1.2) brightness(1.1) saturate(1.1)",
+                  imageRendering: "auto",
                   transform: "scale(1)",
                   backfaceVisibility: "hidden",
                   WebkitBackfaceVisibility: "hidden",
