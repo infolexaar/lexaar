@@ -40,8 +40,6 @@
   width: 1027px;
   height: 128px;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .quality-block-subtitle {
@@ -54,8 +52,6 @@
   padding: 0;
   margin-bottom: 44px;
   text-align: left;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .quality-block-cards {
@@ -75,7 +71,7 @@
   justify-content: flex-start;
   padding: 24px 16px;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #fbf8f4;
   border-radius: 12px;
   gap: 16px;
   text-align: center;
@@ -111,8 +107,6 @@
   padding: 0;
   text-align: center;
   width: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Tablet styles (768px - 1023px) */
