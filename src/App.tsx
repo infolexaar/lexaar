@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Block2 from "./components/Block2";
+import ColorBlock from "./components/ColorBlock";
 import MapSection from "./components/MapSection";
 import CookieConsent from "./components/CookieConsent";
 import "./App.css";
@@ -9,6 +10,7 @@ function App() {
     <div className="overflow-x-hidden">
       <Hero />
       <Block2 />
+      <ColorBlock />
       <MapSection />
       <CookieConsent />
     </div>
