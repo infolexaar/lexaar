@@ -47,12 +47,12 @@
 
 .contact-section-text {
   position: absolute;
-  left: 104px;
-  top: 0;
-  bottom: 0;
+  left: 54px;
+  top: 120px;
+  bottom: 116px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 2;
   width: 692px;
   color: white;
