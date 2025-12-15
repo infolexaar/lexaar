@@ -3,6 +3,7 @@ import Block2 from "./components/Block2";
 import ColorBlock from "./components/ColorBlock";
 import ContactSection from "./components/ContactSection";
 import QualityBlock from "./components/QualityBlock";
+import ReviewsBlock from "./components/ReviewsBlock";
 import MapSection from "./components/MapSection";
 import CookieConsent from "./components/CookieConsent";
 import "./App.css";
@@ -15,6 +16,7 @@ function App() {
       <ColorBlock />
       <ContactSection />
       <QualityBlock />
+      <ReviewsBlock />
       <MapSection />
       <CookieConsent />
     </div>
