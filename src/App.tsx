@@ -5,6 +5,7 @@ import ContactSection from "./components/ContactSection";
 import QualityBlock from "./components/QualityBlock";
 import ReviewsBlock from "./components/ReviewsBlock";
 import ProjectsBlock from "./components/ProjectsBlock";
+import ProcessBlock from "./components/ProcessBlock";
 import MapSection from "./components/MapSection";
 import CookieConsent from "./components/CookieConsent";
 import "./App.css";
@@ -19,6 +20,7 @@ function App() {
       <QualityBlock />
       <ReviewsBlock />
       <ProjectsBlock />
+      <ProcessBlock />
       <MapSection />
       <CookieConsent />
     </div>
