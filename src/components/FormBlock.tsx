@@ -3,11 +3,10 @@ import arrowIcon from "../assets/icons/arrow.svg";
 import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
-import backgroundImage from "../assets/backgrContact.svg";
 import { useContactForm } from "../hooks/useContactForm";
-import "./ContactSection.css";
+import "./FormBlock.css";
 
-const ContactSection: React.FC = () => {
+const FormBlock: React.FC = () => {
   const {
     formData,
     isSubmitting,
@@ -17,48 +16,26 @@ const ContactSection: React.FC = () => {
   } = useContactForm();
 
   return (
-    <section className="contact-section">
-      <div className="contact-section-container">
-        {/* Background Image */}
-        <div className="contact-section-background">
-          <img
-            src={backgroundImage}
-            alt="Modern Kitchen Interior"
-            className="contact-section-image"
-          />
-          {/* Overlay for better text readability */}
-          <div className="contact-section-overlay"></div>
-        </div>
+    <section className="form-block-section">
+      <div className="form-block-container">
+        <div className="form-block-content">
+          {/* Текст слева */}
+          <div className="form-block-text">
+            <h2 className="form-block-title">
+              Ai idei? Noi te ghidăm.
+            </h2>
+            <p className="form-block-description">
+              Completează formularul și descoperă soluțiile perfecte pentru mobila ta
+            </p>
+          </div>
 
-        {/* Text Content - Left Side */}
-        <div className="contact-section-text">
-          <h2 className="contact-section-title">
-            Visezi la o Bucătărie Nouă? Oferim consultanță gratuită pentru
-            bucătăria ta.
-          </h2>
-          <p className="contact-section-description">
-            Te ajutăm să îți aduci ideile la viață, cu sfaturi personalizate
-            care se potrivesc perfect stilului tău.
-          </p>
-        </div>
-
-        {/* Form Panel - Right Side */}
-        <div className="contact-section-form-wrapper">
-          {/* Glass Effect Overlay for Form */}
-          <div className="contact-section-form-overlay"></div>
-
-          {/* Form Content */}
-          <div className="contact-section-form-content">
-            {/* Title */}
-            <h3 className="contact-section-form-title">
-              Începe transformarea bucătăriei tale
-            </h3>
-
+          {/* Форма справа */}
+          <div className="form-block-form-wrapper">
             {/* Success Message */}
             {isSubmitted && (
-              <div className="contact-section-success">
-                <div className="contact-section-success-card">
-                  <div className="contact-section-success-icon">
+              <div className="form-block-success">
+                <div className="form-block-success-card">
+                  <div className="form-block-success-icon">
                     <svg
                       className="w-8 h-8 text-green-600"
                       fill="none"
@@ -73,10 +50,10 @@ const ContactSection: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <h4 className="contact-section-success-title">
+                  <h4 className="form-block-success-title">
                     Mesajul a fost trimis!
                   </h4>
-                  <p className="contact-section-success-message">
+                  <p className="form-block-success-message">
                     Vă mulțumim! Vă vom contacta în cel mai scurt timp posibil.
                   </p>
                 </div>
@@ -84,12 +61,14 @@ const ContactSection: React.FC = () => {
             )}
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="contact-section-form">
+            <form onSubmit={handleSubmit} className="form-block-form">
               {/* Name Field */}
-              <div className="contact-section-field">
-                <label className="contact-section-label">Nume, Prenume</label>
-                <div className="contact-section-input-wrapper">
-                  <div className="contact-section-input-icon">
+              <div className="form-block-field">
+                <label className="form-block-label">
+                  Nume, Prenume <span className="form-block-required">*</span>
+                </label>
+                <div className="form-block-input-wrapper">
+                  <div className="form-block-input-icon">
                     <img src={nameIcon} alt="name" className="w-5 h-5" />
                   </div>
                   <input
@@ -98,7 +77,7 @@ const ContactSection: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Nume, Prenume"
-                    className="contact-section-input"
+                    className="form-block-input"
                     disabled={isSubmitting || isSubmitted}
                     required
                   />
@@ -106,12 +85,12 @@ const ContactSection: React.FC = () => {
               </div>
 
               {/* Phone Field */}
-              <div className="contact-section-field">
-                <label className="contact-section-label">
-                  Telefon <span className="contact-section-required">*</span>
+              <div className="form-block-field">
+                <label className="form-block-label">
+                  Telefon <span className="form-block-required">*</span>
                 </label>
-                <div className="contact-section-input-wrapper">
-                  <div className="contact-section-input-icon">
+                <div className="form-block-input-wrapper">
+                  <div className="form-block-input-icon">
                     <img src={phoneIcon} alt="phone" className="w-5 h-5" />
                   </div>
                   <input
@@ -120,7 +99,7 @@ const ContactSection: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Telefon"
-                    className="contact-section-input"
+                    className="form-block-input"
                     disabled={isSubmitting || isSubmitted}
                     required
                   />
@@ -128,10 +107,10 @@ const ContactSection: React.FC = () => {
               </div>
 
               {/* Email Field */}
-              <div className="contact-section-field">
-                <label className="contact-section-label">Email</label>
-                <div className="contact-section-input-wrapper">
-                  <div className="contact-section-input-icon">
+              <div className="form-block-field">
+                <label className="form-block-label">Email</label>
+                <div className="form-block-input-wrapper">
+                  <div className="form-block-input-icon">
                     <img src={mailIcon} alt="mail" className="w-5 h-5" />
                   </div>
                   <input
@@ -140,7 +119,7 @@ const ContactSection: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email"
-                    className="contact-section-input"
+                    className="form-block-input"
                     disabled={isSubmitting || isSubmitted}
                   />
                 </div>
@@ -150,11 +129,11 @@ const ContactSection: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
-                className="contact-section-button"
+                className="form-block-button"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="contact-section-spinner"></div>
+                    <div className="form-block-spinner"></div>
                     <span>Se trimite...</span>
                   </>
                 ) : (
@@ -172,4 +151,5 @@ const ContactSection: React.FC = () => {
   );
 };
 
-export default ContactSection;
+export default FormBlock;
+

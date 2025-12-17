@@ -1,0 +1,123 @@
+.cta-block-section {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cta-block-container {
+  width: 100%;
+  max-width: 1440px;
+  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 104px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.cta-block-panel {
+  width: 908px;
+  height: 120px;
+  background-color: #007042;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 266px;
+  top: 60px;
+}
+
+.cta-block-text {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.cta-block-button {
+  width: 222px;
+  height: 48px;
+  background-color: #bf1a1a;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: calc(266px + (908px - 222px) / 2);
+  top: 212px;
+}
+
+.cta-block-button:hover {
+  background-color: #a01515;
+}
+
+.cta-block-arrow {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Tablet styles (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cta-block-container {
+    height: auto;
+    min-height: 320px;
+    padding: 60px 40px;
+  }
+
+  .cta-block-panel {
+    width: 100%;
+    max-width: 908px;
+    height: auto;
+    min-height: 120px;
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+}
+
+/* Mobile styles (up to 767px) */
+@media (max-width: 767px) {
+  .cta-block-container {
+    height: auto;
+    min-height: 320px;
+    padding: 40px 20px;
+  }
+
+  .cta-block-panel {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .cta-block-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .cta-block-button {
+    width: 100%;
+    max-width: 222px;
+  }
+}
+

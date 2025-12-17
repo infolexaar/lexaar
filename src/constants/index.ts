@@ -4,7 +4,7 @@ export const COMPANY_INFO = {
   name: "LexAar Bucătării",
   phone: import.meta.env.VITE_COMPANY_PHONE || "+373 78 90 70 07",
   email: import.meta.env.VITE_COMPANY_EMAIL || "info@lexaar.md",
-  address: "Chișinău, Moldova",
+  address: "Strada Bucovinei 9F, Stăuceni, Chișinău",
 } as const;
 
 export const BENEFITS = [

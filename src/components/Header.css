@@ -1,0 +1,152 @@
+.header-top-bar {
+  background-color: #f5f5f5;
+  padding: 8px 104px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #4fc3f7;
+}
+
+.header-top-left {
+  font-size: 14px;
+  color: #3e3d38;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.header-top-right {
+  font-size: 14px;
+  color: #3e3d38;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.header-main {
+  background-color: #171717;
+  padding: 0 104px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 82px;
+  position: relative;
+}
+
+.header-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.header-logo-image {
+  width: 152.5px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 32px;
+  margin-left: 209.75px;
+}
+
+.header-nav-link {
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-nav-link:hover {
+  color: #c19d3d;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.header-phone {
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-phone:hover {
+  color: #c19d3d;
+}
+
+.header-cta-button {
+  background-color: #bf1a1a;
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.header-cta-button:hover {
+  background-color: #a01515;
+}
+
+.header-language {
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-language:hover {
+  color: #c19d3d;
+}
+
+/* Responsive styles */
+@media (max-width: 1280px) {
+  .header-top-bar {
+    padding: 8px 24px;
+  }
+
+  .header-main {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-top-bar {
+    display: none;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-phone {
+    display: none;
+  }
+
+  .header-cta-button {
+    display: none;
+  }
+}
+

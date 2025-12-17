@@ -6,7 +6,10 @@ import QualityBlock from "./components/QualityBlock";
 import ReviewsBlock from "./components/ReviewsBlock";
 import ProjectsBlock from "./components/ProjectsBlock";
 import ProcessBlock from "./components/ProcessBlock";
+import CTABlock from "./components/CTABlock";
+import FormBlock from "./components/FormBlock";
 import MapSection from "./components/MapSection";
+import Footer from "./components/Footer";
 import CookieConsent from "./components/CookieConsent";
 import "./App.css";
 
@@ -21,7 +24,10 @@ function App() {
       <ReviewsBlock />
       <ProjectsBlock />
       <ProcessBlock />
+      <CTABlock />
+      <FormBlock />
       <MapSection />
+      <Footer />
       <CookieConsent />
     </div>
   );

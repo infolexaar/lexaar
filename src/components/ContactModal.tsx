@@ -1,74 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import arrowIcon from "../assets/icons/arrow.svg";
 import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
 import backgroundImage from "../assets/backgrContact.svg";
-import { trackFormSubmission, trackFacebookEvent } from "../utils/analytics";
-import type { ContactModalProps, FormData } from "../types";
-import { sendContactEmail } from "../services/firebaseEmailService";
+import type { ContactModalProps } from "../types";
+import { useContactForm } from "../hooks/useContactForm";
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    phone: "",
-    email: "",
+  const {
+    formData,
+    isSubmitting,
+    isSubmitted,
+    handleSubmit,
+    handleChange,
+  } = useContactForm({
+    onSuccess: onClose,
   });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Track form submission
-    trackFormSubmission("contact_form");
-    trackFacebookEvent("Lead", {
-      content_name: "Contact Form Submission",
-      content_category: "Kitchen Furniture",
-      value: 1,
-      currency: "EUR",
-    });
-
-    try {
-      // Отправляем email
-      const emailSent = await sendContactEmail({
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        message: "Cerere de ofertă pentru bucătării la comandă",
-      });
-
-      if (emailSent) {
-        setIsSubmitted(true);
-
-        // Автоматически закрыть модалку через 3 секунды
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({ name: "", phone: "", email: "" });
-          onClose();
-        }, 3000);
-      } else {
-        alert(
-          "A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou."
-        );
-      }
-    } catch {
-      alert(
-        "A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou."
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   if (!isOpen) return null;
 
