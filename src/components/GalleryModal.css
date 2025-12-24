@@ -1,0 +1,255 @@
+.gallery-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #616161;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0;
+}
+
+.gallery-modal-content {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Кнопка закрытия */
+.gallery-modal-close {
+  position: absolute;
+  top: 48px;
+  right: 62px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  background: transparent;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-modal-close:hover {
+  opacity: 0.8;
+}
+
+.gallery-modal-close-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Стрелки навигации */
+.gallery-modal-nav {
+  position: absolute;
+  width: 48px;
+  height: 96px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-modal-nav:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-modal-nav-left {
+  left: 56px;
+  top: 402px;
+}
+
+.gallery-modal-nav-right {
+  right: 56px;
+  top: 402px;
+}
+
+.gallery-modal-nav svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Основной контейнер 1120x583 */
+.gallery-modal-main-container {
+  width: 1120px;
+  height: 583px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Левая часть - фотки */
+.gallery-modal-images-section {
+  width: 688px;
+  height: 584px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Основная фотка 688x462 */
+.gallery-modal-main-image-wrapper {
+  width: 688px;
+  height: 462px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gallery-modal-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Галерея миниатюр 508x97 */
+.gallery-modal-thumbnails {
+  width: 508px;
+  height: 97px;
+  display: flex;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.gallery-modal-thumbnail {
+  flex: 1;
+  height: 97px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.gallery-modal-thumbnail.active {
+  border-color: #bf1a1a;
+}
+
+.gallery-modal-thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Правая часть - информация */
+.gallery-modal-info-section {
+  width: 408px;
+  height: 334px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.gallery-modal-info-content {
+  width: 408px;
+  height: 334px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 12px;
+}
+
+.gallery-modal-info-title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-modal-info-line {
+  width: 360px;
+  height: 1px;
+  background-color: #cdccc3;
+  margin: 12px 0;
+  padding: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.gallery-modal-info-description {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #e8e7e3;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-modal-info-cta-text {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-modal-info-button {
+  width: 360px;
+  height: 48px;
+  background-color: #bf1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 12px 0 0 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-modal-info-button:hover {
+  background-color: #a01515;
+}

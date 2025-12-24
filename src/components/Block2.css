@@ -61,6 +61,8 @@
   padding: 0;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .category-image-wrapper {

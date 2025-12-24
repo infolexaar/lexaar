@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bucatariiImage from "../assets/categories/main/bucatarii.svg";
 import paturiImage from "../assets/categories/main/paturi.svg";
 import dulapImage from "../assets/categories/main/dulap.svg";
@@ -9,16 +10,19 @@ const Block2: React.FC = () => {
     {
       id: 1,
       title: "Bucătării",
+      slug: "bucatarii",
       image: bucatariiImage,
     },
     {
       id: 2,
       title: "Paturi",
+      slug: "paturi",
       image: paturiImage,
     },
     {
       id: 3,
       title: "Dulapuri și Comode",
+      slug: "dulapuri-si-comode",
       image: dulapImage,
     },
   ];
@@ -29,7 +33,11 @@ const Block2: React.FC = () => {
         <h2 className="block2-title">Descoperă colecțiile noastre</h2>
         <div className="categories-grid">
           {categories.map((category) => (
-            <div key={category.id} className="category-item">
+            <Link
+              key={category.id}
+              to={`/category/${category.slug}`}
+              className="category-item"
+            >
               <div className="category-image-wrapper">
                 <img
                   src={category.image}
@@ -38,7 +46,7 @@ const Block2: React.FC = () => {
                 />
               </div>
               <h3 className="category-title">{category.title}</h3>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

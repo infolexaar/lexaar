@@ -1,26 +1,45 @@
 import React, { useState } from "react";
+import GalleryModal from "./GalleryModal";
 import image1 from "../assets/projects/Image.svg";
 import image2 from "../assets/projects/Image-1.svg";
 import image3 from "../assets/projects/Image-2.svg";
+// Импорт изображений карусели для товара "Bucătărie Industrial Grey"
+import carousel1 from "../assets/categories/bucatarii/itemimg/carousel1.svg";
+import carousel2 from "../assets/categories/bucatarii/itemimg/carousel2.svg";
+import carousel3 from "../assets/categories/bucatarii/itemimg/carousel3.svg";
 import "./ProjectsBlock.css";
 
 const ProjectsBlock: React.FC = () => {
   const projects = [
     {
+      id: 1,
       image: image1,
       title: "Bucătărie Industrial Grey",
+      carouselImages: [carousel1, carousel2, carousel3],
+      description:
+        "Bucătărie modernă cu design minimalist, combinație elegantă de lemn natural și antracit, perfect echilibrată între stil și funcționalitate.",
     },
     {
+      id: 2,
       image: image2,
       title: "Bucătărie Marble Line",
     },
     {
+      id: 3,
       image: image3,
       title: "Bucătărie Urban Wood",
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedItem, setSelectedItem] = useState<{
+    id: number;
+    title: string;
+    image: string;
+    carouselImages?: string[];
+    description?: string;
+  } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % projects.length);
@@ -67,7 +86,14 @@ const ProjectsBlock: React.FC = () => {
                     </svg>
                   </button>
                 )}
-                <div className="projects-block-image-wrapper">
+                <div 
+                  className="projects-block-image-wrapper"
+                  onClick={() => {
+                    setSelectedItem(project);
+                    setIsModalOpen(true);
+                  }}
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
@@ -103,6 +129,15 @@ const ProjectsBlock: React.FC = () => {
           </div>
         </div>
       </div>
+      <GalleryModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedItem(null);
+        }}
+        item={selectedItem}
+        allItems={projects}
+      />
     </section>
   );
 };

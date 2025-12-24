@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/icons/Logo.svg";
 import type { HeaderProps } from "../types";
 import { COMPANY_INFO } from "../constants";
@@ -10,13 +11,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
       {/* Main Navigation */}
       <div className="header-main">
         {/* Logo */}
-        <div className="header-logo-wrapper">
+        <Link to="/" className="header-logo-wrapper">
           <img
             src={Logo}
             alt="LexAar Bucătării"
             className="header-logo-image"
           />
-        </div>
+        </Link>
 
         {/* Navigation Links */}
         <nav className="header-nav">
