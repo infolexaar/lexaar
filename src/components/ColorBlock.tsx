@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import kitchenImage from "../assets/colorBlock/kitchen.svg";
+import blueKitchen from "../assets/colorBlock/blue.svg";
+import creamKitchen from "../assets/colorBlock/cream.svg";
+import greenKitchen from "../assets/colorBlock/green.svg";
+import greyKitchen from "../assets/colorBlock/grey.svg";
+import redKitchen from "../assets/colorBlock/red.svg";
+import whiteKitchen from "../assets/colorBlock/white.svg";
 import arrowIcon from "../assets/icons/arrow.svg";
 import "./ColorBlock.css";
 
 const ColorBlock: React.FC = () => {
+  const navigate = useNavigate();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const autoPlayIntervalRef = useRef<number | null>(null);
+
+  // Массив изображений кухонь
+  const kitchenImages = [
+    redKitchen,
+    blueKitchen,
+    whiteKitchen,
+    creamKitchen,
+    greenKitchen,
+    greyKitchen,
+    kitchenImage,
+  ];
+
+  // Автоматическая смена изображений
+  useEffect(() => {
+    autoPlayIntervalRef.current = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % kitchenImages.length);
+    }, 1500); // Интервал 1.5 секунды между сменами
+
+    return () => {
+      if (autoPlayIntervalRef.current) {
+        clearInterval(autoPlayIntervalRef.current);
+      }
+    };
+  }, [kitchenImages.length]);
+
   const features = [
     "Alege culoarea care îți spune povestea",
     "Descoperă ce se potrivește cel mai bine stilului tău",
@@ -18,7 +53,8 @@ const ColorBlock: React.FC = () => {
         {/* Изображение кухни */}
         <div className="color-block-image-wrapper">
           <img
-            src={kitchenImage}
+            key={currentImageIndex}
+            src={kitchenImages[currentImageIndex]}
             alt="Bucătărie modernă cu culori personalizate"
             className="color-block-image"
           />
@@ -48,7 +84,10 @@ const ColorBlock: React.FC = () => {
           </ul>
 
           {/* Кнопка */}
-          <button className="color-block-button">
+          <button
+            className="color-block-button"
+            onClick={() => navigate("/colors")}
+          >
             <span className="color-block-button-text">Vezi culorile</span>
             <img
               src={arrowIcon}

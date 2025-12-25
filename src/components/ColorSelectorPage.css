@@ -1,0 +1,234 @@
+.color-selector-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-top: 82px;
+}
+
+.color-selector-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 56px;
+  box-sizing: border-box;
+}
+
+/* Заголовок */
+.color-selector-header {
+  width: 100%;
+  margin: 0 0 60px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color-selector-title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #1a1911;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Основной контент */
+.color-selector-main {
+  width: 100%;
+  height: 552px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Левая часть - изображение */
+.color-selector-image-section {
+  width: 807px;
+  height: 492px;
+  flex-shrink: 0;
+}
+
+.color-selector-image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.color-selector-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.color-selector-image.fade-in {
+  opacity: 1;
+}
+
+.color-selector-image.fade-out {
+  opacity: 0;
+}
+
+.color-selector-image.fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Правая часть - селектор */
+.color-selector-controls {
+  width: 344px;
+  height: 395px;
+  padding: 0 10px 0 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.color-selector-controls-title {
+  display: none;
+}
+
+/* Метка материала */
+.color-selector-material-label {
+  display: flex;
+  align-items: center;
+  margin: 0 0 8px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color-selector-material-name {
+  width: 138px;
+  height: 40px;
+  padding: 4px;
+  border: 1px solid #e8e7e3;
+  border-radius: 8px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+.color-selector-material-name::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid #e8e7e3;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.color-selector-material-name span {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #1a1911;
+  padding: 8px 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.color-selector-color-code {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #1a1911;
+  margin-left: 80px;
+}
+
+/* Разделительная линия */
+.color-selector-divider {
+  width: 296px;
+  height: 1px;
+  background-color: #e8e7e3;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/* Сетка цветов */
+.color-selector-grid {
+  width: 286px;
+  height: 170px;
+  display: grid;
+  grid-template-columns: repeat(5, 54px);
+  grid-auto-flow: row;
+  gap: 4px;
+  margin: 8px 0 0 0;
+  box-sizing: border-box;
+}
+
+.color-selector-swatch {
+  width: 54px;
+  height: 54px;
+  border: 1px solid #cdccc3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color-selector-swatch:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.color-selector-swatch.active {
+  border-color: #bf1a1a;
+  border-width: 2px;
+}
+
+/* CTA секция */
+.color-selector-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.color-selector-cta-text {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #1a1911;
+  margin: 0;
+  padding: 0;
+}
+
+.color-selector-button {
+  width: 222px;
+  height: 48px;
+  background-color: #bf1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color-selector-button:hover {
+  background-color: #a01515;
+}

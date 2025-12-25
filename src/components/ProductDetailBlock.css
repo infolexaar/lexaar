@@ -76,15 +76,16 @@
   margin: 0 auto;
   padding: 0 104px;
   box-sizing: border-box;
-  min-height: 571.63px;
+  margin-top: 0;
+  margin-bottom: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .product-detail-main {
-  width: 1120px;
-  height: 571.63px;
+  width: 1232px;
+  height: 511.63px;
   display: flex;
   align-items: flex-start;
   gap: 60px;
@@ -96,7 +97,7 @@
 /* Левая часть - фотки */
 .product-detail-images-section {
   width: 680px;
-  height: 571.63px;
+  height: 511.63px;
   display: flex;
   flex-direction: column;
   gap: 24px;
