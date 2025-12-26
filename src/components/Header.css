@@ -107,21 +107,6 @@
   background-color: #a01515;
 }
 
-.header-language {
-  color: #ffffff;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.header-language:hover {
-  color: #c19d3d;
-}
 
 /* Responsive styles */
 @media (max-width: 1280px) {

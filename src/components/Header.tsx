@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/icons/Logo.svg";
 import type { HeaderProps } from "../types";
 import { COMPANY_INFO } from "../constants";
+import LanguageSelector from "./LanguageSelector";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./Header.css";
 
 const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
+  const { t } = useLanguage();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
       {/* Main Navigation */}
@@ -21,14 +25,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
 
         {/* Navigation Links */}
         <nav className="header-nav">
-          <a href="#servicii" className="header-nav-link">
-            Servicii
-          </a>
+          <Link to="/servicii" className="header-nav-link">
+            {t.header.servicii}
+          </Link>
           <a href="#despre" className="header-nav-link">
-            Despre noi
+            {t.header.despreNoi}
           </a>
           <a href="#blog" className="header-nav-link">
-            Blog
+            {t.header.blog}
           </a>
         </nav>
 
@@ -41,9 +45,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
             {COMPANY_INFO.phone}
           </a>
           <button className="header-cta-button" onClick={onOpenModal}>
-            Solicită ofertă
+            {t.header.solicitOferta}
           </button>
-          <button className="header-language">RO</button>
+          <LanguageSelector />
         </div>
       </div>
     </header>

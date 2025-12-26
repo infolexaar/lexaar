@@ -6,8 +6,10 @@ import mailIcon from "../assets/icons/mail.svg";
 import backgroundImage from "../assets/backgrContact.svg";
 import type { ContactModalProps } from "../types";
 import { useContactForm } from "../hooks/useContactForm";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+  const { t, language } = useLanguage();
   const {
     formData,
     isSubmitting,
@@ -104,34 +106,39 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
                     {/* Success Title */}
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      Mesajul a fost trimis!
+                      {t.modal.successTitle}
                     </h3>
 
                     {/* Success Message */}
                     <p className="text-gray-600 text-sm mb-4">
-                      Vă mulțumim! Vă vom contacta în cel mai scurt timp
-                      posibil.
+                      {t.modal.successMessage}
                     </p>
 
                     {/* Compact Details */}
                     <div className="bg-gray-50 rounded-lg p-3 text-left mb-4">
                       <div className="space-y-1 text-xs">
                         <div className="flex justify-between">
-                          <span className="text-gray-500">De la:</span>
+                          <span className="text-gray-500">{t.modal.from}</span>
                           <span className="font-medium text-gray-900">
                             {formData.name}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Telefon:</span>
+                          <span className="text-gray-500">{t.modal.phone}</span>
                           <span className="font-medium text-gray-900">
                             {formData.phone}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Data:</span>
+                          <span className="text-gray-500">{t.modal.date}</span>
                           <span className="font-medium text-gray-900">
-                            {new Date().toLocaleDateString("ro-RO")}
+                            {new Date().toLocaleDateString(
+                              language === "RO"
+                                ? "ro-RO"
+                                : language === "EN"
+                                ? "en-US"
+                                : "ru-RU"
+                            )}
                           </span>
                         </div>
                       </div>
@@ -139,7 +146,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
                     {/* Auto-close notice */}
                     <div className="text-xs text-gray-500">
-                      Se va închide automat...
+                      {t.modal.autoClose}
                     </div>
                   </div>
                 </div>
@@ -150,7 +157,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 {/* Name Field */}
                 <div>
                   <label className="block text-white text-sm font-medium mb-2">
-                    Nume, Prenume
+                    {t.form.name}
                   </label>
                   <div className="relative">
                     <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
@@ -165,7 +172,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Nume, Prenume"
+                      placeholder={t.form.name}
                       className="w-full pl-10 pr-4 py-2 sm:py-3 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm sm:text-base"
                       disabled={isSubmitting || isSubmitted}
                       required
@@ -176,7 +183,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 {/* Phone Field */}
                 <div>
                   <label className="block text-white text-sm font-medium mb-2">
-                    Telefon <span className="text-red-500">*</span>
+                    {t.form.phone} <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
@@ -191,7 +198,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="Telefon"
+                      placeholder={t.form.phone}
                       className="w-full pl-10 pr-4 py-2 sm:py-3 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm sm:text-base"
                       disabled={isSubmitting || isSubmitted}
                       required
@@ -202,7 +209,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 {/* Email Field */}
                 <div>
                   <label className="block text-white text-sm font-medium mb-2">
-                    Email
+                    {t.form.email}
                   </label>
                   <div className="relative">
                     <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
@@ -217,7 +224,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Email"
+                      placeholder={t.form.email}
                       className="w-full pl-10 pr-4 py-2 sm:py-3 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm sm:text-base"
                       disabled={isSubmitting || isSubmitted}
                     />
@@ -233,11 +240,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Se trimite...</span>
+                      <span>{t.form.sending}</span>
                     </>
                   ) : (
                     <>
-                      <span>Trimite</span>
+                      <span>{t.form.send}</span>
                       <img src={arrowIcon} alt="arrow" className="w-5 h-5" />
                     </>
                   )}

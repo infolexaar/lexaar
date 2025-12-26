@@ -32,3 +32,4 @@ const ColorPage: React.FC = () => {
 
 export default ColorPage;
 
+

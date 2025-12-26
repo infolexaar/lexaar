@@ -4,9 +4,11 @@ import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
 import { useContactForm } from "../hooks/useContactForm";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./FormBlock.css";
 
 const FormBlock: React.FC = () => {
+  const { t } = useLanguage();
   const {
     formData,
     isSubmitting,
@@ -21,12 +23,8 @@ const FormBlock: React.FC = () => {
         <div className="form-block-content">
           {/* Текст слева */}
           <div className="form-block-text">
-            <h2 className="form-block-title">
-              Ai idei? Noi te ghidăm.
-            </h2>
-            <p className="form-block-description">
-              Completează formularul și descoperă soluțiile perfecte pentru mobila ta
-            </p>
+            <h2 className="form-block-title">{t.form.title}</h2>
+            <p className="form-block-description">{t.form.subtitle}</p>
           </div>
 
           {/* Форма справа */}
@@ -51,10 +49,10 @@ const FormBlock: React.FC = () => {
                     </svg>
                   </div>
                   <h4 className="form-block-success-title">
-                    Mesajul a fost trimis!
+                    {t.form.successTitle}
                   </h4>
                   <p className="form-block-success-message">
-                    Vă mulțumim! Vă vom contacta în cel mai scurt timp posibil.
+                    {t.form.successMessage}
                   </p>
                 </div>
               </div>
@@ -65,7 +63,7 @@ const FormBlock: React.FC = () => {
               {/* Name Field */}
               <div className="form-block-field">
                 <label className="form-block-label">
-                  Nume, Prenume <span className="form-block-required">*</span>
+                  {t.form.name} <span className="form-block-required">*</span>
                 </label>
                 <div className="form-block-input-wrapper">
                   <div className="form-block-input-icon">
@@ -76,7 +74,7 @@ const FormBlock: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Nume, Prenume"
+                    placeholder={t.form.name}
                     className="form-block-input"
                     disabled={isSubmitting || isSubmitted}
                     required
@@ -87,7 +85,7 @@ const FormBlock: React.FC = () => {
               {/* Phone Field */}
               <div className="form-block-field">
                 <label className="form-block-label">
-                  Telefon <span className="form-block-required">*</span>
+                  {t.form.phone} <span className="form-block-required">*</span>
                 </label>
                 <div className="form-block-input-wrapper">
                   <div className="form-block-input-icon">
@@ -98,7 +96,7 @@ const FormBlock: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Telefon"
+                    placeholder={t.form.phone}
                     className="form-block-input"
                     disabled={isSubmitting || isSubmitted}
                     required
@@ -108,7 +106,7 @@ const FormBlock: React.FC = () => {
 
               {/* Email Field */}
               <div className="form-block-field">
-                <label className="form-block-label">Email</label>
+                <label className="form-block-label">{t.form.email}</label>
                 <div className="form-block-input-wrapper">
                   <div className="form-block-input-icon">
                     <img src={mailIcon} alt="mail" className="w-5 h-5" />
@@ -118,7 +116,7 @@ const FormBlock: React.FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Email"
+                    placeholder={t.form.email}
                     className="form-block-input"
                     disabled={isSubmitting || isSubmitted}
                   />
@@ -134,11 +132,11 @@ const FormBlock: React.FC = () => {
                 {isSubmitting ? (
                   <>
                     <div className="form-block-spinner"></div>
-                    <span>Se trimite...</span>
+                    <span>{t.form.sending}</span>
                   </>
                 ) : (
                   <>
-                    <span>Trimite</span>
+                    <span>{t.form.send}</span>
                     <img src={arrowIcon} alt="arrow" className="w-5 h-5" />
                   </>
                 )}

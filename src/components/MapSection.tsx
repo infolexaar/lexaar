@@ -1,8 +1,11 @@
 import React from "react";
 import mapImage from "../assets/icons/map.png";
 import { COMPANY_INFO } from "../constants";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const MapSection: React.FC = () => {
+  const { t } = useLanguage();
+
   const handleAddressClick = () => {
     // Открываем карту в новом окне с указанной меткой
     const mapUrl = "https://maps.app.goo.gl/b91ahGUeZL6JSJor9";
@@ -16,11 +19,10 @@ const MapSection: React.FC = () => {
           {/* Заголовок */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Locația noastră
+              {t.map.title}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Vă așteptăm să discutăm despre bucătăria visurilor voastre. Veniți
-              să ne vizitați pentru a vedea calitatea execuției noastre!
+              {t.map.subtitle}
             </p>
           </div>
 
@@ -61,7 +63,7 @@ const MapSection: React.FC = () => {
                     marginBottom: "16px",
                   }}
                 >
-                  Contacte
+                  {t.common.contact}
                 </h3>
 
                 {/* Разделительная линия */}
@@ -109,7 +111,7 @@ const MapSection: React.FC = () => {
                       fontWeight: "300",
                     }}
                   >
-                    Strada Bucovina 9F, Stăuceni, Chișinău (Port Mall)
+                    {t.common.address}
                   </button>
                 </div>
 
@@ -141,7 +143,7 @@ const MapSection: React.FC = () => {
                       fontWeight: "300",
                     }}
                   >
-                    Luni-Duminică: 10:00-19:00
+                    {t.common.workingHours}
                   </p>
                 </div>
 
@@ -237,7 +239,7 @@ const MapSection: React.FC = () => {
             {/* Контактная форма */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
               {/* Заголовок Contacte */}
-              <h3 className="font-medium text-black text-2xl mb-4">Contacte</h3>
+              <h3 className="font-medium text-black text-2xl mb-4">{t.common.contact}</h3>
 
               {/* Разделительная линия */}
               <div

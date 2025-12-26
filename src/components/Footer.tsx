@@ -9,9 +9,12 @@ import whatsappIcon from "../assets/icons/messengers/watsapp.svg";
 import viberIcon from "../assets/icons/messengers/viber.svg";
 import messengerIcon from "../assets/icons/messengers/messenger.svg";
 import { COMPANY_INFO } from "../constants";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="footer-section">
       <div className="footer-container">
@@ -21,10 +24,7 @@ const Footer: React.FC = () => {
           <div className="footer-logo">
             <img src={logoIcon} alt="LexAar" className="footer-logo-image" />
           </div>
-          <p className="footer-description">
-            De peste 15 ani creăm mobilier la comandă, cu soluții adaptate
-            oricărui spațiu și buget.
-          </p>
+          <p className="footer-description">{t.footer.description}</p>
           <div className="footer-contacts">
             <a
               href="mailto:infolexaar@gmail.com"
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
 
         {/* Middle Column - Social Links */}
         <div className="footer-middle">
-          <h3 className="footer-section-title">Social</h3>
+          <h3 className="footer-section-title">{t.footer.social}</h3>
           <ul className="footer-links">
             <li>
               <a
@@ -90,21 +90,21 @@ const Footer: React.FC = () => {
 
         {/* Right Column - Company Links */}
         <div className="footer-right">
-          <h3 className="footer-section-title">Companie</h3>
+          <h3 className="footer-section-title">{t.footer.company}</h3>
           <ul className="footer-links">
             <li>
               <a href="#" className="footer-link">
-                Despre noi
+                {t.footer.aboutUs}
               </a>
             </li>
             <li>
               <a href="#" className="footer-link">
-                Blog
+                {t.footer.blog}
               </a>
             </li>
             <li>
               <a href="#" className="footer-link">
-                Servicii
+                {t.footer.services}
               </a>
             </li>
           </ul>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Section - Copyright and Social Icons */}
       <div className="footer-bottom">
-        <p className="footer-copyright">© 2025 MOBILIA</p>
+        <p className="footer-copyright">{t.footer.copyright}</p>
         <div className="footer-social-icons">
           <a
             href="#"
