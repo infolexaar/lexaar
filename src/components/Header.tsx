@@ -28,12 +28,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
           <Link to="/servicii" className="header-nav-link">
             {t.header.servicii}
           </Link>
-          <a href="#despre" className="header-nav-link">
+          <Link to="/despre-noi" className="header-nav-link">
             {t.header.despreNoi}
-          </a>
-          <a href="#blog" className="header-nav-link">
+          </Link>
+          <Link to="/blog" className="header-nav-link">
             {t.header.blog}
-          </a>
+          </Link>
         </nav>
 
         {/* Right Side - Phone, CTA, Language */}

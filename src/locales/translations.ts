@@ -92,6 +92,61 @@ export interface Translations {
     date: string;
     autoClose: string;
   };
+  // About Us Page
+  about: {
+    whoWeAre: {
+      title: string;
+      description: string;
+    };
+    mission: {
+      title: string;
+      description: string;
+    };
+    advantages: {
+      title: string;
+      consultation: {
+        title: string;
+        description: string;
+      };
+      measurements: {
+        title: string;
+        description: string;
+      };
+      manufacturing: {
+        title: string;
+        description: string;
+      };
+      delivery: {
+        title: string;
+        description: string;
+      };
+      warranty: {
+        title: string;
+        description: string;
+      };
+    };
+  };
+  // Reviews Block
+  reviews: {
+    title: string;
+    review1: {
+      quote: string;
+      author: string;
+    };
+    review2: {
+      quote: string;
+      author: string;
+    };
+    review3: {
+      quote: string;
+      author: string;
+    };
+  };
+  // Blog Page
+  blog: {
+    title: string;
+    next: string;
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -186,6 +241,68 @@ export const translations: Record<Language, Translations> = {
       date: "Data:",
       autoClose: "Se va închide automat...",
     },
+    about: {
+      whoWeAre: {
+        title: "Cine suntem noi?",
+        description:
+          "Suntem o echipă cu peste 15 ani de experiență în mobilier, pasionați să creăm piese care se potrivesc perfect casei tale. Ne ocupăm exclusiv de mobilier solid – bucătării, dulapuri, biblioteci, mese, paturi și orice ține de depozitare și living. Lucrăm cu materiale de calitate, atenți la detalii, și, mai ales, aproape de tine: ascultăm, înțelegem și transformăm ideile tale în mobilier care îți face viața mai frumoasă și mai practică. Colaborăm atât cu clienți din țară, cât și cu cei din străinătate, oferind aceeași atenție și profesionalism indiferent de locație.",
+      },
+      mission: {
+        title: "Misiunea și valorile noastre",
+        description:
+          "Pentru noi, mobilierul nu e doar funcțional – e parte din personalitatea ta și din povestea casei tale. De aceea începem fiecare proiect printr-o discuție sinceră, ca să înțelegem exact ce îți dorești și cum trăiești în spațiul tău.\n\nNe ghidăm după câteva principii simple: calitate fără compromisuri, comunicare clară și respect pentru timpul și bugetul tău. Nu lucrăm pe bandă – fiecare piesă este gândită special pentru tine, cu măsuri exacte și finisaje atent lucrate.\n\nCeea ce ne motivează sunt oamenii: bucuria clienților când își văd spațiul transformat și încrederea cu care ne recomandă mai departe. Aceasta este energia care ne face să ridicăm ștacheta la fiecare proiect.",
+      },
+      advantages: {
+        title: "De ce să alegi Mobilia",
+        consultation: {
+          title: "Consultanță gratuită și personalizată",
+          description:
+            "Venim la tine acasă, măsurăm spațiul și discutăm împreună exact ce îți trebuie, ca să găsim soluția care se potrivește cel mai bine, fără niciun cost.",
+        },
+        measurements: {
+          title: "Măsurători de precizie",
+          description:
+            "Folosim echipamente profesionale pentru măsurători exacte, astfel încât mobilierul să se integreze perfect în spațiul tău.",
+        },
+        manufacturing: {
+          title: "Fabricație locală cu materiale premium",
+          description:
+            "Lucrăm doar cu furnizori de încredere, iar tot procesul de fabricație se desfășoară în atelierul nostru, sub supravegherea directă.",
+        },
+        delivery: {
+          title: "Livrare și montaj profesionist",
+          description:
+            "Echipa noastră se ocupă de transport în condiții sigure și montaj rapid, cu atenție la fiecare detaliu.",
+        },
+        warranty: {
+          title: "Garanție și suport post-vânzare",
+          description:
+            "Îți oferim garanție completă și rămânem alături de tine pentru orice ajustări sau întrebări viitoare.",
+        },
+      },
+    },
+    reviews: {
+      title: "Ce spun clienții noștri",
+      review1: {
+        quote:
+          "Mobilierul a fost livrat exact cum am discutat, cu finisaje impecabile. Echipa a fost foarte profesionistă și atentă la fiecare detaliu. Recomand!",
+        author: "Maria P., Chișinău",
+      },
+      review2: {
+        quote:
+          "Am fost impresionată de seriozitatea și promptitudinea cu care s-au ocupat de proiectul nostru. Bucătăria arată exact cum mi-am dorit.",
+        author: "Alexandru M., Rezina",
+      },
+      review3: {
+        quote:
+          "Consultanța gratuită m-a convins să lucrez cu ei. M-au ajutat să optimizez spațiul mult mai bine decât îmi imaginam. Sunt foarte mulțumită!",
+        author: "Elena R., Orhei",
+      },
+    },
+    blog: {
+      title: "Blog",
+      next: "Next",
+    },
   },
   EN: {
     header: {
@@ -278,6 +395,68 @@ export const translations: Record<Language, Translations> = {
       date: "Date:",
       autoClose: "Will close automatically...",
     },
+    about: {
+      whoWeAre: {
+        title: "Who are we?",
+        description:
+          "We are a team with over 15 years of experience in furniture, passionate about creating pieces that fit perfectly in your home. We work exclusively with solid furniture – kitchens, wardrobes, libraries, tables, beds, and anything related to storage and living. We work with quality materials, pay attention to details, and, above all, stay close to you: we listen, understand, and transform your ideas into furniture that makes your life more beautiful and practical. We work with both local and international clients, offering the same attention and professionalism regardless of location.",
+      },
+      mission: {
+        title: "Our mission and values",
+        description:
+          "For us, furniture is not just functional – it's part of your personality and your home's story. That's why we start every project with an honest discussion, to understand exactly what you want and how you live in your space.\n\nWe are guided by a few simple principles: uncompromising quality, clear communication, and respect for your time and budget. We don't work on an assembly line – each piece is specially designed for you, with exact measurements and carefully crafted finishes.\n\nWhat motivates us are people: the joy of clients when they see their space transformed and the trust with which they recommend us further. This is the energy that makes us raise the bar with every project.",
+      },
+      advantages: {
+        title: "Why choose Mobilia",
+        consultation: {
+          title: "Free and personalized consultation",
+          description:
+            "We come to your home, measure the space, and discuss together exactly what you need, to find the solution that fits best, at no cost.",
+        },
+        measurements: {
+          title: "Precision measurements",
+          description:
+            "We use professional equipment for exact measurements, so that the furniture integrates perfectly into your space.",
+        },
+        manufacturing: {
+          title: "Local manufacturing with premium materials",
+          description:
+            "We work only with trusted suppliers, and the entire manufacturing process takes place in our workshop, under direct supervision.",
+        },
+        delivery: {
+          title: "Professional delivery and installation",
+          description:
+            "Our team handles transport in safe conditions and rapid installation, with attention to every detail.",
+        },
+        warranty: {
+          title: "Warranty and after-sales support",
+          description:
+            "We offer you a complete warranty and remain by your side for any adjustments or future questions.",
+        },
+      },
+    },
+    reviews: {
+      title: "What our clients say",
+      review1: {
+        quote:
+          "The furniture was delivered exactly as we discussed, with impeccable finishes. The team was very professional and attentive to every detail. I recommend!",
+        author: "Maria P., Chisinau",
+      },
+      review2: {
+        quote:
+          "I was impressed by the seriousness and promptness with which they handled our project. The kitchen looks exactly as I wanted.",
+        author: "Alexandru M., Rezina",
+      },
+      review3: {
+        quote:
+          "The free consultation convinced me to work with them. They helped me optimize the space much better than I imagined. I am very satisfied!",
+        author: "Elena R., Orhei",
+      },
+    },
+    blog: {
+      title: "Blog",
+      next: "Next",
+    },
   },
   RU: {
     header: {
@@ -369,6 +548,68 @@ export const translations: Record<Language, Translations> = {
       phone: "Телефон:",
       date: "Дата:",
       autoClose: "Закроется автоматически...",
+    },
+    about: {
+      whoWeAre: {
+        title: "Кто мы?",
+        description:
+          "Мы команда с более чем 15-летним опытом в мебели, увлеченные созданием изделий, которые идеально подходят вашему дому. Мы работаем исключительно с массивной мебелью – кухни, шкафы, библиотеки, столы, кровати и все, что связано с хранением и гостиной. Мы работаем с качественными материалами, уделяем внимание деталям и, прежде всего, остаемся рядом с вами: мы слушаем, понимаем и превращаем ваши идеи в мебель, которая делает вашу жизнь красивее и практичнее. Мы сотрудничаем как с местными, так и с зарубежными клиентами, предлагая одинаковое внимание и профессионализм независимо от местоположения.",
+      },
+      mission: {
+        title: "Наша миссия и ценности",
+        description:
+          "Для нас мебель – это не просто функциональность, это часть вашей личности и истории вашего дома. Поэтому мы начинаем каждый проект с честного обсуждения, чтобы понять точно, что вы хотите и как вы живете в своем пространстве.\n\nНами руководят несколько простых принципов: бескомпромиссное качество, четкая коммуникация и уважение к вашему времени и бюджету. Мы не работаем на конвейере – каждое изделие специально разработано для вас, с точными размерами и тщательно обработанной отделкой.\n\nНас мотивируют люди: радость клиентов, когда они видят свое пространство преображенным, и доверие, с которым они рекомендуют нас дальше. Это энергия, которая заставляет нас поднимать планку с каждым проектом.",
+      },
+      advantages: {
+        title: "Почему выбрать Mobilia",
+        consultation: {
+          title: "Бесплатная и персонализированная консультация",
+          description:
+            "Мы приезжаем к вам домой, измеряем пространство и вместе обсуждаем точно, что вам нужно, чтобы найти решение, которое лучше всего подходит, без каких-либо затрат.",
+        },
+        measurements: {
+          title: "Точные измерения",
+          description:
+            "Мы используем профессиональное оборудование для точных измерений, чтобы мебель идеально интегрировалась в ваше пространство.",
+        },
+        manufacturing: {
+          title: "Местное производство с премиальными материалами",
+          description:
+            "Мы работаем только с проверенными поставщиками, и весь процесс производства проходит в нашей мастерской, под прямым надзором.",
+        },
+        delivery: {
+          title: "Профессиональная доставка и установка",
+          description:
+            "Наша команда занимается транспортировкой в безопасных условиях и быстрой установкой, с вниманием к каждой детали.",
+        },
+        warranty: {
+          title: "Гарантия и послепродажная поддержка",
+          description:
+            "Мы предлагаем полную гарантию и остаемся рядом с вами для любых корректировок или будущих вопросов.",
+        },
+      },
+    },
+    reviews: {
+      title: "Что говорят наши клиенты",
+      review1: {
+        quote:
+          "Мебель была доставлена точно так, как мы обсуждали, с безупречной отделкой. Команда была очень профессиональной и внимательной к каждой детали. Рекомендую!",
+        author: "Мария П., Кишинёв",
+      },
+      review2: {
+        quote:
+          "Я была впечатлена серьезностью и оперативностью, с которой они занимались нашим проектом. Кухня выглядит именно так, как я хотела.",
+        author: "Александру М., Резина",
+      },
+      review3: {
+        quote:
+          "Бесплатная консультация убедила меня работать с ними. Они помогли мне оптимизировать пространство намного лучше, чем я представляла. Я очень довольна!",
+        author: "Елена Р., Орхей",
+      },
+    },
+    blog: {
+      title: "Блог",
+      next: "Далее",
     },
   },
 };

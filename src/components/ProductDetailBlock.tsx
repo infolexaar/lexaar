@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ContactModal from "./ContactModal";
 import "./ProductDetailBlock.css";
 
 // Импорт изображений для категории Bucătării
@@ -37,7 +36,6 @@ const ProductDetailBlock: React.FC = () => {
   }>();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   // Данные для галереи в зависимости от категории
   const getCategoryItems = (): ProductItem[] => {
@@ -119,19 +117,16 @@ const ProductDetailBlock: React.FC = () => {
                 onClick={handleBackClick}
               >
                 <svg
-                  width="11.05"
-                  height="19.09"
-                  viewBox="0 0 11.05 19.09"
+                  viewBox="0 0 12 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M9.5 1.5L1.5 9.5L9.5 17.5"
-                    stroke="#858480"
+                    d="M10 2L2 10L10 18"
+                    stroke="#1a1911"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    vectorEffect="non-scaling-stroke"
                   />
                 </svg>
               </button>
@@ -155,65 +150,54 @@ const ProductDetailBlock: React.FC = () => {
               </div>
 
               {/* Галерея миниатюр */}
-              <div className="product-detail-thumbnails">
-                {galleryImages.map((imgSrc, index) => (
-                  <div
-                    key={index}
-                    className={`product-detail-thumbnail ${
-                      index === currentImageIndex ? "active" : ""
-                    }`}
-                    onClick={() => handleThumbnailClick(index)}
-                  >
-                    <img
-                      src={imgSrc}
-                      alt={`${item.title} ${index + 1}`}
-                      className="product-detail-thumbnail-image"
-                    />
-                  </div>
-                ))}
-              </div>
+              {galleryImages.length > 1 && (
+                <div className="product-detail-thumbnails">
+                  {galleryImages.map((img, index) => (
+                    <div
+                      key={index}
+                      className={`product-detail-thumbnail ${
+                        currentImageIndex === index ? "active" : ""
+                      }`}
+                      onClick={() => handleThumbnailClick(index)}
+                    >
+                      <img
+                        src={img}
+                        alt={`${item.title} ${index + 1}`}
+                        className="product-detail-thumbnail-image"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Правая часть - информация */}
             <div className="product-detail-info-section">
               <div className="product-detail-info-content">
-                <div className="product-detail-info-text-wrapper">
-                  <p className="product-detail-info-text-16">
-                    Design elegant, cu linii curate şi finisaje mate, această
-                    bucătărie îmbină funcționalitatea cu rafinamentul
-                    contemporan. Fronturile gri antracit oferă un aspect
-                    sofisticat și ușor de întreţinut, iar accentele din lemn
-                    adaugă căldură și echilibru vizual.
-                  </p>
-                  <p className="product-detail-info-text-16">
-                    Blatul și peretele din spate sunt realizate din material cu
-                    textură de marmură gri, conferind un plus de eleganță și
-                    rezistență în timp. Iluminarea minimalistă pe șină pune în
-                    valoare fiecare detaliu al mobilierului.
-                  </p>
-                  <p className="product-detail-info-text-17">
-                    Ideală pentru spații moderne, această bucătărie oferă o
-                    combinație perfectă între estetică și funcționalitate.
-                  </p>
-                </div>
+                {item.description && (
+                  <div className="product-detail-info-text-wrapper">
+                    <p className="product-detail-info-text-17">
+                      {item.description}
+                    </p>
+                  </div>
+                )}
                 <button
                   className="product-detail-info-button"
-                  onClick={() => setIsContactModalOpen(true)}
+                  onClick={() => {
+                    // Здесь можно добавить логику открытия модального окна
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
-                  Solicită oferta →
+                  Solicită ofertă
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <ContactModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-      />
     </>
   );
 };
 
 export default ProductDetailBlock;
+

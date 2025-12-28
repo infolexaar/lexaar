@@ -1,0 +1,239 @@
+.despre-noi-page {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Intro Section */
+.despre-noi-intro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.despre-noi-intro-container {
+  width: 1440px;
+  max-width: 100%;
+  height: 248px;
+  padding: 60px 104px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.despre-noi-intro-title {
+  font-size: 42px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 0 0;
+  line-height: 1.2;
+}
+
+.despre-noi-intro-text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Main Section */
+.despre-noi-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.despre-noi-main-container {
+  width: 1440px;
+  max-width: 100%;
+  height: 1032px;
+  padding: 60px 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Mission Section */
+.despre-noi-mission-section {
+  display: grid;
+  grid-template-columns: 604px 604px;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 0;
+}
+
+.despre-noi-mission-image-wrapper {
+  width: 604px;
+  height: 416px;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.despre-noi-mission-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.despre-noi-mission-content {
+  width: 604px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 0;
+}
+
+.despre-noi-mission-title {
+  font-size: 35px;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.despre-noi-mission-text {
+  font-size: 17px;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.despre-noi-mission-text p {
+  margin: 0;
+}
+
+/* Advantages Section */
+.despre-noi-advantages-section {
+  width: 100%;
+  margin-top: 36px;
+  box-sizing: border-box;
+}
+
+.despre-noi-advantages-title {
+  font-size: 35px;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin: 0 0 32px 0;
+}
+
+.despre-noi-advantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.despre-noi-advantage-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.despre-noi-advantage-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.despre-noi-advantage-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1500px) {
+  .despre-noi-intro-container,
+  .despre-noi-main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding-left: 104px;
+    padding-right: 104px;
+  }
+}
+
+@media (max-width: 968px) {
+  .despre-noi-mission-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .despre-noi-mission-image-wrapper {
+    width: 100%;
+    height: 300px;
+    order: -1;
+  }
+
+  .despre-noi-intro-container {
+    padding: 60px 24px 0;
+    height: auto;
+    min-height: 248px;
+  }
+
+  .despre-noi-main-container {
+    padding: 60px 24px;
+    height: auto;
+    min-height: 1032px;
+  }
+
+  .despre-noi-intro-title {
+    font-size: 32px;
+  }
+
+  .despre-noi-intro-text {
+    font-size: 18px;
+  }
+
+  .despre-noi-mission-title,
+  .despre-noi-advantages-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .despre-noi-intro-container {
+    padding: 60px 20px 0;
+    height: auto;
+  }
+
+  .despre-noi-intro-title {
+    font-size: 28px;
+  }
+
+  .despre-noi-intro-text {
+    font-size: 16px;
+  }
+
+  .despre-noi-main-container {
+    padding: 60px 20px;
+    height: auto;
+  }
+
+  .despre-noi-mission-title,
+  .despre-noi-advantages-title {
+    font-size: 24px;
+  }
+
+  .despre-noi-advantage-title {
+    font-size: 18px;
+  }
+
+  .despre-noi-advantage-description {
+    font-size: 15px;
+  }
+}
+
