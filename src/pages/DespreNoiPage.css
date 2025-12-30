@@ -156,6 +156,77 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1279px) {
+  .despre-noi-intro-container {
+    width: 100%;
+    max-width: 1279px;
+    height: auto;
+    min-height: 216px;
+    padding: 52px 90px 0;
+  }
+
+  .despre-noi-intro-title {
+    font-size: 36px;
+  }
+
+  .despre-noi-intro-text {
+    font-size: 17px;
+  }
+
+  .despre-noi-main-container {
+    width: 100%;
+    max-width: 1279px;
+    height: auto;
+    min-height: 898px;
+    padding: 52px 90px;
+  }
+
+  .despre-noi-mission-section {
+    grid-template-columns: 525px 1fr;
+    gap: 14px;
+  }
+
+  .despre-noi-mission-image-wrapper {
+    width: 525px;
+    height: 362px;
+  }
+
+  .despre-noi-mission-content {
+    width: 100%;
+    max-width: 525px;
+  }
+
+  .despre-noi-mission-title {
+    font-size: 30px;
+  }
+
+  .despre-noi-mission-text {
+    font-size: 15px;
+    gap: 14px;
+  }
+
+  .despre-noi-advantages-title {
+    font-size: 30px;
+    margin-bottom: 28px;
+  }
+
+  .despre-noi-advantages-section {
+    margin-top: 31px;
+  }
+
+  .despre-noi-advantages-list {
+    gap: 21px;
+  }
+
+  .despre-noi-advantage-title {
+    font-size: 17px;
+  }
+
+  .despre-noi-advantage-description {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 1500px) {
   .despre-noi-intro-container,
   .despre-noi-main-container {

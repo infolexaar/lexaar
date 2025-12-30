@@ -118,6 +118,53 @@
 
 
 /* Responsive Design */
+@media (max-width: 1279px) {
+  .servicii-hero-container {
+    width: 100%;
+    max-width: 1279px;
+    height: auto;
+    min-height: 129px;
+    padding: 28px 49px 0;
+  }
+
+  .servicii-main-title {
+    font-size: 36px;
+  }
+
+  .servicii-intro-text {
+    font-size: 17px;
+  }
+
+  .servicii-services-wrapper {
+    width: 100%;
+    max-width: 1279px;
+    padding: 52px 49px;
+  }
+
+  .servicii-service-block {
+    width: 100%;
+    max-width: 1071px;
+    grid-template-columns: 497px 1fr;
+    gap: 21px;
+  }
+
+  .servicii-service-block-reverse {
+    grid-template-columns: 1fr 497px;
+  }
+
+  .servicii-service-image-wrapper {
+    width: 497px;
+  }
+
+  .servicii-service-title {
+    font-size: 30px;
+  }
+
+  .servicii-service-description {
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 1400px) {
   .servicii-services-wrapper {
     width: 100%;

@@ -229,6 +229,46 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1279px) {
+  .blog-container {
+    width: 100%;
+    max-width: 1279px;
+    padding: 52px 90px;
+    min-height: 1522px;
+  }
+
+  .blog-title {
+    font-size: 36px;
+    margin-bottom: 42px;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(3, 348px);
+    gap: 21px;
+    margin-bottom: 42px;
+  }
+
+  .blog-card {
+    width: 348px;
+    height: 357px;
+  }
+
+  .blog-card-image-wrapper {
+    width: 348px;
+    height: 232px;
+  }
+
+  .blog-card-title {
+    font-size: 21px;
+  }
+
+  .blog-pagination {
+    width: 100%;
+    max-width: 1071px;
+    height: 49px;
+  }
+}
+
 @media (max-width: 1500px) {
   .blog-container {
     max-width: 100%;

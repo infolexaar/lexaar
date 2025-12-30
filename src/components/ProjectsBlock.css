@@ -26,8 +26,12 @@
   color: #1a1911;
   margin: 0;
   padding: 0;
-  margin-bottom: 32px;
+  margin-bottom: 0;
   text-align: left;
+  width: 1232px;
+  height: 64px;
+  box-sizing: border-box;
+  align-self: flex-start;
 }
 
 .projects-block-title-accent {
@@ -40,21 +44,25 @@
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .projects-block-cards-container {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  width: 100%;
-  justify-content: center;
+  width: 1167px;
+  height: 448px;
+  justify-content: flex-start;
   align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .projects-block-card {
-  width: 400px;
-  height: 444px;
+  width: 378.3px;
+  height: 419.91px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -62,8 +70,8 @@
 }
 
 .projects-block-image-wrapper {
-  width: 400px;
-  height: 400px;
+  width: 378.3px;
+  height: 378.3px;
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 16px;
@@ -125,6 +133,63 @@
 .projects-block-button-right {
   right: 12px;
   top: 157px;
+}
+
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .projects-block-container {
+    width: 100%;
+    max-width: 1279px;
+    height: auto;
+    min-height: 578px;
+    padding: 52px 104px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .projects-block-title {
+    width: 100%;
+    max-width: 1071px;
+    height: 56px;
+    font-size: 43px;
+    line-height: 56px;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: flex-start;
+  }
+
+  .projects-block-projects {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .projects-block-cards-container {
+    width: 100%;
+    max-width: 1015px;
+    height: 390px;
+    gap: 14px;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: flex-start;
+  }
+
+  .projects-block-card {
+    width: 329px;
+    height: 365px;
+    flex-shrink: 0;
+  }
+
+  .projects-block-image-wrapper {
+    width: 329px;
+    height: 329px;
+  }
+
+  .projects-block-title-text {
+    font-size: 21px;
+    line-height: 28px;
+  }
 }
 
 /* Tablet styles (768px - 1023px) */
@@ -204,4 +269,3 @@
     bottom: auto;
   }
 }
-
