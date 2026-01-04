@@ -225,3 +225,14 @@
 .product-detail-info-button:hover {
   background-color: #a01515;
 }
+
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .product-detail-container {
+    padding: 52px 56px;
+  }
+
+  .product-detail-main-wrapper {
+    padding: 0 56px;
+  }
+}

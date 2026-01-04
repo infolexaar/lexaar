@@ -7,17 +7,23 @@
 }
 
 .block2-container {
-  width: 100%;
-  max-width: 1232px;
+  width: 1232px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
   margin-bottom: 0;
-  padding: 0 20px;
+  padding: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+}
+
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .block2-container {
+    width: 1167px;
+  }
 }
 
 .block2-title {
@@ -154,41 +160,161 @@
   box-sizing: border-box;
 }
 
-/* Mobile styles (up to 767px) */
-@media (max-width: 767px) {
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
   .block2-container {
-    width: 100%;
+    width: 664px;
     height: auto;
     margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 56px;
+    box-sizing: border-box;
+  }
+
+  .block2-title {
+    width: 664px;
+    font-size: 36px;
+    line-height: 48px;
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  .categories-grid {
+    display: flex;
+    flex-direction: row;
+    width: 664px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    padding-bottom: 8px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .categories-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .categories-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .categories-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+
+  .category-item {
+    width: 210.67px;
+    min-width: 210.67px;
+    max-width: 210.67px;
+    height: 348px;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+
+  .category-image-wrapper {
+    width: 210.67px;
+    height: 296px;
+    min-height: 296px;
+    max-height: 296px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .category-image-wrapper svg,
+  .category-image-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0 !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .category-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0 !important;
+    display: block !important;
+  }
+
+  .category-title {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 12px;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .block2-container {
+    width: 100%;
+    max-width: 375px;
+    height: auto;
+    margin-top: 32px;
     padding: 0 20px;
   }
 
   .block2-title {
     width: 100%;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 36px;
     height: auto;
   }
 
   .categories-grid {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    margin-top: 24px;
-    margin-bottom: 60px;
-    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 32px;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    padding-bottom: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .categories-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .categories-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .categories-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
   }
 
   .category-item {
-    width: 100%;
-    max-width: 100%;
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
     height: auto;
+    flex-shrink: 0;
   }
 
   .category-image-wrapper {
-    width: 100%;
-    max-width: 100%;
-    height: 248px;
-    min-height: 248px;
+    width: 240px;
+    height: 178px;
+    min-height: 178px;
   }
 
   .category-image,
@@ -199,8 +325,8 @@
   }
 
   .category-title {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 22px;
     margin-top: 12px;
   }
 }

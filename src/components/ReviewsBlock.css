@@ -131,22 +131,19 @@
 /* Responsive Design for 1279px */
 @media (max-width: 1279px) {
   .reviews-block-container {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
     height: auto;
     min-height: 536px;
   }
 
   .reviews-block-background {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
     height: auto;
     min-height: 432px;
   }
 
   .reviews-block-content {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
     height: auto;
     min-height: 432px;
   }
@@ -155,15 +152,15 @@
     font-size: 43px;
     line-height: 56px;
     margin-top: 49px;
-    margin-left: 52px;
-    margin-right: 52px;
-    width: calc(100% - 104px);
+    margin-left: 30px;
+    margin-right: 30px;
+    width: calc(100% - 60px);
   }
 
   .reviews-block-cards {
-    width: calc(100% - 104px);
-    margin-left: 52px;
-    margin-right: 52px;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-right: 30px;
     margin-top: 156px;
     gap: 14px;
   }
@@ -181,6 +178,48 @@
   .reviews-block-author {
     font-size: 17px;
     margin-top: 14px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .reviews-block-container {
+    width: 664px;
+    height: auto;
+    min-height: 536px;
+  }
+
+  .reviews-block-background {
+    width: 664px;
+    height: auto;
+    min-height: 432px;
+  }
+
+  .reviews-block-content {
+    width: 664px;
+    height: auto;
+    min-height: 432px;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .reviews-block-container {
+    width: 327px;
+    height: auto;
+    min-height: 536px;
+  }
+
+  .reviews-block-background {
+    width: 327px;
+    height: auto;
+    min-height: 432px;
+  }
+
+  .reviews-block-content {
+    width: 327px;
+    height: auto;
+    min-height: 432px;
   }
 }
 

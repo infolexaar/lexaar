@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import GalleryModal from "./GalleryModal";
 import "./GalleryBlock.css";
 
-// Импорт изображений для категории Bucătării
+// Импорт изображений для категории bucatarii
 import bucatarii1 from "../assets/categories/bucatarii/1.svg";
 import bucatarii2 from "../assets/categories/bucatarii/2.svg";
 import bucatarii3 from "../assets/categories/bucatarii/3.svg";
@@ -16,53 +17,153 @@ import bucatarii10 from "../assets/categories/bucatarii/10.svg";
 import bucatarii11 from "../assets/categories/bucatarii/11.svg";
 import bucatarii12 from "../assets/categories/bucatarii/12.svg";
 
-interface GalleryItem {
-  id: number;
-  title: string;
-  image: string;
-}
+import carousel1 from "../assets/categories/bucatarii/itemimg/carousel1.svg";
+import carousel2 from "../assets/categories/bucatarii/itemimg/carousel2.svg";
+import carousel3 from "../assets/categories/bucatarii/itemimg/carousel3.svg";
 
 interface GalleryBlockProps {
   categoryName: string;
 }
 
+interface GalleryItem {
+  id: number;
+  title: string;
+  image: string;
+  carouselImages?: string[];
+  description?: string;
+}
+
 const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName }) => {
   const navigate = useNavigate();
-  const { category } = useParams<{ category: string }>();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Данные для галереи в зависимости от категории
-  const getCategoryItems = (): GalleryItem[] => {
-    if (category === "bucatarii") {
-      return [
-        { id: 1, title: "Bucătărie Urban Wood", image: bucatarii1 },
-        { id: 2, title: "Bucătărie Arctic Line", image: bucatarii2 },
-        { id: 3, title: "Bucătărie Nordic Home", image: bucatarii3 },
-        { id: 4, title: "Bucătărie Loft Beige", image: bucatarii4 },
-        { id: 5, title: "Bucătărie Amber Touch", image: bucatarii5 },
-        { id: 6, title: "Bucătărie Walnut Flow", image: bucatarii6 },
-        { id: 7, title: "Bucătărie Industrial Grey", image: bucatarii7 },
-        { id: 8, title: "Bucătărie Soft Contrast", image: bucatarii8 },
-        { id: 9, title: "Bucătărie Marble Line", image: bucatarii9 },
-        { id: 10, title: "Bucătărie Concrete Mood", image: bucatarii10 },
-        { id: 11, title: "Bucătărie Sand Gloss", image: bucatarii11 },
-        { id: 12, title: "Bucătărie Forest Light", image: bucatarii12 },
-      ];
+  const itemsPerPage = 6;
+
+  // Функция для получения элементов категории
+  const getCategoryItems = (category: string): GalleryItem[] => {
+    switch (category) {
+      case "Bucătării":
+        return [
+          {
+            id: 1,
+            title: "Bucătărie Industrial Grey",
+            image: bucatarii1,
+            carouselImages: [carousel1, carousel2, carousel3],
+            description:
+              "Bucătărie modernă cu design minimalist, combinație elegantă de lemn natural și antracit.",
+          },
+          {
+            id: 2,
+            title: "Bucătărie Marble Line",
+            image: bucatarii2,
+          },
+          {
+            id: 3,
+            title: "Bucătărie Urban Wood",
+            image: bucatarii3,
+          },
+          {
+            id: 4,
+            title: "Bucătărie Nordic Home",
+            image: bucatarii4,
+          },
+          {
+            id: 5,
+            title: "Bucătărie Amber Touch",
+            image: bucatarii5,
+          },
+          {
+            id: 6,
+            title: "Bucătărie Modern Classic",
+            image: bucatarii6,
+          },
+          {
+            id: 7,
+            title: "Bucătărie Elegant Design",
+            image: bucatarii7,
+          },
+          {
+            id: 8,
+            title: "Bucătărie Contemporary",
+            image: bucatarii8,
+          },
+          {
+            id: 9,
+            title: "Bucătărie Premium",
+            image: bucatarii9,
+          },
+          {
+            id: 10,
+            title: "Bucătărie Luxury",
+            image: bucatarii10,
+          },
+          {
+            id: 11,
+            title: "Bucătărie Style",
+            image: bucatarii11,
+          },
+          {
+            id: 12,
+            title: "Bucătărie Exclusive",
+            image: bucatarii12,
+          },
+        ];
+      case "Paturi":
+        return [
+          {
+            id: 1,
+            title: "Pat Modern",
+            image: bucatarii1, // Заглушка
+          },
+          {
+            id: 2,
+            title: "Pat Classic",
+            image: bucatarii2, // Заглушка
+          },
+          {
+            id: 3,
+            title: "Pat Premium",
+            image: bucatarii3, // Заглушка
+          },
+        ];
+      case "Dulapuri și Comode":
+        return [
+          {
+            id: 1,
+            title: "Dulap Modern",
+            image: bucatarii1, // Заглушка
+          },
+          {
+            id: 2,
+            title: "Comodă Premium",
+            image: bucatarii2, // Заглушка
+          },
+          {
+            id: 3,
+            title: "Dulap Classic",
+            image: bucatarii3, // Заглушка
+          },
+        ];
+      default:
+        return [];
     }
-    // Для других категорий можно добавить данные позже
-    return [];
   };
 
-  const allItems = useMemo(() => getCategoryItems(), [category]);
-  const totalPages = Math.ceil(allItems.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = allItems.slice(startIndex, startIndex + itemsPerPage);
+  const allItems = useMemo(() => getCategoryItems(categoryName), [categoryName]);
 
-  const handleItemClick = (itemId: number) => {
-    if (category) {
-      navigate(`/category/${category}/${itemId}`);
-    }
+  const totalPages = Math.ceil(allItems.length / itemsPerPage);
+
+  const currentItems = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return allItems.slice(startIndex, endIndex);
+  }, [allItems, currentPage, itemsPerPage]);
+
+  const handleItemClick = (item: GalleryItem) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
   };
 
   const handlePageChange = (page: number) => {
@@ -76,108 +177,105 @@ const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName }) => {
     }
   };
 
-  // Генерация номеров страниц для пагинации
-  const getPageNumbers = () => {
-    const pages: (number | string)[] = [];
+  const renderPaginationNumbers = () => {
+    const numbers = [];
     const maxVisible = 5;
 
     if (totalPages <= maxVisible) {
       for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
+        numbers.push(i);
       }
     } else {
       if (currentPage <= 3) {
         for (let i = 1; i <= 4; i++) {
-          pages.push(i);
+          numbers.push(i);
         }
-        pages.push("...");
-        pages.push(totalPages);
+        numbers.push(-1); // Ellipsis
+        numbers.push(totalPages);
       } else if (currentPage >= totalPages - 2) {
-        pages.push(1);
-        pages.push("...");
+        numbers.push(1);
+        numbers.push(-1); // Ellipsis
         for (let i = totalPages - 3; i <= totalPages; i++) {
-          pages.push(i);
+          numbers.push(i);
         }
       } else {
-        pages.push(1);
-        pages.push("...");
+        numbers.push(1);
+        numbers.push(-1); // Ellipsis
         for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-          pages.push(i);
+          numbers.push(i);
         }
-        pages.push("...");
-        pages.push(totalPages);
+        numbers.push(-1); // Ellipsis
+        numbers.push(totalPages);
       }
     }
 
-    return pages;
+    return numbers.map((num, index) => {
+      if (num === -1) {
+        return (
+          <span key={`ellipsis-${index}`} className="pagination-ellipsis">
+            ...
+          </span>
+        );
+      }
+      return (
+        <button
+          key={num}
+          className={`pagination-button ${currentPage === num ? "active" : ""}`}
+          onClick={() => handlePageChange(num)}
+        >
+          {num}
+        </button>
+      );
+    });
   };
 
-  if (allItems.length === 0) {
-    return (
-      <section className="gallery-block-container">
-        <h2 className="gallery-block-title">{categoryName}</h2>
-        <p>Нет товаров в этой категории</p>
-      </section>
-    );
-  }
-
   return (
-    <section className="gallery-block-container">
-      <h2 className="gallery-block-title">{categoryName}</h2>
-      <div className="gallery-grid">
-        {currentItems.map((item) => (
-          <div
-            key={item.id}
-            className="gallery-item"
-            onClick={() => handleItemClick(item.id)}
-          >
-            <div className="gallery-item-image">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="gallery-item-img"
-              />
+    <section className="gallery-block-section">
+      <div className="gallery-block-container">
+        <h2 className="gallery-block-title">{categoryName}</h2>
+
+        <div className="gallery-grid">
+          {currentItems.map((item) => (
+            <div
+              key={item.id}
+              className="gallery-item"
+              onClick={() => handleItemClick(item)}
+            >
+              <div className="gallery-item-image">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="gallery-item-img"
+                />
+              </div>
+              <h3 className="gallery-item-title">{item.title}</h3>
             </div>
-            <h3 className="gallery-item-title">{item.title}</h3>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <div className="gallery-pagination">
+            <div className="pagination-numbers">{renderPaginationNumbers()}</div>
+            <button
+              className={`pagination-next ${currentPage >= totalPages ? "disabled" : ""}`}
+              onClick={handleNextPage}
+              disabled={currentPage >= totalPages}
+            >
+              Next →
+            </button>
           </div>
-        ))}
+        )}
       </div>
 
-      {totalPages > 1 && (
-        <div className="gallery-pagination">
-          <div className="pagination-numbers">
-            {getPageNumbers().map((page, index) => {
-              if (page === "...") {
-                return (
-                  <span key={`ellipsis-${index}`} className="pagination-ellipsis">
-                    ...
-                  </span>
-                );
-              }
-              return (
-                <button
-                  key={page}
-                  className={`pagination-button ${
-                    currentPage === page ? "active" : ""
-                  }`}
-                  onClick={() => handlePageChange(page as number)}
-                >
-                  {page}
-                </button>
-              );
-            })}
-          </div>
-          <button
-            className={`pagination-next ${
-              currentPage >= totalPages ? "disabled" : ""
-            }`}
-            onClick={handleNextPage}
-            disabled={currentPage >= totalPages}
-          >
-            Next →
-          </button>
-        </div>
-      )}
+      <GalleryModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedItem(null);
+        }}
+        item={selectedItem}
+        allItems={allItems}
+      />
     </section>
   );
 };

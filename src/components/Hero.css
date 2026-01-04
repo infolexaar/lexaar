@@ -1,0 +1,198 @@
+/* Hero Block Styles */
+
+.hero-container {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 160px;
+  padding-left: 104px;
+  padding-right: 104px;
+  padding-bottom: 32px;
+  box-sizing: border-box;
+}
+
+.hero-heading {
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 80px;
+  margin-bottom: 32px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.hero-description {
+  color: #e5e7eb;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  width: 797px;
+  margin-bottom: 32px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.hero-cta-button {
+  background-color: #bf1a1a;
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 8px;
+  border: none;
+  width: 251px;
+  height: 64px;
+  padding: 20px 28px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.hero-cta-button:hover {
+  background-color: #a01515;
+}
+
+.hero-benefits-panel {
+  position: absolute;
+  bottom: 86px;
+  right: 104px;
+  width: 269px;
+  height: 216px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(7px) saturate(120%);
+  -webkit-backdrop-filter: blur(7px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  box-sizing: border-box;
+  z-index: 40;
+}
+
+.hero-benefits-mobile {
+  display: none;
+}
+
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .hero-content {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .hero-description {
+    width: 732px;
+  }
+
+  .hero-benefits-panel {
+    right: 56px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .hero-content {
+    padding-top: 140px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+  }
+
+  .hero-heading {
+    font-size: 35px;
+    line-height: 48px;
+    width: 100%;
+    max-width: 664px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    max-width: 664px;
+  }
+
+  .hero-cta-button {
+    width: 222px;
+    height: 56px;
+    font-size: 18px;
+    padding: 16px 24px;
+  }
+
+  .hero-benefits-panel {
+    display: none;
+  }
+
+  .hero-benefits-mobile {
+    display: block;
+    width: 327px;
+    height: 192px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(7px) saturate(120%);
+    -webkit-backdrop-filter: blur(7px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    box-sizing: border-box;
+    margin-top: 32px;
+    margin-bottom: 120px;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .hero-content {
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-heading {
+    font-size: 28px;
+    line-height: 36px;
+    max-width: 327px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 327px;
+  }
+
+  .hero-cta-button {
+    width: 200px;
+    height: 48px;
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .hero-benefits-mobile {
+    width: 327px;
+    height: 180px;
+    padding: 12px;
+  }
+}
+

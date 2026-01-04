@@ -233,7 +233,7 @@
   .blog-container {
     width: 100%;
     max-width: 1279px;
-    padding: 52px 90px;
+    padding: 52px 56px;
     min-height: 1522px;
   }
 
@@ -263,9 +263,30 @@
   }
 
   .blog-pagination {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
     height: 49px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .blog-container {
+    padding: 40px 56px;
+  }
+
+  .blog-pagination {
+    width: 664px;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .blog-container {
+    padding: 32px 24px;
+  }
+
+  .blog-pagination {
+    width: 327px;
   }
 }
 

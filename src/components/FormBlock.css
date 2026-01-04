@@ -30,6 +30,67 @@
   margin: 0 auto;
 }
 
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .form-block-content {
+    width: 1167px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .form-block-container {
+    width: 776px;
+    max-width: 100%;
+    height: 452px;
+    padding: 32px 56px;
+    box-sizing: border-box;
+  }
+
+  .form-block-content {
+    width: 664px;
+    height: 388px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 17px;
+  }
+
+  .form-block-text {
+    width: 385px;
+    height: 78px;
+    margin-top: 81px;
+    margin-bottom: 81px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 13px;
+    flex-shrink: 0;
+  }
+
+  .form-block-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .form-block-description {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .form-block-form-wrapper {
+    width: 270px;
+    height: 388px;
+    padding: 22px 13px;
+    flex-shrink: 0;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .form-block-content {
+    width: 327px;
+  }
+}
+
 .form-block-text {
   width: 715px;
   height: 96px;
@@ -249,8 +310,8 @@
   margin: 0;
 }
 
-/* Tablet styles (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet styles (768px - 1023px) - исключаем 776px */
+@media (min-width: 777px) and (max-width: 1023px) {
   .form-block-container {
     height: auto;
     min-height: 516px;
@@ -315,4 +376,3 @@
     min-height: 396px;
   }
 }
-

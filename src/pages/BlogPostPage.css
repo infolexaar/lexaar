@@ -223,21 +223,19 @@
   .blog-post-nav {
     width: 100%;
     max-width: 1279px;
-    padding: 52px 104px;
+    padding: 52px 56px;
     height: auto;
     min-height: 232px;
   }
 
   .blog-post-nav-content {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
     height: auto;
     min-height: 112px;
   }
 
   .blog-post-content {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
     height: auto;
     min-height: 336px;
   }
@@ -259,17 +257,62 @@
   .blog-post-main-content {
     width: 100%;
     max-width: 1279px;
-    padding: 0 90px 52px 90px;
+    padding: 0 56px 52px 56px;
     min-height: 1216px;
   }
 
   .blog-post-main-content-wrapper {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
   }
 
   .blog-post-title {
     font-size: 30px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .blog-post-nav {
+    padding: 40px 56px;
+  }
+
+  .blog-post-nav-content {
+    width: 664px;
+  }
+
+  .blog-post-content {
+    width: 664px;
+  }
+
+  .blog-post-main-content {
+    padding: 0 56px 40px 56px;
+  }
+
+  .blog-post-main-content-wrapper {
+    width: 664px;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .blog-post-nav {
+    padding: 32px 24px;
+  }
+
+  .blog-post-nav-content {
+    width: 327px;
+  }
+
+  .blog-post-content {
+    width: 327px;
+  }
+
+  .blog-post-main-content {
+    padding: 0 24px 32px 24px;
+  }
+
+  .blog-post-main-content-wrapper {
+    width: 327px;
   }
 }
 

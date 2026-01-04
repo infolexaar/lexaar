@@ -109,6 +109,39 @@
   width: 100%;
 }
 
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .quality-block-container {
+    padding: 52px 56px;
+  }
+
+  .quality-block-content {
+    width: 1167px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .quality-block-container {
+    padding: 40px 56px;
+  }
+
+  .quality-block-content {
+    width: 664px;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .quality-block-container {
+    padding: 32px 24px;
+  }
+
+  .quality-block-content {
+    width: 327px;
+  }
+}
+
 /* Tablet styles (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .quality-block-container {

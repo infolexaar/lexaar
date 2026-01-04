@@ -142,8 +142,7 @@
   }
 
   .servicii-service-block {
-    width: 100%;
-    max-width: 1071px;
+    width: 1167px;
     grid-template-columns: 497px 1fr;
     gap: 21px;
   }
@@ -162,6 +161,28 @@
 
   .servicii-service-description {
     font-size: 15px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .servicii-services-wrapper {
+    padding: 40px 56px;
+  }
+
+  .servicii-service-block {
+    width: 664px;
+  }
+}
+
+/* Mobile styles (375px) */
+@media (max-width: 375px) {
+  .servicii-services-wrapper {
+    padding: 32px 24px;
+  }
+
+  .servicii-service-block {
+    width: 327px;
   }
 }
 

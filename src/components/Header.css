@@ -109,9 +109,128 @@
 
 
 /* Responsive styles */
+@media (max-width: 1279px) {
+  .header-top-bar {
+    padding: 8px 56px;
+  }
+
+  .header-main {
+    padding: 0 56px;
+  }
+}
+
 @media (max-width: 1280px) {
   .header-top-bar {
     padding: 8px 24px;
+  }
+
+  .header-main {
+    padding: 0 24px;
+  }
+}
+
+/* Burger Menu Button */
+.header-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.header-burger svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Burger Close Icon */
+.header-burger-close-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile Menu */
+.header-mobile-menu {
+  position: fixed;
+  top: 82px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.header-mobile-menu-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-mobile-menu-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.header-mobile-menu-open .header-mobile-menu-content {
+  transform: translateY(0);
+}
+
+.header-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header-mobile-nav-link {
+  color: #1a1911;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  padding: 12px 0;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid #e8e7e3;
+}
+
+.header-mobile-nav-link:last-child {
+  border-bottom: none;
+}
+
+.header-mobile-nav-link:hover {
+  color: #c19d3d;
+}
+
+/* Responsive styles for 776px */
+@media (max-width: 776px) {
+  .header-top-bar {
+    display: none;
+  }
+
+  .header-burger {
+    display: block;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-phone {
+    display: none;
+  }
+
+  .header-cta-button {
+    display: none;
   }
 
   .header-main {

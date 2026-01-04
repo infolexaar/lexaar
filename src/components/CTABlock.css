@@ -72,6 +72,13 @@
   filter: brightness(0) invert(1);
 }
 
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .cta-block-container {
+    padding: 52px 56px;
+  }
+}
+
 /* Tablet styles (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .cta-block-container {

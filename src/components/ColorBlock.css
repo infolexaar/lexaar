@@ -181,8 +181,90 @@
   filter: brightness(0) invert(1);
 }
 
-/* Tablet styles (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Responsive Design for 1279px */
+@media (max-width: 1279px) {
+  .color-block-container {
+    padding: 52px 56px;
+  }
+
+  .color-block-content {
+    width: 1167px;
+  }
+}
+
+/* Tablet styles (776px) */
+@media (max-width: 776px) {
+  .color-block-container {
+    width: 776px;
+    max-width: 100%;
+    height: 1006px;
+    padding: 60px 56px;
+    gap: 16px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .color-block-image-wrapper {
+    width: 664px;
+    height: 442px;
+    min-height: 442px;
+    max-height: 442px;
+    margin-bottom: 0;
+    order: 1;
+  }
+
+  .color-block-image {
+    width: 664px;
+    height: 442px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .color-block-content {
+    width: 664px;
+    height: 428px;
+    min-height: 428px;
+    margin-top: 0;
+    padding: 0;
+    order: 2;
+  }
+
+  .color-block-main-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 12px;
+  }
+
+  .color-block-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  .color-block-list-item {
+    margin-bottom: 16px;
+  }
+
+  .color-block-list-item:last-of-type {
+    margin-bottom: 24px;
+  }
+
+  .color-block-text {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .color-block-button {
+    width: 203px;
+    height: 47px;
+  }
+}
+
+/* Tablet styles (768px - 1023px) - но не 776px */
+@media (min-width: 777px) and (max-width: 1023px) {
   .color-block-container {
     flex-direction: row;
     align-items: center;
