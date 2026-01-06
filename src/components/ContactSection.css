@@ -412,14 +412,27 @@
     overflow: hidden !important;
   }
 
+  .contact-section-image {
+    object-fit: cover !important;
+    object-position: center top !important; /* Показываем верхнюю часть изображения, чтобы люстра была видна */
+  }
+
+  .contact-section-overlay {
+    top: 32px !important;
+    left: 56px !important;
+    width: 664px !important;
+    height: 388px !important;
+    border-radius: 14px !important;
+  }
+
   .contact-section-text {
     left: 80px !important; /* 56px (padding) + 24px (отступ от края карточки) */
-    top: 154px !important; /* 32px (padding) + 122px (отступ от верха карточки) */
+    top: 144px !important; /* 32px (padding) + 112px (отступ от верха карточки) */
+    bottom: 116px !important; /* 32px (padding) + 84px (отступ от низа карточки) */
     width: auto !important;
     max-width: calc(
       664px - 240px - 24px - 24px
     ) !important; /* 664 - 240(форма) - 24(отступ формы) - 24(отступ текста) */
-    bottom: auto !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 24px !important;
@@ -499,9 +512,9 @@
   }
 
   .contact-section-button {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 32px !important;
+    width: 216px !important;
+    max-width: 216px !important;
+    height: 40px !important;
     font-size: 12px !important;
     box-sizing: border-box !important;
     gap: 4px !important;
