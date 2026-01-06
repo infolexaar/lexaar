@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom"; // Reserved for future use
 import GalleryModal from "./GalleryModal";
 import "./GalleryBlock.css";
 
@@ -34,7 +34,7 @@ interface GalleryItem {
 }
 
 const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate(); // Reserved for future use
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

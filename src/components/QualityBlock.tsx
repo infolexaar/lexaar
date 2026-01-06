@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import icon1 from "../assets/icons/blockCalitate/Icons.svg";
 import icon2 from "../assets/icons/blockCalitate/Icons-1.svg";
 import icon3 from "../assets/icons/blockCalitate/Vector.svg";
@@ -6,6 +6,17 @@ import icon4 from "../assets/icons/blockCalitate/Vector-1.svg";
 import "./QualityBlock.css";
 
 const QualityBlock: React.FC = () => {
+  useEffect(() => {
+    console.log("🔵 QualityBlock компонент загружен!");
+    const checkMediaQuery = () => {
+      const mediaQuery = window.matchMedia("(max-width: 777px) and (min-width: 768px)");
+      console.log("📱 Медиа-запрос 776px активен:", mediaQuery.matches);
+      console.log("📏 Текущая ширина окна:", window.innerWidth);
+    };
+    checkMediaQuery();
+    window.addEventListener("resize", checkMediaQuery);
+    return () => window.removeEventListener("resize", checkMediaQuery);
+  }, []);
   const features = [
     {
       icon: icon1,

@@ -31,7 +31,7 @@ const ProjectsBlock: React.FC = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [_currentIndex, setCurrentIndex] = useState(0);
   const [selectedItem, setSelectedItem] = useState<{
     id: number;
     title: string;
@@ -42,11 +42,11 @@ const ProjectsBlock: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % projects.length);
+    setCurrentIndex((prev: number) => (prev + 1) % projects.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
+    setCurrentIndex((prev: number) => (prev - 1 + projects.length) % projects.length);
   };
 
   return (

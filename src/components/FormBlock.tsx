@@ -3,24 +3,29 @@ import arrowIcon from "../assets/icons/arrow.svg";
 import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
+import backgroundImage from "../assets/backgrContact.svg";
 import { useContactForm } from "../hooks/useContactForm";
 import { useLanguage } from "../contexts/LanguageContext";
 import "./FormBlock.css";
 
 const FormBlock: React.FC = () => {
   const { t } = useLanguage();
-  const {
-    formData,
-    isSubmitting,
-    isSubmitted,
-    handleSubmit,
-    handleChange,
-  } = useContactForm();
+  const { formData, isSubmitting, isSubmitted, handleSubmit, handleChange } =
+    useContactForm();
 
   return (
     <section className="form-block-section">
       <div className="form-block-container">
         <div className="form-block-content">
+          {/* Background Image */}
+          <div className="form-block-background">
+            <img
+              src={backgroundImage}
+              alt="Modern Kitchen Interior"
+              className="form-block-image"
+            />
+          </div>
+
           {/* Текст слева */}
           <div className="form-block-text">
             <h2 className="form-block-title">{t.form.title}</h2>
@@ -150,4 +155,3 @@ const FormBlock: React.FC = () => {
 };
 
 export default FormBlock;
-

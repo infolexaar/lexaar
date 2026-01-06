@@ -26,7 +26,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
   isOpen,
   onClose,
   item,
-  allItems = [],
+  // allItems = [], // Reserved for future use
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);

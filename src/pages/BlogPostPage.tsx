@@ -6,21 +6,22 @@ import CTABlock from "../components/CTABlock";
 import FormBlock from "../components/FormBlock";
 import MapSection from "../components/MapSection";
 import ContactModal from "../components/ContactModal";
-import { useLanguage } from "../contexts/LanguageContext";
+// import { useLanguage } from "../contexts/LanguageContext"; // Reserved for future use
 import "./BlogPostPage.css";
 
 // Иконка стрелки назад не нужна, используем SVG
 
 // Импорт изображений блога
 import blogImage1 from "../assets/blog/Image-1.svg";
-import blogImage2 from "../assets/blog/Image-2.svg";
-import blogImage3 from "../assets/blog/Image-3.svg";
-import blogImage4 from "../assets/blog/Image-4.svg";
-import blogImage5 from "../assets/blog/Image-5.svg";
-import blogImage6 from "../assets/blog/Image-6.svg";
-import blogImage7 from "../assets/blog/Image-7.svg";
-import blogImage8 from "../assets/blog/Image-8.svg";
-import blogImage9 from "../assets/blog/Image.svg";
+// Reserved for future use:
+// import blogImage2 from "../assets/blog/Image-2.svg";
+// import blogImage3 from "../assets/blog/Image-3.svg";
+// import blogImage4 from "../assets/blog/Image-4.svg";
+// import blogImage5 from "../assets/blog/Image-5.svg";
+// import blogImage6 from "../assets/blog/Image-6.svg";
+// import blogImage7 from "../assets/blog/Image-7.svg";
+// import blogImage8 from "../assets/blog/Image-8.svg";
+// import blogImage9 from "../assets/blog/Image.svg";
 
 interface BlogPost {
   id: number;
@@ -34,7 +35,7 @@ const BlogPostPage: React.FC = () => {
   const { postId } = useParams<{ postId: string }>();
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t } = useLanguage();
+  // const { t } = useLanguage(); // Reserved for future use
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -106,7 +107,7 @@ Alegerea corectă a materialului se face în funcție de buget, stilul camerei, 
     const sections = content.split(/\n\n## /);
     const introText = sections[0].trim();
     const restSections = sections.slice(1);
-    const restResult: JSX.Element[] = [];
+    const restResult: React.ReactElement[] = [];
 
     // Остальные секции
     restSections.forEach((section, sectionIndex) => {
