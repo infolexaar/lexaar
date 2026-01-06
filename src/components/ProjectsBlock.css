@@ -194,8 +194,69 @@
   }
 }
 
-/* Tablet styles (776px) */
-@media (max-width: 776px) {
+/* 776px - точные размеры по дизайну - ДОЛЖЕН БЫТЬ ПЕРЕД мобильными */
+@media screen and (max-width: 777px) and (min-width: 768px) {
+  .projects-block-container {
+    width: 776px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 32px 56px !important;
+    box-sizing: border-box !important;
+  }
+
+  .projects-block-title {
+    width: 664px !important; /* 776 - 56*2 */
+    font-size: 35px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    margin-bottom: 32px !important;
+    height: auto !important;
+  }
+
+  .projects-block-projects {
+    width: 664px !important;
+    overflow: visible !important;
+  }
+
+  .projects-block-cards-container {
+    width: 664px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important; /* Уменьшаем gap */
+    padding-bottom: 0 !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Карточки уменьшаем пропорционально: (664 - 2*8) / 3 = ~216px */
+  .projects-block-card {
+    width: 216px !important;
+    min-width: 216px !important;
+    max-width: 216px !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  .projects-block-image-wrapper {
+    width: 216px !important;
+    height: 216px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .projects-block-title-text {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+
+  .projects-block-button {
+    display: none !important;
+  }
+}
+
+/* Tablet styles (776px) - старый медиа-запрос для совместимости */
+@media (max-width: 776px) and (max-width: 767px) {
   .projects-block-container {
     width: 100%;
     max-width: 776px;

@@ -194,6 +194,81 @@
   }
 }
 
+/* 776px - точные размеры по дизайну - ДОЛЖЕН БЫТЬ ПЕРЕД другими tablet стилями */
+@media screen and (max-width: 777px) and (min-width: 768px) {
+  .footer-container {
+    width: 776px !important;
+    max-width: 100% !important;
+    padding: 32px 56px 0 56px !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-container-top {
+    flex-direction: row !important; /* Три колонки в ряд */
+    gap: 32px !important; /* Уменьшен gap */
+    width: 100% !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-left {
+    flex: 1 !important;
+    min-width: 0 !important; /* Позволяет сжиматься */
+  }
+
+  .footer-description {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .footer-contacts {
+    flex-direction: column !important; /* Контакты вертикально */
+    align-items: flex-start !important;
+    gap: 12px !important; /* Уменьшен gap */
+    margin-top: 16px !important;
+  }
+
+  .footer-contact-item {
+    width: auto !important;
+  }
+
+  .footer-contact-text {
+    white-space: normal !important;
+  }
+
+  .footer-middle,
+  .footer-right {
+    flex-shrink: 0 !important;
+    min-width: 120px !important; /* Минимальная ширина для колонок */
+  }
+
+  .footer-separator {
+    width: 664px !important; /* 776 - 56*2 */
+    max-width: 100% !important;
+    margin: 24px auto 0 auto !important;
+  }
+
+  .footer-bottom {
+    width: 776px !important;
+    max-width: 100% !important;
+    padding: 24px 56px 32px 56px !important;
+    flex-direction: row !important; /* Копирайт и иконки в ряд */
+    gap: 0 !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* Копирайт слева, иконки справа */
+  }
+
+  .footer-copyright {
+    text-align: left !important;
+    flex-shrink: 0 !important;
+  }
+
+  .footer-social-icons {
+    justify-content: flex-end !important;
+    flex-shrink: 0 !important;
+  }
+}
+
 /* Tablet styles (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .footer-container {

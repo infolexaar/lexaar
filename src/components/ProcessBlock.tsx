@@ -47,7 +47,8 @@ const ProcessBlock: React.FC = () => {
         {/* Заголовок */}
         <div className="process-block-header">
           <h2 className="process-block-title">
-            De la idee la realitate: 6 pași spre mobilierul tău perfect
+            De la idee la realitate: <br/>
+            6 pași spre mobilierul tău perfect
           </h2>
         </div>
 
