@@ -90,40 +90,40 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
           </button>
           <LanguageSelector />
         </div>
-      </div>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`header-mobile-menu ${isMenuOpen ? "header-mobile-menu-open" : ""}`}
-        onClick={closeMenu}
-      >
+        {/* Mobile Menu Overlay */}
         <div
-          className="header-mobile-menu-content"
-          onClick={(e) => e.stopPropagation()}
+          className={`header-mobile-menu ${isMenuOpen ? "header-mobile-menu-open" : ""}`}
+          onClick={closeMenu}
         >
-          <nav className="header-mobile-nav">
-            <Link
-              to="/servicii"
-              className="header-mobile-nav-link"
-              onClick={closeMenu}
-            >
-              {t.header.servicii}
-            </Link>
-            <Link
-              to="/despre-noi"
-              className="header-mobile-nav-link"
-              onClick={closeMenu}
-            >
-              {t.header.despreNoi}
-            </Link>
-            <Link
-              to="/blog"
-              className="header-mobile-nav-link"
-              onClick={closeMenu}
-            >
-              {t.header.blog}
-            </Link>
-          </nav>
+          <div
+            className="header-mobile-menu-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <nav className="header-mobile-nav">
+              <Link
+                to="/servicii"
+                className="header-mobile-nav-link"
+                onClick={closeMenu}
+              >
+                {t.header.servicii}
+              </Link>
+              <Link
+                to="/despre-noi"
+                className="header-mobile-nav-link"
+                onClick={closeMenu}
+              >
+                {t.header.despreNoi}
+              </Link>
+              <Link
+                to="/blog"
+                className="header-mobile-nav-link"
+                onClick={closeMenu}
+              >
+                {t.header.blog}
+              </Link>
+            </nav>
+          </div>
         </div>
       </div>
     </header>

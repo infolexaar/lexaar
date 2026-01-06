@@ -108,24 +108,49 @@
 }
 
 
-/* Responsive styles */
-@media (max-width: 1279px) {
+/* Responsive styles - все от 768px до 1279px выглядит как на 776px */
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   .header-top-bar {
-    padding: 8px 56px;
+    display: none !important;
+  }
+
+  .header-burger {
+    display: block !important;
+  }
+
+  .header-nav {
+    display: none !important;
+  }
+
+  .header-phone {
+    display: none !important;
+  }
+
+  .header-cta-button {
+    display: none !important;
   }
 
   .header-main {
-    padding: 0 56px;
+    padding: 0 56px !important;
+    width: 776px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
-}
 
-@media (max-width: 1280px) {
-  .header-top-bar {
-    padding: 8px 24px;
+  .header-logo-wrapper {
+    flex-shrink: 0 !important;
   }
 
-  .header-main {
-    padding: 0 24px;
+  .header-logo-image {
+    width: 152.5px !important;
+    height: 50px !important;
+  }
+
+  .header-right {
+    flex-shrink: 0 !important;
+    gap: 16px !important;
   }
 }
 
@@ -152,28 +177,27 @@
 
 /* Mobile Menu */
 .header-mobile-menu {
-  position: fixed;
-  top: 82px;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
   z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
 }
 
 .header-mobile-menu-open {
-  opacity: 1;
-  visibility: visible;
+  max-height: 100vh;
 }
 
 .header-mobile-menu-content {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   background-color: #ffffff;
   padding: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -183,6 +207,28 @@
 
 .header-mobile-menu-open .header-mobile-menu-content {
   transform: translateY(0);
+}
+
+/* Overlay для затемнения фона */
+.header-mobile-menu::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+.header-mobile-menu-open::before {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .header-mobile-nav {
@@ -211,48 +257,5 @@
   color: #c19d3d;
 }
 
-/* Responsive styles for 776px */
-@media (max-width: 776px) {
-  .header-top-bar {
-    display: none;
-  }
-
-  .header-burger {
-    display: block;
-  }
-
-  .header-nav {
-    display: none;
-  }
-
-  .header-phone {
-    display: none;
-  }
-
-  .header-cta-button {
-    display: none;
-  }
-
-  .header-main {
-    padding: 0 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-top-bar {
-    display: none;
-  }
-
-  .header-nav {
-    display: none;
-  }
-
-  .header-phone {
-    display: none;
-  }
-
-  .header-cta-button {
-    display: none;
-  }
-}
+/* Старые медиа-запросы для 776px и 768px удалены - теперь используется единый стиль для 768px-1279px */
 

@@ -82,15 +82,8 @@
   filter: brightness(0) invert(1);
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
-  .cta-block-container {
-    padding: 52px 56px;
-  }
-}
-
-/* 779px - центрирование содержимого */
-@media screen and (max-width: 779px) and (min-width: 768px) {
+/* 768px-1279px - все выглядит как на 776px */
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   .cta-block-container {
     display: flex !important;
     flex-direction: column !important;

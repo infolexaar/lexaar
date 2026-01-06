@@ -181,108 +181,80 @@
   filter: brightness(0) invert(1);
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
-  .color-block-container {
-    padding: 52px 56px;
-  }
+/* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
 
-  .color-block-content {
-    width: 1167px;
-  }
-}
-
-/* Tablet styles (776px) */
-@media (max-width: 776px) {
+/* 768px-1279px - все выглядит как на 776px */
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   .color-block-container {
-    width: 776px;
-    max-width: 100%;
-    height: 1006px;
-    padding: 60px 56px;
-    gap: 16px;
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
-    align-items: flex-start;
+    width: 776px !important;
+    max-width: 100% !important;
+    height: 1006px !important;
+    padding: 60px 56px !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 
   .color-block-image-wrapper {
-    width: 664px;
-    height: 442px;
-    min-height: 442px;
-    max-height: 442px;
-    margin-bottom: 0;
-    order: 1;
+    width: 664px !important;
+    height: 442px !important;
+    min-height: 442px !important;
+    max-height: 442px !important;
+    margin-bottom: 0 !important;
+    order: 1 !important;
   }
 
   .color-block-image {
-    width: 664px;
-    height: 442px;
-    object-fit: cover;
-    display: block;
+    width: 664px !important;
+    height: 442px !important;
+    object-fit: cover !important;
+    display: block !important;
   }
 
   .color-block-content {
-    width: 664px;
-    height: 428px;
-    min-height: 428px;
-    margin-top: 0;
-    padding: 0;
-    order: 2;
+    width: 664px !important;
+    height: 428px !important;
+    min-height: 428px !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    order: 2 !important;
   }
 
   .color-block-main-title {
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 12px;
+    font-size: 24px !important;
+    line-height: 32px !important;
+    margin-bottom: 12px !important;
   }
 
   .color-block-subtitle {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 24px;
+    font-size: 18px !important;
+    line-height: 24px !important;
+    margin-bottom: 24px !important;
   }
 
   .color-block-list-item {
-    margin-bottom: 16px;
+    margin-bottom: 16px !important;
   }
 
   .color-block-list-item:last-of-type {
-    margin-bottom: 24px;
+    margin-bottom: 24px !important;
   }
 
   .color-block-text {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 15px !important;
+    line-height: 22px !important;
   }
 
   .color-block-button {
-    width: 203px;
-    height: 47px;
+    width: 203px !important;
+    height: 47px !important;
   }
 }
 
-/* Tablet styles (768px - 1023px) - но не 776px */
-@media (min-width: 777px) and (max-width: 1023px) {
-  .color-block-container {
-    flex-direction: row;
-    align-items: center;
-    padding: 60px 40px;
-    gap: 40px;
-  }
-
-  .color-block-image-wrapper {
-    flex: 0 0 50%;
-    max-width: 50%;
-    height: auto;
-  }
-
-  .color-block-content {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
+/* Старый медиа-запрос для 777px-1023px удален - теперь используется единый стиль для 768px-1279px */
 
 /* Desktop styles (1024px+) */
 @media (min-width: 1024px) {

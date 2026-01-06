@@ -137,65 +137,8 @@
   top: 157px;
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
-  .projects-block-container {
-    width: 1279px;
-    max-width: 100%;
-    height: auto;
-    min-height: 578px;
-    padding: 52px 56px;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-
-  .projects-block-title {
-    width: 1167px;
-    height: auto;
-    font-size: 43px;
-    line-height: 56px;
-    margin-bottom: 28px;
-    margin-left: 0;
-    margin-right: 0;
-    align-self: flex-start;
-  }
-
-  .projects-block-projects {
-    width: 1167px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .projects-block-cards-container {
-    width: 1167px;
-    height: 390px;
-    gap: 14px;
-    margin-left: 0;
-    margin-right: 0;
-    justify-content: flex-start;
-  }
-
-  .projects-block-card {
-    width: 379px;
-    height: 421px;
-    flex-shrink: 0;
-  }
-
-  .projects-block-image-wrapper {
-    width: 379px;
-    height: 379px;
-  }
-
-  .projects-block-title-text {
-    font-size: 21px;
-    line-height: 28px;
-  }
-}
-
-/* 776px - точные размеры по дизайну - ДОЛЖЕН БЫТЬ ПЕРЕД мобильными */
-@media screen and (max-width: 777px) and (min-width: 768px) {
+/* 768px-1279px - все выглядит как на 776px - ДОЛЖЕН БЫТЬ ПЕРЕД мобильными */
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   .projects-block-container {
     width: 776px !important;
     max-width: 100% !important;

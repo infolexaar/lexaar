@@ -187,15 +187,8 @@
   display: block;
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
-  .footer-container {
-    padding: 56px 56px 0 56px;
-  }
-}
-
-/* 776px - точные размеры по дизайну - ДОЛЖЕН БЫТЬ ПЕРЕД другими tablet стилями */
-@media screen and (max-width: 777px) and (min-width: 768px) {
+/* 768px-1279px - все выглядит как на 776px - ДОЛЖЕН БЫТЬ ПЕРЕД другими tablet стилями */
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   .footer-container {
     width: 776px !important;
     max-width: 100% !important;

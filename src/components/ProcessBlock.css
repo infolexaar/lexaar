@@ -116,102 +116,75 @@
   padding: 0;
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
+/* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
+
+/* 768px-1279px - все выглядит как на 776px */
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   .process-block-container {
-    width: 1279px;
-    max-width: 100%;
-    height: auto;
-    min-height: 654px;
-    padding: 52px 56px;
-    box-sizing: border-box;
-  }
-
-  .process-block-title {
-    width: 1167px;
-    font-size: 43px;
-    line-height: 56px;
-  }
-
-  .process-block-cards {
-    width: 1167px;
-    height: 410px;
-    gap: 14px;
-  }
-
-  .process-block-card {
-    width: 378.33px;
-    height: 224px;
-  }
-}
-
-/* Tablet styles (776px) */
-@media (max-width: 776px) {
-  .process-block-container {
-    width: 776px;
-    max-width: 100%;
-    height: auto;
-    min-height: auto;
-    padding: 40px 56px;
-    box-sizing: border-box;
+    width: 776px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 40px 56px !important;
+    box-sizing: border-box !important;
   }
 
   .process-block-header {
-    width: 664px;
-    margin-bottom: 24px;
+    width: 664px !important;
+    margin-bottom: 24px !important;
   }
 
   .process-block-title {
-    width: 664px;
-    font-size: 36px;
-    line-height: 48px;
-    margin-bottom: 0;
+    width: 664px !important;
+    font-size: 36px !important;
+    line-height: 48px !important;
+    margin-bottom: 0 !important;
   }
 
   .process-block-cards {
-    width: 664px;
-    height: auto;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 14px;
-    justify-content: flex-start;
+    width: 664px !important;
+    height: auto !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(3, auto) !important;
+    gap: 14px !important;
+    justify-content: flex-start !important;
   }
 
   .process-block-card {
-    width: 100%;
-    max-width: 325px;
-    height: 195px;
-    flex-shrink: 0;
+    width: 100% !important;
+    max-width: 325px !important;
+    height: 195px !important;
+    flex-shrink: 0 !important;
   }
 
   .process-block-number-circle {
-    width: 64px;
-    height: 64px;
-    left: 20px;
-    top: 20px;
+    width: 64px !important;
+    height: 64px !important;
+    left: 20px !important;
+    top: 20px !important;
   }
 
   .process-block-number {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 30px !important;
+    line-height: 36px !important;
   }
 
   .process-block-card-content {
-    left: 20px;
-    right: 20px;
-    top: 104px;
-    bottom: 20px;
-    gap: 10px;
+    left: 20px !important;
+    right: 20px !important;
+    top: 104px !important;
+    bottom: 20px !important;
+    gap: 10px !important;
   }
 
   .process-block-card-title {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 15px !important;
+    line-height: 22px !important;
   }
 
   .process-block-card-description {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 14px !important;
+    line-height: 20px !important;
   }
 }
 
