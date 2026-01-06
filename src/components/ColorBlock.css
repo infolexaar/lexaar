@@ -283,8 +283,156 @@
   }
 }
 
-/* Mobile styles (up to 767px) */
-@media (max-width: 767px) {
+/* Mobile styles (375px) */
+@media screen and (max-width: 375px) {
+  .color-block-section {
+    width: 375px !important;
+    max-width: 100% !important;
+    height: 806px !important;
+    box-sizing: border-box !important;
+  }
+
+  .color-block-container {
+    width: 375px !important;
+    max-width: 100% !important;
+    height: 806px !important;
+    padding: 32px 24px !important; /* Отступ сверху 32px, по бокам 24px */
+    gap: 0 !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .color-block-image-wrapper {
+    width: 327px !important; /* Внутреннее пространство 327px */
+    height: 218px !important;
+    min-width: 327px !important;
+    min-height: 218px !important;
+    max-width: 327px !important;
+    max-height: 218px !important;
+    margin-bottom: 0 !important;
+    order: 1 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .color-block-image {
+    width: 327px !important;
+    height: 218px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .color-block-content {
+    width: 327px !important; /* Внутреннее пространство 327px */
+    height: auto !important;
+    min-height: auto !important;
+    margin-top: 16px !important; /* Отступ 16px после картинки */
+    padding: 0 !important;
+    order: 2 !important;
+    box-sizing: border-box !important;
+  }
+
+  .color-block-headers {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important; /* Отступ между заголовками */
+    margin-bottom: 32px !important; /* Отступ после подзаголовка */
+  }
+
+  .color-block-main-title {
+    font-size: 24px !important;
+    font-weight: 500 !important; /* Medium */
+    line-height: 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #1a1911 !important;
+  }
+
+  .color-block-subtitle {
+    font-size: 16px !important;
+    font-weight: 400 !important; /* Regular */
+    line-height: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #3e3d38 !important;
+  }
+
+  .color-block-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-bottom: 32px !important; /* Отступ после списка */
+  }
+
+  .color-block-list-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .color-block-list-item:not(:last-child) {
+    margin-bottom: 12px !important; /* Отступ между пунктами */
+  }
+
+  .color-block-list-item:last-of-type {
+    margin-bottom: 0 !important;
+  }
+
+  .color-block-bullet {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+    padding: 6px !important;
+  }
+
+  .color-block-bullet::before {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  .color-block-text {
+    font-size: 16px !important;
+    font-weight: 400 !important; /* Regular */
+    line-height: 24px !important;
+    color: #858480 !important;
+    flex: 1 !important;
+  }
+
+  .color-block-button {
+    width: 204px !important;
+    height: 48px !important;
+    min-width: 204px !important;
+    max-width: 204px !important;
+    padding: 12px 24px !important;
+    margin-top: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .color-block-button-text {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+  }
+
+  .color-block-button-arrow {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* Mobile styles (up to 767px, но не 375px) */
+@media screen and (max-width: 767px) and (min-width: 376px) {
   .color-block-container {
     padding: 40px 20px;
     gap: 32px;
