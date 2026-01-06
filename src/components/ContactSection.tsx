@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import arrowIcon from "../assets/icons/arrow.svg";
 import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
 import backgroundImage from "../assets/backgrContact.svg";
+import contact375Image from "../assets/contact375.svg";
 import { useContactForm } from "../hooks/useContactForm";
 import "./ContactSection.css";
 
@@ -16,13 +17,27 @@ const ContactSection: React.FC = () => {
     handleChange,
   } = useContactForm();
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 375);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const currentBackgroundImage = isMobile ? contact375Image : backgroundImage;
+
   return (
     <section className="contact-section">
       <div className="contact-section-container">
         {/* Background Image */}
         <div className="contact-section-background">
           <img
-            src={backgroundImage}
+            src={currentBackgroundImage}
             alt="Modern Kitchen Interior"
             className="contact-section-image"
           />
