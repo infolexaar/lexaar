@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/icons/Logo.svg";
 import closeButtonIcon from "../assets/categories/main/CloseButton.svg";
+import phoneIcon from "../assets/icons/phone.svg";
 import type { HeaderProps } from "../types";
 import { COMPANY_INFO } from "../constants";
 import LanguageSelector from "./LanguageSelector";
@@ -84,6 +85,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
             className="header-phone"
           >
             {COMPANY_INFO.phone}
+          </a>
+          <a
+            href={`tel:${COMPANY_INFO.phone.replace(/\s/g, "")}`}
+            className="header-phone-icon"
+            aria-label="Call us"
+          >
+            <img src={phoneIcon} alt="phone" />
           </a>
           <button className="header-cta-button" onClick={onOpenModal}>
             {t.header.solicitOferta}

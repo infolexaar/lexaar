@@ -259,3 +259,70 @@
 
 /* Старые медиа-запросы для 776px и 768px удалены - теперь используется единый стиль для 768px-1279px */
 
+/* Mobile styles (375px) */
+@media screen and (max-width: 375px) {
+  .header-top-bar {
+    display: none !important;
+  }
+
+  .header-burger {
+    display: block !important;
+  }
+
+  .header-nav {
+    display: none !important;
+  }
+
+  .header-phone {
+    display: none !important; /* Скрываем текст телефона */
+  }
+
+  .header-phone-icon {
+    display: flex !important; /* Показываем иконку телефона */
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .header-phone-icon img {
+    width: 100% !important;
+    height: 100% !important;
+    filter: brightness(0) invert(1); /* Делаем иконку белой */
+  }
+
+  .header-cta-button {
+    display: none !important;
+  }
+
+  .header-main {
+    padding: 0 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 64px !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-logo-wrapper {
+    flex-shrink: 0 !important;
+    margin: 0 auto !important; /* Центрируем логотип */
+  }
+
+  .header-logo-image {
+    width: 120px !important;
+    height: 40px !important;
+  }
+
+  .header-right {
+    flex-shrink: 0 !important;
+    gap: 16px !important;
+  }
+}
+
+/* Скрываем иконку телефона на десктопе и планшете */
+.header-phone-icon {
+  display: none;
+}
+

@@ -109,8 +109,8 @@
   }
 }
 
-/* Tablet styles (776px) */
-@media (max-width: 776px) {
+/* Tablet styles (768px-776px) - НЕ применяется для 375px */
+@media screen and (max-width: 776px) and (min-width: 768px) {
   .hero-content {
     padding-top: 140px;
     padding-left: 24px;
@@ -162,37 +162,80 @@
   }
 }
 
-/* Mobile styles (375px) */
-@media (max-width: 375px) {
+/* Mobile styles (375px) - ДОЛЖЕН БЫТЬ ПОСЛЕДНИМ */
+@media screen and (max-width: 375px) {
   .hero-content {
-    padding-top: 120px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 136px !important; /* Отступ от верха экрана (136px) */
+    padding-left: 25px !important; /* Отступ слева (25px) */
+    padding-right: 24px !important; /* Отступ справа (24px) */
+    padding-bottom: 64px !important; /* Отступ снизу до конца блока (64px) */
+    min-height: 800px !important; /* Общая высота блока */
+    box-sizing: border-box !important;
   }
 
   .hero-heading {
-    font-size: 28px;
-    line-height: 36px;
-    max-width: 327px;
+    font-size: 35px !important;
+    font-weight: 500 !important; /* Medium */
+    line-height: 44px !important;
+    margin-bottom: 32px !important; /* Отступ после заголовка */
+    margin-top: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .hero-description {
-    font-size: 14px;
-    line-height: 20px;
-    max-width: 327px;
+    font-size: 17px !important;
+    font-weight: 500 !important; /* Medium */
+    line-height: 24px !important;
+    margin-bottom: 32px !important; /* Отступ после описания */
+    margin-top: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    color: #e5e7eb !important;
   }
 
   .hero-cta-button {
-    width: 200px;
-    height: 48px;
-    font-size: 16px;
-    padding: 12px 20px;
+    width: 326px !important;
+    height: 48px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    padding: 12px 24px !important;
+    margin-bottom: 32px !important; /* Отступ после кнопки */
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .hero-cta-button img {
+    width: 16px !important;
+    height: 16px !important;
   }
 
   .hero-benefits-mobile {
-    width: 327px;
-    height: 180px;
-    padding: 12px;
+    width: 327px !important;
+    height: 192px !important;
+    padding: 16px !important;
+    margin-top: 0 !important;
+    margin-bottom: 64px !important; /* Отступ снизу до конца блока */
+    box-sizing: border-box !important;
+    display: block !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(7px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(7px) saturate(120%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .hero-benefits-panel {
+    display: none !important;
   }
 }
 
