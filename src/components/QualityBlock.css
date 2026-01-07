@@ -112,13 +112,115 @@
 /* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
 
 /* Mobile styles (375px) */
-@media (max-width: 375px) {
+@media screen and (max-width: 375px) {
+  .quality-block-section {
+    width: 375px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .quality-block-container {
-    padding: 32px 24px;
+    width: 375px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 32px 24px !important; /* Отступы: 32px сверху/снизу, 24px по бокам */
+    box-sizing: border-box !important;
   }
 
   .quality-block-content {
-    width: 327px;
+    width: 327px !important; /* 375 - 24*2 */
+    height: auto !important;
+    max-width: 327px !important;
+    box-sizing: border-box !important;
+  }
+
+  .quality-block-title {
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    line-height: 32px !important;
+    color: #1a1911 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .quality-block-subtitle {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #3e3d38 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 24px !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .quality-block-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .quality-block-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 24px 16px !important;
+    box-sizing: border-box !important;
+    background-color: #fbf8f4 !important;
+    border-radius: 12px !important;
+    gap: 16px !important;
+    text-align: center !important;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .quality-block-icon-wrapper {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0px 7px 9.1px 0px rgba(138, 117, 54, 0.03) !important;
+  }
+
+  .quality-block-icon {
+    width: 48px !important;
+    height: 48px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .quality-block-card-text {
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #3e3d38 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 
