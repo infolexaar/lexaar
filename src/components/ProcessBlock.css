@@ -189,13 +189,126 @@
 }
 
 /* Mobile styles (375px) */
-@media (max-width: 375px) {
+@media screen and (max-width: 375px) {
+  .process-block-section {
+    width: 375px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .process-block-container {
-    padding: 32px 24px;
+    width: 375px !important;
+    max-width: 100% !important;
+    height: 1544px !important; /* Размер блока 375x1544 */
+    min-height: 1544px !important;
+    max-height: 1544px !important;
+    padding: 32px 24px !important; /* Отступы: 32px сверху/снизу, 24px по бокам */
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .process-block-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 24px !important; /* Отступ после заголовка */
+    box-sizing: border-box !important;
+  }
+
+  .process-block-title {
+    font-size: 29px !important;
+    font-weight: 500 !important; /* Medium */
+    line-height: 36px !important;
+    color: #1a1911 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .process-block-cards {
-    width: 327px;
+    width: 327px !important; /* 375 - 24*2 */
+    max-width: 327px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important; /* Расстояние между ячейками */
+    box-sizing: border-box !important;
+  }
+
+  .process-block-card {
+    width: 327px !important;
+    height: 208px !important;
+    max-width: 327px !important;
+    min-width: 327px !important;
+    max-height: 208px !important;
+    min-height: 208px !important;
+    background-color: #fbf8f4 !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0 !important;
+  }
+
+  .process-block-number-circle {
+    position: absolute !important;
+    left: 24px !important;
+    top: 24px !important;
+    width: 72px !important;
+    height: 72px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0px 7px 9.1px 0px rgba(138, 117, 54, 0.03) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .process-block-number {
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 35px !important;
+    font-weight: 700 !important;
+    line-height: 42px !important;
+    color: #c19d3d !important;
+  }
+
+  .process-block-card-content {
+    position: absolute !important;
+    left: 24px !important;
+    right: 24px !important;
+    top: 116px !important; /* 24px (padding) + 72px (круг) + 20px (отступ) */
+    bottom: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .process-block-card-title {
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    color: #1a1911 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .process-block-card-description {
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    color: #3e3d38 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
-

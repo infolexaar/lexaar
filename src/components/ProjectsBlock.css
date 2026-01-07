@@ -292,21 +292,23 @@
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    scrollbar-width: none !important; /* Скрываем скролл для Firefox */
+    -ms-overflow-style: none !important; /* Скрываем скролл для IE/Edge */
   }
 
   .projects-block-projects::-webkit-scrollbar {
-    height: 4px;
+    display: none !important; /* Скрываем скролл для Chrome/Safari */
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
   }
 
   .projects-block-projects::-webkit-scrollbar-track {
-    background: transparent;
+    display: none !important;
   }
 
   .projects-block-projects::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
+    display: none !important;
   }
 
   .projects-block-cards-container {
