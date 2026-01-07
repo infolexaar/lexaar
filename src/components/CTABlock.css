@@ -138,8 +138,103 @@
   }
 }
 
-/* Mobile styles (up to 767px) */
-@media (max-width: 767px) {
+/* Mobile styles (375px) */
+@media screen and (max-width: 375px) {
+  .cta-block-section {
+    width: 375px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cta-block-container {
+    width: 375px !important;
+    max-width: 100% !important;
+    height: 384px !important; /* Размер блока 375x384 */
+    min-height: 384px !important;
+    max-height: 384px !important;
+    padding: 32px 24px !important; /* Отступы: 32px сверху/снизу, 24px слева/справа */
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .cta-block-panel {
+    width: 327px !important; /* 375 - 24*2 */
+    height: 240px !important;
+    max-width: 327px !important;
+    min-width: 327px !important;
+    max-height: 240px !important;
+    min-height: 240px !important;
+    background-color: #007042 !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    top: auto !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .cta-block-text {
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important; /* Regular */
+    line-height: 24px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cta-block-button {
+    width: 327px !important; /* 375 - 24*2 */
+    height: 48px !important;
+    max-width: 327px !important;
+    min-width: 327px !important;
+    background-color: #bf1a1a !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    top: auto !important;
+    margin: 32px auto 0 auto !important; /* Отступ 32px после панели */
+    box-sizing: border-box !important;
+  }
+
+  .cta-block-button:hover {
+    background-color: #a01515 !important;
+  }
+
+  .cta-block-arrow {
+    width: 20px !important;
+    height: 20px !important;
+    filter: brightness(0) invert(1) !important;
+  }
+}
+
+/* Mobile styles (up to 767px, но не 375px) */
+@media (max-width: 767px) and (min-width: 376px) {
   .cta-block-container {
     height: auto;
     min-height: 320px;

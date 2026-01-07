@@ -6,27 +6,24 @@ import arrowIcon from "../assets/icons/arrow.svg";
 import ContactModal from "./ContactModal";
 import Header from "./Header";
 import { trackButtonClick, trackFacebookEvent } from "../utils/analytics";
-import { BENEFITS } from "../constants";
+import { BENEFITS, COMPANY_INFO } from "../constants";
 import "./Hero.css";
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSmsShaking, setIsSmsShaking] = useState(false);
-  const [showComingSoon, setShowComingSoon] = useState(false);
 
   const handleSmsClick = () => {
     setIsSmsShaking(true);
-    setShowComingSoon(true);
 
     // Убрать анимацию через 600ms
     setTimeout(() => {
       setIsSmsShaking(false);
     }, 600);
 
-    // Убрать сообщение через 2 секунды
-    setTimeout(() => {
-      setShowComingSoon(false);
-    }, 2000);
+    // Открыть SMS на номер телефона компании
+    const phoneNumber = COMPANY_INFO.phone.replace(/\s/g, ""); // Убираем пробелы
+    window.location.href = `sms:${phoneNumber}`;
   };
 
   const benefits = BENEFITS;
@@ -154,13 +151,6 @@ const Hero = () => {
           <div className="absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves"></div>
           <div className="absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves-delay-1"></div>
           <div className="absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves-delay-2"></div>
-
-          {/* Coming Soon Message */}
-          {showComingSoon && (
-            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-80 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap animate-fade-in">
-              În curând...
-            </div>
-          )}
 
           <button
             className={`w-24 h-24 p-0 m-0 transition-transform duration-150 animate-pulse-gentle relative z-10 ${
