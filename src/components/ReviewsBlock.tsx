@@ -5,7 +5,7 @@ import "./ReviewsBlock.css";
 
 const ReviewsBlock: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const reviews = [
     {
       quote: t.reviews.review1.quote,
@@ -24,34 +24,34 @@ const ReviewsBlock: React.FC = () => {
   return (
     <section className="reviews-block-section">
       <div className="reviews-block-container">
-        {/* Background Image */}
-        <div className="reviews-block-background">
-          <img
-            src={reviewImage}
-            alt="Modern Interior"
-            className="reviews-block-image"
-          />
-        </div>
-
         {/* Content */}
         <div className="reviews-block-content">
           {/* Title */}
           <h2 className="reviews-block-title">{t.reviews.title}</h2>
 
-          {/* Cards */}
-          <div className="reviews-block-cards">
-            {reviews.map((review, index) => (
-              <div key={index} className="reviews-block-card">
-                {/* Glass Effect Overlay */}
-                <div className="reviews-block-card-overlay"></div>
+          {/* Background Image with Cards inside */}
+          <div className="reviews-block-background">
+            <img
+              src={reviewImage}
+              alt="Modern Interior"
+              className="reviews-block-image"
+            />
 
-                {/* Card Content */}
-                <div className="reviews-block-card-content">
-                  <p className="reviews-block-quote">{review.quote}</p>
-                  <p className="reviews-block-author">{review.author}</p>
+            {/* Cards */}
+            <div className="reviews-block-cards">
+              {reviews.map((review, index) => (
+                <div key={index} className="reviews-block-card">
+                  {/* Glass Effect Overlay */}
+                  <div className="reviews-block-card-overlay"></div>
+
+                  {/* Card Content */}
+                  <div className="reviews-block-card-content">
+                    <p className="reviews-block-quote">{review.quote}</p>
+                    <p className="reviews-block-author">{review.author}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -60,10 +60,3 @@ const ReviewsBlock: React.FC = () => {
 };
 
 export default ReviewsBlock;
-
-
-
-
-
-
-

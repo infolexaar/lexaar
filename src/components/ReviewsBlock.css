@@ -131,23 +131,200 @@
 /* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
 
 /* Mobile styles (375px) */
-@media (max-width: 375px) {
+@media screen and (max-width: 375px) {
+  .reviews-block-section {
+    width: 375px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .reviews-block-container {
-    width: 327px;
-    height: auto;
-    min-height: 536px;
+    width: 375px !important;
+    max-width: 100% !important;
+    height: 484px !important; /* Размер блока 375x484 */
+    min-height: 484px !important;
+    max-height: 484px !important;
+    padding: 32px 24px !important; /* Отступы: 32px сверху/снизу, 24px по бокам */
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: block !important;
+    overflow: hidden !important;
   }
 
   .reviews-block-background {
-    width: 327px;
-    height: auto;
-    min-height: 432px;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 327px !important; /* 375 - 24*2 */
+    height: 356px !important;
+    max-width: 327px !important;
+    max-height: 356px !important;
+    min-width: 327px !important;
+    min-height: 356px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important; /* Важно: скрываем переполнение карточек */
+    z-index: 0 !important;
+    margin: 0 auto !important; /* Центрируем */
+    margin-top: 32px !important; /* Отступ 32px после заголовка */
+  }
+
+  /* Карточки внутри reviews-block-background */
+  .reviews-block-background .reviews-block-cards {
+    position: absolute !important;
+    top: 123px !important; /* От верха контейнера фотки */
+    left: 0 !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+    width: 327px !important; /* Ширина контейнера фотки */
+    max-width: 327px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 30px !important; /* Отступы по бокам для центрирования первой/последней карточки */
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important; /* Скрываем scrollbar в Firefox */
+    -ms-overflow-style: none !important; /* Скрываем scrollbar в IE/Edge */
+  }
+
+  .reviews-block-background .reviews-block-cards::-webkit-scrollbar {
+    display: none !important; /* Скрываем scrollbar в Chrome/Safari */
+  }
+
+  .reviews-block-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
   }
 
   .reviews-block-content {
-    width: 327px;
-    height: auto;
-    min-height: 432px;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    z-index: 1 !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Заголовок позиционируем относительно контейнера, наверху блока */
+  .reviews-block-title {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    line-height: 32px !important;
+    margin: 0 auto !important; /* Центрируем */
+    padding: 0 !important;
+    text-align: center !important;
+    z-index: 3 !important;
+    color: #1a1911 !important;
+    display: block !important;
+  }
+
+  /* Карточки должны быть внутри контейнера фотки (reviews-block-background), скроллятся горизонтально */
+  .reviews-block-cards {
+    position: absolute !important;
+    top: 123px !important; /* От верха контейнера фотки */
+    left: 0 !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+    width: 327px !important; /* Ширина контейнера фотки */
+    max-width: 327px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 30px !important; /* Отступы по бокам для центрирования первой/последней карточки */
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important; /* Скрываем scrollbar в Firefox */
+    -ms-overflow-style: none !important; /* Скрываем scrollbar в IE/Edge */
+  }
+
+  .reviews-block-cards::-webkit-scrollbar {
+    display: none !important; /* Скрываем scrollbar в Chrome/Safari */
+  }
+
+  /* Все карточки: 266x224px */
+  .reviews-block-card {
+    width: 266px !important;
+    height: 224px !important;
+    max-width: 266px !important;
+    min-width: 266px !important;
+    max-height: 224px !important;
+    min-height: 224px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .reviews-block-card {
+    box-sizing: border-box !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .reviews-block-card-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(255, 255, 255, 0.11) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    z-index: 1 !important;
+    border-radius: 12px !important;
+  }
+
+  .reviews-block-card-content {
+    position: relative !important;
+    z-index: 2 !important;
+    padding: 24px !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+
+  .reviews-block-quote {
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important; /* Regular */
+    line-height: 24px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 1 !important;
+  }
+
+  .reviews-block-author {
+    font-family: "Inter", system-ui, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important; /* Regular */
+    line-height: 24px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 16px !important;
   }
 }
 
