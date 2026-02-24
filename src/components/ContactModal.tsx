@@ -3,7 +3,7 @@ import arrowIcon from "../assets/icons/arrow.svg";
 import nameIcon from "../assets/icons/name.svg";
 import phoneIcon from "../assets/icons/phone.svg";
 import mailIcon from "../assets/icons/mail.svg";
-import backgroundImage from "../assets/backgrContact.svg";
+import backgroundImage from "../assets/backgrContact.jpg";
 import type { ContactModalProps } from "../types";
 import { useContactForm } from "../hooks/useContactForm";
 import { useLanguage } from "../contexts/LanguageContext";

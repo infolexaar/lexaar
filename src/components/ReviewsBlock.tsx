@@ -1,5 +1,5 @@
 import React from "react";
-import reviewImage from "../assets/review.svg";
+import reviewImage from "../assets/review.jpg";
 import { useLanguage } from "../contexts/LanguageContext";
 import "./ReviewsBlock.css";
 
@@ -32,7 +32,7 @@ const ReviewsBlock: React.FC = () => {
           {/* Background Image with Cards inside */}
           <div className="reviews-block-background">
             <img
-              src={reviewImage}
+              src={reviewImage} loading="lazy" decoding="async"
               alt="Modern Interior"
               className="reviews-block-image"
             />

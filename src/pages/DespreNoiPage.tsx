@@ -10,7 +10,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import "./DespreNoiPage.css";
 
 // Импорт изображения для блока "Misiunea și valorile noastre"
-import missionImage from "../assets/desprenoi/desprenoi.svg";
+import missionImage from "../assets/desprenoi/desprenoi.jpg";
 
 interface Advantage {
   title: string;
@@ -67,7 +67,7 @@ const DespreNoiPage: React.FC = () => {
             <div className="despre-noi-mission-section">
               <div className="despre-noi-mission-image-wrapper">
                 <img
-                  src={missionImage}
+                  src={missionImage} loading="lazy" decoding="async"
                   alt="Mission"
                   className="despre-noi-mission-image"
                 />
