@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import kitchenImage from "../assets/colorBlock/kitchen.svg";
 import blueKitchen from "../assets/colorBlock/blue.svg";
 import creamKitchen from "../assets/colorBlock/cream.svg";
@@ -8,12 +8,20 @@ import greyKitchen from "../assets/colorBlock/grey.svg";
 import redKitchen from "../assets/colorBlock/red.svg";
 import whiteKitchen from "../assets/colorBlock/white.svg";
 import arrowIcon from "../assets/icons/arrow.svg";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./ColorBlock.css";
 
 const ColorBlock: React.FC = () => {
-  const navigate = useNavigate();
+  const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const autoPlayIntervalRef = useRef<number | null>(null);
+  const features = [
+    t.home.colorBlock.feature1,
+    t.home.colorBlock.feature2,
+    t.home.colorBlock.feature3,
+    t.home.colorBlock.feature4,
+    t.home.colorBlock.feature5,
+  ];
 
   // Массив изображений кухонь
   const kitchenImages = [
@@ -39,16 +47,8 @@ const ColorBlock: React.FC = () => {
     };
   }, [kitchenImages.length]);
 
-  const features = [
-    "Alege culoarea care îți spune povestea",
-    "Descoperă ce se potrivește cel mai bine stilului tău",
-    "Inspiră-te și apropie-te de stilul tău ideal",
-    "Finisaje premium, ușor de întreținut",
-    "Design modern, gata de integrat în orice locuință",
-  ];
-
   return (
-    <section className="color-block-section">
+    <section className="color-block-section" id="culori">
       <div className="color-block-container">
         {/* Изображение кухни */}
         <div className="color-block-image-wrapper">
@@ -65,11 +65,11 @@ const ColorBlock: React.FC = () => {
           {/* Группа заголовков */}
           <div className="color-block-headers">
             <h2 className="color-block-main-title">
-              CULORI PERSONALIZATE PENTRU BUCĂTĂRIA TA
+              {t.home.colorBlock.mainTitle}
             </h2>
 
             <h3 className="color-block-subtitle">
-              FUNCTIONAL. ELEGANT. PERSONAL.
+              {t.home.colorBlock.subtitle}
             </h3>
           </div>
 
@@ -84,17 +84,22 @@ const ColorBlock: React.FC = () => {
           </ul>
 
           {/* Кнопка */}
-          <button
+          <Link
+            to="/colors"
             className="color-block-button"
-            onClick={() => navigate("/colors")}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              document.documentElement.scrollTop = 0;
+              document.body.scrollTop = 0;
+            }}
           >
-            <span className="color-block-button-text">Vezi culorile</span>
+            <span className="color-block-button-text">{t.home.colorBlock.buttonText}</span>
             <img
               src={arrowIcon}
               alt="arrow"
               className="color-block-button-arrow"
             />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

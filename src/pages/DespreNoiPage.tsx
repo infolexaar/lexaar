@@ -51,7 +51,7 @@ const DespreNoiPage: React.FC = () => {
   return (
     <div className="overflow-x-hidden">
       <Header onOpenModal={handleOpenModal} />
-      <main className="despre-noi-page" style={{ marginTop: "82px" }}>
+      <main className="despre-noi-page">
         {/* First Block - Who We Are */}
         <section className="despre-noi-intro">
           <div className="despre-noi-intro-container">

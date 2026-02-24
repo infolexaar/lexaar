@@ -10,7 +10,7 @@ const CTABlock: React.FC = () => {
 
   return (
     <>
-      <section className="cta-block-section">
+      <section className="cta-block-section" id="cta">
         <div className="cta-block-container">
           <div className="cta-block-panel">
             <p className="cta-block-text">{t.cta.text}</p>

@@ -35,10 +35,15 @@
   color: #1a1911;
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .process-block-cards {
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: 472px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -104,6 +109,10 @@
   color: #1a1911;
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .process-block-card-description {
@@ -114,12 +123,16 @@
   color: #3e3d38;
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 /* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
 
-/* 768px-1279px - все выглядит как на 776px */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
+/* 376px-1279px - планшет, вид как на 776px */
+@media screen and (min-width: 776px) and (max-width: 1279px) {
   .process-block-container {
     width: 776px !important;
     max-width: 100% !important;
@@ -188,21 +201,93 @@
   }
 }
 
-/* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+/* 450px-775px: тот же вид что 776, но меньше */
+@media screen and (min-width: 450px) and (max-width: 775px) {
+  .process-block-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 24px 32px !important;
+    box-sizing: border-box !important;
+  }
+
+  .process-block-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .process-block-title {
+    width: 100% !important;
+    font-size: 28px !important;
+    line-height: 36px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .process-block-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(3, auto) !important;
+    gap: 12px !important;
+    justify-content: flex-start !important;
+  }
+
+  .process-block-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 160px !important;
+    min-height: 160px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .process-block-number-circle {
+    width: 56px !important;
+    height: 56px !important;
+    left: 16px !important;
+    top: 16px !important;
+  }
+
+  .process-block-number {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+
+  .process-block-card-content {
+    left: 16px !important;
+    right: 16px !important;
+    top: 88px !important;
+    bottom: 16px !important;
+    gap: 8px !important;
+  }
+
+  .process-block-card-title {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  .process-block-card-description {
+    font-size: 13px !important;
+    line-height: 18px !important;
+  }
+}
+
+/* Mobile: ниже 450px — как 375, масштабировано под экран */
+@media screen and (max-width: 449px) {
   .process-block-section {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .process-block-container {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    height: 1544px !important; /* Размер блока 375x1544 */
-    min-height: 1544px !important;
-    max-height: 1544px !important;
-    padding: 32px 24px !important; /* Отступы: 32px сверху/снизу, 24px по бокам */
+    height: auto !important;
+    min-height: auto !important;
+    padding: clamp(24px, 6vw, 32px) clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
@@ -228,8 +313,8 @@
   }
 
   .process-block-cards {
-    width: 327px !important; /* 375 - 24*2 */
-    max-width: 327px !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -238,12 +323,11 @@
   }
 
   .process-block-card {
-    width: 327px !important;
-    height: 208px !important;
-    max-width: 327px !important;
-    min-width: 327px !important;
-    max-height: 208px !important;
-    min-height: 208px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 180px !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     background-color: #fbf8f4 !important;
     border-radius: 12px !important;
     padding: 24px !important;

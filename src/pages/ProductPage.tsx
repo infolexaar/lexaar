@@ -7,6 +7,7 @@ import FormBlock from "../components/FormBlock";
 import MapSection from "../components/MapSection";
 import Footer from "../components/Footer";
 import ContactModal from "../components/ContactModal";
+import "./ProductPage.css";
 
 const ProductPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +19,7 @@ const ProductPage: React.FC = () => {
   return (
     <div className="overflow-x-hidden">
       <Header onOpenModal={handleOpenModal} />
-      <main style={{ marginTop: "82px" }}>
+      <main className="product-page-main">
         <ProductDetailBlock />
         <CTABlock />
         <FormBlock />

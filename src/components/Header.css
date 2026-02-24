@@ -108,8 +108,9 @@
 }
 
 
-/* Responsive styles - все от 768px до 1279px выглядит как на 776px */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
+/* Tablet styles - от 376px до 1279px */
+/* Планшет и мини-планшет: 450-1279 */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .header-top-bar {
     display: none !important;
   }
@@ -132,7 +133,7 @@
 
   .header-main {
     padding: 0 56px !important;
-    width: 776px !important;
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     margin-left: auto !important;
@@ -257,10 +258,8 @@
   color: #c19d3d;
 }
 
-/* Старые медиа-запросы для 776px и 768px удалены - теперь используется единый стиль для 768px-1279px */
-
-/* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+/* Mobile styles - до 375px */
+@media screen and (max-width: 449px) {
   .header-top-bar {
     display: none !important;
   }
@@ -298,7 +297,7 @@
   }
 
   .header-main {
-    padding: 0 20px !important;
+    padding: 0 clamp(16px, 4vw, 20px) !important;
     width: 100% !important;
     max-width: 100% !important;
     height: 64px !important;

@@ -5,21 +5,25 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Оптимизация для продакшена
     minify: "terser",
     sourcemap: false,
+    // SVG не инлайним — они слишком большие и так не попали бы (>4KB),
+    // но явно ставим 0 чтобы исключить случайные мелкие ассеты
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: {
         manualChunks: {
-          // Разделение vendor библиотек
           vendor: ["react", "react-dom"],
+          router: ["react-router-dom"],
         },
+        // Хэш в имени файла для долгосрочного кэширования
+        assetFileNames: "assets/[name]-[hash][extname]",
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
       },
     },
   },
-  // Базовый путь для деплоя (если нужен подпапка)
   base: "/",
-  // Настройки для разработки
   server: {
     port: 3000,
     open: true,

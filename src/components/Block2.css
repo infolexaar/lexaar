@@ -7,7 +7,8 @@
 }
 
 .block2-container {
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -19,12 +20,7 @@
   flex-direction: column;
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
-  .block2-container {
-    width: 1167px;
-  }
-}
+/* 1280+ десктоп без отдельного 1279 — контейнер из базовых стилей */
 
 .block2-title {
   font-family: "Inter", system-ui, sans-serif;
@@ -33,12 +29,17 @@
   line-height: 64px;
   color: #1a1911;
   width: 100%;
+  max-width: 100%;
   height: auto;
   margin: 0;
   padding: 0;
   text-align: left;
   box-sizing: border-box;
   flex-shrink: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .categories-grid {
@@ -160,70 +161,54 @@
   box-sizing: border-box;
 }
 
-/* Tablet styles (776px) */
-@media (max-width: 776px) {
+/* 450px–1279px: один вид как на 776, только размер уменьшается от 776 к 450 (сетка 3 колонки, wrap) */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .block2-container {
-    width: 664px;
+    width: 100%;
+    max-width: 1232px;
     height: auto;
-    margin-top: 40px;
+    margin-top: clamp(32px, 4vw, 60px);
     margin-left: auto;
     margin-right: auto;
-    padding: 0 56px;
+    padding: 0 clamp(20px, 4vw, 56px);
     box-sizing: border-box;
   }
 
   .block2-title {
-    width: 664px;
-    font-size: 36px;
-    line-height: 48px;
+    width: 100%;
+    font-size: clamp(28px, 3.5vw, 50px);
+    line-height: 1.2;
     height: auto;
-    margin-bottom: 24px;
+    margin-bottom: clamp(20px, 2.5vw, 32px);
   }
 
   .categories-grid {
     display: flex;
     flex-direction: row;
-    width: 664px;
-    margin-top: 24px;
-    margin-bottom: 40px;
-    gap: 14px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-    padding-bottom: 8px;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-  }
-
-  .categories-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .categories-grid::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .categories-grid::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: clamp(20px, 2.5vw, 32px);
+    margin-bottom: clamp(32px, 4vw, 60px);
+    gap: clamp(10px, 1.2vw, 16px);
+    box-sizing: border-box;
+    align-items: flex-start;
+    overflow: visible;
   }
 
   .category-item {
-    width: 210.67px;
-    min-width: 210.67px;
-    max-width: 210.67px;
-    height: 348px;
-    flex-shrink: 0;
-    display: inline-block;
+    flex: 0 0 calc((100% - 2 * clamp(10px, 1.2vw, 16px)) / 3);
+    width: calc((100% - 2 * clamp(10px, 1.2vw, 16px)) / 3);
+    max-width: none;
+    min-width: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .category-image-wrapper {
-    width: 210.67px;
-    height: 296px;
-    min-height: 296px;
-    max-height: 296px;
+    width: 100%;
+    aspect-ratio: 400 / 296;
+    height: auto;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -251,28 +236,30 @@
   }
 
   .category-title {
-    font-size: 20px;
-    line-height: 28px;
-    margin-top: 12px;
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1.3;
+    margin-top: clamp(8px, 1vw, 12px);
   }
 }
 
-/* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+/* Mobile: ниже 450px */
+@media screen and (max-width: 449px) {
   .block2-section {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    height: 508px !important;
+    height: auto !important;
+    min-height: 508px !important;
     box-sizing: border-box !important;
   }
 
   .block2-container {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    height: 508px !important;
-    margin-top: 32px !important; /* Отступ сверху */
+    height: auto !important;
+    min-height: 508px !important;
+    margin-top: clamp(24px, 6vw, 32px) !important;
     margin-bottom: 0 !important;
-    padding: 0 24px !important; /* Отступы по бокам */
+    padding: 0 clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
   }
 
@@ -363,8 +350,8 @@
   }
 }
 
-/* Desktop and Tablet styles (768px+) - одинаковый стиль, только масштабирование */
-@media (min-width: 768px) {
+/* Desktop 1280px+ — базовый десктопный вид */
+@media (min-width: 1280px) {
   .block2-container {
     width: 100%;
     max-width: 1232px;

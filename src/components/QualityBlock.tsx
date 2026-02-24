@@ -3,52 +3,36 @@ import icon1 from "../assets/icons/blockCalitate/Icons.svg";
 import icon2 from "../assets/icons/blockCalitate/Icons-1.svg";
 import icon3 from "../assets/icons/blockCalitate/Vector.svg";
 import icon4 from "../assets/icons/blockCalitate/Vector-1.svg";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./QualityBlock.css";
 
 const QualityBlock: React.FC = () => {
+  const { t } = useLanguage();
   useEffect(() => {
-    console.log("🔵 QualityBlock компонент загружен!");
     const checkMediaQuery = () => {
-      const mediaQuery = window.matchMedia("(max-width: 777px) and (min-width: 768px)");
-      console.log("📱 Медиа-запрос 776px активен:", mediaQuery.matches);
-      console.log("📏 Текущая ширина окна:", window.innerWidth);
+      window.matchMedia("(max-width: 777px) and (min-width: 768px)");
     };
     checkMediaQuery();
     window.addEventListener("resize", checkMediaQuery);
     return () => window.removeEventListener("resize", checkMediaQuery);
   }, []);
   const features = [
-    {
-      icon: icon1,
-      text: "Consultație individuală gratuită pentru fiecare client",
-    },
-    {
-      icon: icon2,
-      text: "Instalare și montaj mobilă fără cost suplimentar",
-    },
-    {
-      icon: icon3,
-      text: "Soluții personalizate pentru orice comandă",
-    },
-    {
-      icon: icon4,
-      text: "Garanție 5 ani pentru liniștea și comfortul tău",
-    },
+    { icon: icon1, text: t.home.qualityBlock.item1 },
+    { icon: icon2, text: t.home.qualityBlock.item2 },
+    { icon: icon3, text: t.home.qualityBlock.item3 },
+    { icon: icon4, text: t.home.qualityBlock.item4 },
   ];
 
   return (
-    <section className="quality-block-section">
+    <section className="quality-block-section" id="calitate">
       <div className="quality-block-container">
         <div className="quality-block-content">
-          {/* Заголовок */}
           <h2 className="quality-block-title">
-            Calitatea muncii noastre contează pentru fiecare client
+            {t.home.qualityBlock.title}
           </h2>
 
-          {/* Подзаголовок */}
           <p className="quality-block-subtitle">
-            Ne asigurăm că fiecare proiect de mobilier este perfect, de la
-            consultanță până la garanție.
+            {t.home.qualityBlock.subtitle}
           </p>
 
           {/* Карточки с иконками */}

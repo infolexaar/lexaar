@@ -38,72 +38,28 @@ const BlogPage: React.FC = () => {
     setIsModalOpen(true);
   };
 
-  // Все статьи блога
-  const allPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: "Cum aleg materialul potrivit pentru mobila mea?",
-      description:
-        "Alegerea materialului potrivit depinde de mai mulți factori: buget, durabilitate, stilul dorit și...",
-      image: blogImage1,
-    },
-    {
-      id: 2,
-      title: "Ce culori și finisaje sunt potrivite pentru camerele mici?",
-      description:
-        "Culorile deschise, neutre sau pastelate fac ca încăperile mici să pară mai spațioase și...",
-      image: blogImage2,
-    },
-    {
-      id: 3,
-      title: "Cum aleg între mobilier modular și personalizat?",
-      description:
-        "Mobilierul modular este o soluție rapidă și accesibilă, ideal pentru spațiile standard...",
-      image: blogImage3,
-    },
-    {
-      id: 4,
-      title: "Cum se desfășoară procesul de comandă a mobilei la comandă?",
-      description:
-        "Procesul începe cu consultanța inițială, unde se discută preferințele de design...",
-      image: blogImage4,
-    },
-    {
-      id: 5,
-      title: "Cum întrețin mobila din MDF sau lemn masiv?",
-      description:
-        "Întreținerea corectă prelungește durata de viață a mobilierului și păstrează aspectul său.",
-      image: blogImage5,
-    },
-    {
-      id: 6,
-      title: "Ce trebuie să știu despre combinarea diferitelor materiale?",
-      description:
-        "Combinarea MDF, lemn și sticlă trebuie făcută ținând cont de rezistența și compatibilitatea...",
-      image: blogImage6,
-    },
-    {
-      id: 7,
-      title: "Cum planific iluminatul în camere cu mobilă personalizată?",
-      description:
-        "Iluminatul trebuie să fie funcțional și estetic. Spoturile și benzile LED pot evidenția anumite...",
-      image: blogImage7,
-    },
-    {
-      id: 8,
-      title: "Ce garanție oferă mobila la comandă și cum funcționează serviciile post-livrare?",
-      description:
-        "Garanția acoperă defectele de fabricație și problemele de calitate care apar în mod normal...",
-      image: blogImage8,
-    },
-    {
-      id: 9,
-      title: "Cum pot evalua calitatea unei mobile la comandă înainte de a o comanda?",
-      description:
-        "Pentru a evalua calitatea mobilei, verifică tipul de materiale folosite, grosimea și densitatea plăcilor...",
-      image: blogImage9,
-    },
-  ];
+  const imageById: Record<number, string> = {
+    1: blogImage1,
+    2: blogImage2,
+    3: blogImage3,
+    4: blogImage4,
+    5: blogImage5,
+    6: blogImage6,
+    7: blogImage7,
+    8: blogImage8,
+    9: blogImage9,
+  };
+
+  const allPosts: BlogPost[] = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((id) => {
+    const key = String(id);
+    const post = t.blog.posts[key];
+    return {
+      id,
+      title: post?.title ?? "",
+      description: post?.description ?? "",
+      image: imageById[id],
+    };
+  });
 
   const postsPerPage = 9;
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
@@ -160,7 +116,7 @@ const BlogPage: React.FC = () => {
   return (
     <div className="overflow-x-hidden">
       <Header onOpenModal={handleOpenModal} />
-      <main className="blog-page" style={{ marginTop: "82px" }}>
+      <main className="blog-page">
         {/* Blog Section */}
         <section className="blog-section">
           <div className="blog-container">

@@ -84,8 +84,10 @@
 }
 
 .product-detail-main {
-  width: 1232px;
-  height: 511.63px;
+  width: 100%;
+  max-width: 1232px;
+  height: auto;
+  min-height: 511.63px;
   display: flex;
   align-items: flex-start;
   gap: 60px;
@@ -96,8 +98,10 @@
 
 /* Левая часть - фотки */
 .product-detail-images-section {
-  width: 680px;
-  height: 511.63px;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  min-height: 511.63px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -108,7 +112,8 @@
 
 /* Основная фотка */
 .product-detail-main-image-wrapper {
-  width: 680px;
+  width: 100%;
+  max-width: 680px;
   height: 402.63px;
   border-radius: 12px;
   overflow: hidden;
@@ -123,13 +128,17 @@
   display: block;
 }
 
-/* Галерея миниатюр */
+/* Галерея миниатюр — перенос на новую строку при нехватке места */
 .product-detail-thumbnails {
   width: 100%;
-  height: 97px;
+  min-height: 97px;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
 .product-detail-thumbnail {
@@ -142,10 +151,18 @@
   transition: all 0.2s ease;
   box-sizing: border-box;
   flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  display: block;
+  pointer-events: auto;
 }
 
 .product-detail-thumbnail.active {
   border-color: #bf1a1a;
+  border-width: 3px;
+  box-shadow: 0 0 0 1px #bf1a1a;
 }
 
 .product-detail-thumbnail-image {
@@ -157,15 +174,19 @@
 
 /* Правая часть - информация */
 .product-detail-info-section {
-  width: 536px;
-  height: 356px;
+  width: 100%;
+  max-width: 536px;
+  height: auto;
+  min-height: 356px;
   box-sizing: border-box;
   flex-shrink: 0;
 }
 
 .product-detail-info-content {
-  width: 536px;
-  height: 356px;
+  width: 100%;
+  max-width: 536px;
+  height: auto;
+  min-height: 356px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -175,8 +196,10 @@
 }
 
 .product-detail-info-text-wrapper {
-  width: 512px;
-  height: 265px;
+  width: 100%;
+  max-width: 512px;
+  height: auto;
+  min-height: 265px;
   box-sizing: border-box;
   margin-bottom: 44px;
 }
@@ -226,13 +249,212 @@
   background-color: #a01515;
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
+/* 450px-1279px - планшет: одна колонка, изображения сверху, инфо снизу */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .product-detail-container {
-    padding: 52px 56px;
+    padding: 32px clamp(24px, 6vw, 56px);
   }
 
   .product-detail-main-wrapper {
-    padding: 0 56px;
+    padding: 0 clamp(24px, 6vw, 56px);
+    margin-bottom: 48px;
+  }
+
+  .product-detail-main {
+    flex-direction: column;
+    gap: 32px;
+    min-height: 0;
+  }
+
+  .product-detail-images-section {
+    max-width: 100%;
+    min-height: 0;
+    gap: 16px;
+  }
+
+  .product-detail-main-image-wrapper {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 680 / 402.63;
+    min-height: 0;
+  }
+
+  .product-detail-thumbnails {
+    height: auto;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .product-detail-thumbnail {
+    width: 120px;
+    height: 72px;
+  }
+
+  .product-detail-info-section {
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .product-detail-info-content {
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .product-detail-info-text-wrapper {
+    max-width: 100%;
+    min-height: 0;
+    margin-bottom: 24px;
+  }
+
+  .product-detail-nav {
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .product-detail-title {
+    font-size: 28px;
+  }
+
+  .product-detail-back-button {
+    margin-bottom: 16px;
+  }
+}
+
+/* до 776px: меньше отступы, компактнее блоки */
+@media screen and (max-width: 776px) {
+  .product-detail-container {
+    padding: 24px clamp(16px, 5vw, 24px);
+  }
+
+  .product-detail-main-wrapper {
+    padding: 0 clamp(16px, 5vw, 24px);
+    margin-bottom: 32px;
+  }
+
+  .product-detail-main {
+    gap: 24px;
+  }
+
+  .product-detail-thumbnail {
+    width: 100px;
+    height: 60px;
+  }
+
+  .product-detail-info-text-17 {
+    font-size: 16px;
+  }
+
+  .product-detail-info-button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .product-detail-title {
+    font-size: 24px;
+  }
+}
+
+/* мобильная: максимум компактности, обязательно одна колонка (как на планшете) */
+@media screen and (max-width: 449px) {
+  .product-detail-main {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .product-detail-images-section {
+    max-width: 100% !important;
+    min-height: 0 !important;
+    gap: 12px;
+  }
+
+  .product-detail-main-image-wrapper {
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 680 / 402.63;
+    min-height: 0 !important;
+  }
+
+  .product-detail-info-section {
+    max-width: 100% !important;
+    min-height: 0 !important;
+  }
+
+  .product-detail-info-content {
+    max-width: 100% !important;
+    min-height: 0 !important;
+  }
+
+  .product-detail-info-text-wrapper {
+    max-width: 100% !important;
+    min-height: 0 !important;
+    margin-bottom: 20px;
+  }
+
+  .product-detail-container {
+    padding: 20px 16px;
+  }
+
+  .product-detail-main-wrapper {
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+
+  .product-detail-main {
+    gap: 20px;
+  }
+
+  .product-detail-images-section {
+    gap: 12px;
+  }
+
+  .product-detail-main-image-wrapper {
+    border-radius: 8px;
+  }
+
+  .product-detail-thumbnails {
+    gap: 8px;
+  }
+
+  .product-detail-thumbnail {
+    width: 80px;
+    height: 52px;
+    border-radius: 6px;
+  }
+
+  .product-detail-thumbnail.active {
+    border-width: 2px;
+  }
+
+  .product-detail-info-text-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .product-detail-info-text-17 {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .product-detail-info-button {
+    width: 100%;
+    max-width: none;
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .product-detail-title {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .product-detail-back-button {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .product-detail-back-button svg {
+    width: 10px;
+    height: 16px;
   }
 }

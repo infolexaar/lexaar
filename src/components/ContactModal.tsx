@@ -79,7 +79,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             <div className="relative z-10 p-4 sm:p-6 md:p-8 h-full flex flex-col justify-center">
               {/* Title */}
               <h2 className="text-white text-lg sm:text-xl font-semibold mb-4 sm:mb-6">
-                Începe transformarea bucătăriei tale
+                {t.contactSection.formTitle}
               </h2>
 
               {/* Success Message */}

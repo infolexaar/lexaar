@@ -7,10 +7,17 @@
   min-height: 100vh;
 }
 
+/* Внутренний контейнер не выходит за границы (перенос текста, flex) */
+.hero-content > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .hero-content {
   position: relative;
   z-index: 10;
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,6 +27,7 @@
   padding-right: 104px;
   padding-bottom: 32px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .hero-heading {
@@ -31,6 +39,10 @@
   margin-bottom: 32px;
   margin-top: 0;
   padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .hero-description {
@@ -39,10 +51,14 @@
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
-  width: 797px;
+  width: 100%;
+  max-width: 797px;
   margin-bottom: 32px;
   margin-top: 0;
   padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .hero-cta-button {
@@ -93,24 +109,8 @@
   display: none;
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
-  .hero-content {
-    padding-left: 56px;
-    padding-right: 56px;
-  }
-
-  .hero-description {
-    width: 732px;
-  }
-
-  .hero-benefits-panel {
-    right: 56px;
-  }
-}
-
-/* Tablet styles (768px-776px) - НЕ применяется для 375px */
-@media screen and (max-width: 776px) and (min-width: 768px) {
+/* Планшет 376px-1279px — вид как на 776px */
+@media screen and (min-width: 776px) and (max-width: 1279px) {
   .hero-content {
     padding-top: 140px;
     padding-left: 24px;
@@ -145,8 +145,10 @@
 
   .hero-benefits-mobile {
     display: block;
-    width: 327px;
-    height: 192px;
+    width: 100%;
+    max-width: 327px;
+    height: auto;
+    min-height: 192px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(7px) saturate(120%);
@@ -159,25 +161,107 @@
     box-sizing: border-box;
     margin-top: 32px;
     margin-bottom: 120px;
+    overflow: hidden;
+  }
+
+  .hero-benefits-mobile span,
+  .hero-benefits-mobile .flex {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
-/* Mobile styles (375px) - ДОЛЖЕН БЫТЬ ПОСЛЕДНИМ */
-@media screen and (max-width: 375px) {
+/* 450px-775px: тот же вид что 776, но меньше — текст не выходит за границы */
+@media screen and (min-width: 450px) and (max-width: 775px) {
   .hero-content {
-    padding-top: 136px !important; /* Отступ от верха экрана (136px) */
-    padding-left: 25px !important; /* Отступ слева (25px) */
-    padding-right: 24px !important; /* Отступ справа (24px) */
+    padding-top: 100px;
+    padding-left: clamp(16px, 4vw, 20px);
+    padding-right: clamp(16px, 4vw, 20px);
+    padding-bottom: 20px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero-heading {
+    font-size: clamp(22px, 5.5vw, 28px);
+    line-height: 1.25;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .hero-description {
+    font-size: clamp(13px, 3.2vw, 14px);
+    line-height: 1.4;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .hero-cta-button {
+    width: 100%;
+    max-width: 200px;
+    height: 48px;
+    font-size: 16px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+  }
+
+  .hero-benefits-panel {
+    display: none;
+  }
+
+  /* Карточка преимуществ: высота по контенту, текст переносится */
+  .hero-benefits-mobile {
+    display: block;
+    width: 100%;
+    max-width: min(280px, calc(100vw - 40px));
+    height: auto;
+    min-height: 160px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(7px) saturate(120%);
+    -webkit-backdrop-filter: blur(7px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    box-sizing: border-box;
+    margin-top: 24px;
+    margin-bottom: 80px;
+    overflow: hidden;
+  }
+
+  .hero-benefits-mobile span,
+  .hero-benefits-mobile .flex {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Mobile: ниже 450px — как 375, масштабировано */
+@media screen and (max-width: 449px) {
+  .hero-content {
+    padding-top: clamp(80px, 20vw, 136px) !important;
+    padding-left: clamp(16px, 4vw, 25px) !important;
+    padding-right: clamp(16px, 4vw, 24px) !important;
     padding-bottom: 64px !important; /* Отступ снизу до конца блока (64px) */
     min-height: 800px !important; /* Общая высота блока */
     box-sizing: border-box !important;
   }
 
   .hero-heading {
-    font-size: 35px !important;
-    font-weight: 500 !important; /* Medium */
-    line-height: 44px !important;
-    margin-bottom: 32px !important; /* Отступ после заголовка */
+    font-size: clamp(28px, 8vw, 35px) !important;
+    font-weight: 500 !important;
+    line-height: 1.25 !important;
+    margin-bottom: clamp(20px, 5vw, 32px) !important;
     margin-top: 0 !important;
     padding: 0 !important;
     width: 100% !important;
@@ -185,7 +269,7 @@
   }
 
   .hero-description {
-    font-size: 17px !important;
+    font-size: clamp(15px, 4vw, 17px) !important;
     font-weight: 500 !important; /* Medium */
     line-height: 24px !important;
     margin-bottom: 32px !important; /* Отступ после описания */
@@ -197,7 +281,8 @@
   }
 
   .hero-cta-button {
-    width: 326px !important;
+    width: 100% !important;
+    max-width: 326px !important;
     height: 48px !important;
     font-size: 16px !important;
     font-weight: 500 !important;
@@ -217,11 +302,13 @@
   }
 
   .hero-benefits-mobile {
-    width: 327px !important;
-    height: 192px !important;
+    width: 100% !important;
+    max-width: 327px !important;
+    height: auto !important;
+    min-height: 192px !important;
     padding: 16px !important;
     margin-top: 0 !important;
-    margin-bottom: 64px !important; /* Отступ снизу до конца блока */
+    margin-bottom: 64px !important;
     box-sizing: border-box !important;
     display: block !important;
     border-radius: 12px !important;
@@ -232,6 +319,15 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
       inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+  }
+
+  .hero-benefits-mobile span,
+  .hero-benefits-mobile .flex {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 
   .hero-benefits-panel {

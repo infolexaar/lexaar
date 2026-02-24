@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ContactModal from "./ContactModal";
 import closeButtonIcon from "../assets/categories/main/CloseButton.svg";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./GalleryModal.css";
 
 interface GalleryModalProps {
@@ -26,24 +27,23 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
   isOpen,
   onClose,
   item,
-  // allItems = [], // Reserved for future use
 }) => {
+  const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  // Сбрасываем индекс при открытии модального окна или изменении товара
   useEffect(() => {
     if (isOpen && item) {
       setCurrentImageIndex(0);
     }
-  }, [isOpen, item?.id]);
+  }, [isOpen, item]);
 
   if (!isOpen || !item) return null;
 
-  // Используем изображения карусели товара, если они есть, иначе используем основное изображение
-  const galleryImages = item.carouselImages && item.carouselImages.length > 0
-    ? item.carouselImages
-    : [item.image];
+  const galleryImages =
+    item.carouselImages && item.carouselImages.length > 0
+      ? item.carouselImages
+      : [item.image];
 
   const currentImageSrc = galleryImages[currentImageIndex] || galleryImages[0];
 
@@ -76,7 +76,6 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
             />
           </button>
 
-          {/* Стрелки навигации - показываем только если есть несколько изображений */}
           {galleryImages.length > 1 && (
             <>
               <button
@@ -87,13 +86,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                 }}
                 aria-label="Previous image"
               >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M15 18L9 12L15 6"
                     stroke="currentColor"
@@ -111,13 +104,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                 }}
                 aria-label="Next image"
               >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M9 18L15 12L9 6"
                     stroke="currentColor"
@@ -130,11 +117,9 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
             </>
           )}
 
-          {/* Основной контейнер 1120x583 */}
           <div className="gallery-modal-main-container">
-            {/* Левая часть - фотки */}
+            {/* Левая часть — фото */}
             <div className="gallery-modal-images-section">
-              {/* Основная фотка 688x462 */}
               <div className="gallery-modal-main-image-wrapper">
                 <img
                   src={currentImageSrc}
@@ -143,7 +128,6 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                 />
               </div>
 
-              {/* Галерея миниатюр 508x97 */}
               <div className="gallery-modal-thumbnails">
                 {galleryImages.map((imgSrc, index) => (
                   <div
@@ -160,13 +144,15 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                       src={imgSrc}
                       alt={`${item.title} ${index + 1}`}
                       className="gallery-modal-thumbnail-image"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Правая часть - информация */}
+            {/* Правая часть — информация */}
             <div className="gallery-modal-info-section">
               <div className="gallery-modal-info-content">
                 <h2 className="gallery-modal-info-title">{item.title}</h2>
@@ -177,7 +163,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                 </p>
                 <div className="gallery-modal-info-line"></div>
                 <p className="gallery-modal-info-cta-text">
-                  Pentru recomandări personalizate, contactează-ne.
+                  {t.colorsPage.ctaText}
                 </p>
                 <button
                   className="gallery-modal-info-button"
@@ -186,7 +172,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                     setIsContactModalOpen(true);
                   }}
                 >
-                  Solicită oferta →
+                  {t.cta.button} →
                 </button>
               </div>
             </div>
@@ -203,4 +189,3 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
 };
 
 export default GalleryModal;
-

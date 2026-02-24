@@ -14,7 +14,7 @@ const FormBlock: React.FC = () => {
     useContactForm();
 
   return (
-    <section className="form-block-section">
+    <section className="form-block-section" id="form">
       <div className="form-block-container">
         <div className="form-block-content">
           {/* Background Image */}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ContactModal from "./ContactModal";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./ColorSelectorPage.css";
 
 // Импорт изображений кухонь для каждого цвета
@@ -25,6 +26,7 @@ interface ColorOption {
 }
 
 const ColorSelectorPage: React.FC = () => {
+  const { t } = useLanguage();
   const [selectedColor, setSelectedColor] = useState<string>("1");
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
@@ -126,7 +128,7 @@ const ColorSelectorPage: React.FC = () => {
           {/* Заголовок */}
           <div className="color-selector-header">
             <h1 className="color-selector-title">
-              Culori personalizate pentru bucătăria ta
+              {t.colorsPage.title}
             </h1>
           </div>
 
@@ -177,13 +179,13 @@ const ColorSelectorPage: React.FC = () => {
               {/* Текст и кнопка */}
               <div className="color-selector-cta">
                 <p className="color-selector-cta-text">
-                  Pentru recomandări personalizate, contactează-ne.
+                  {t.colorsPage.ctaText}
                 </p>
                 <button
                   className="color-selector-button"
                   onClick={() => setIsContactModalOpen(true)}
                 >
-                  Solicită oferta →
+                  {t.colorsPage.ctaButton} →
                 </button>
               </div>
             </div>

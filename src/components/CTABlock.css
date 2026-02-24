@@ -25,7 +25,8 @@
 }
 
 .cta-block-panel {
-  width: 908px;
+  width: 100%;
+  max-width: 908px;
   height: 120px;
   background-color: #007042;
   border-radius: 12px;
@@ -82,8 +83,8 @@
   filter: brightness(0) invert(1);
 }
 
-/* 768px-1279px - все выглядит как на 776px */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
+/* 450px-1279px - планшет (450-775 как 776 но меньше) */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .cta-block-container {
     display: flex !important;
     flex-direction: column !important;
@@ -119,27 +120,8 @@
   }
 }
 
-/* Tablet styles (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .cta-block-container {
-    height: auto;
-    min-height: 320px;
-    padding: 60px 40px;
-  }
-
-  .cta-block-panel {
-    width: 100%;
-    max-width: 908px;
-    height: auto;
-    min-height: 120px;
-    position: relative;
-    left: auto;
-    top: auto;
-  }
-}
-
 /* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 449px) {
   .cta-block-section {
     width: 375px !important;
     max-width: 100% !important;
@@ -149,10 +131,10 @@
   .cta-block-container {
     width: 375px !important;
     max-width: 100% !important;
-    height: 384px !important; /* Размер блока 375x384 */
-    min-height: 384px !important;
-    max-height: 384px !important;
-    padding: 32px 24px !important; /* Отступы: 32px сверху/снизу, 24px слева/справа */
+    height: auto !important;
+    min-height: 200px !important;
+    max-height: none !important;
+    padding: 32px 24px !important;
     box-sizing: border-box !important;
     position: relative !important;
     display: flex !important;
@@ -162,12 +144,12 @@
   }
 
   .cta-block-panel {
-    width: 327px !important; /* 375 - 24*2 */
-    height: 240px !important;
+    width: 100% !important;
     max-width: 327px !important;
-    min-width: 327px !important;
-    max-height: 240px !important;
-    min-height: 240px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 120px !important;
+    max-height: none !important;
     background-color: #007042 !important;
     border-radius: 12px !important;
     padding: 24px !important;
@@ -197,10 +179,10 @@
   }
 
   .cta-block-button {
-    width: 327px !important; /* 375 - 24*2 */
-    height: 48px !important;
+    width: 100% !important;
     max-width: 327px !important;
-    min-width: 327px !important;
+    min-width: 0 !important;
+    height: 48px !important;
     background-color: #bf1a1a !important;
     border: none !important;
     border-radius: 8px !important;
@@ -233,45 +215,4 @@
   }
 }
 
-/* Mobile styles (up to 767px, но не 375px) */
-@media (max-width: 767px) and (min-width: 376px) {
-  .cta-block-container {
-    height: auto;
-    min-height: 320px;
-    padding: 40px 20px;
-  }
-
-  .cta-block-panel {
-    width: 100%;
-    height: auto;
-    min-height: 120px;
-    position: relative;
-    left: auto;
-    top: auto;
-    padding: 20px;
-    gap: 24px;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .cta-block-text {
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-
-  .cta-block-button {
-    width: 100%;
-    max-width: 222px;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    margin: 0 auto !important;
-    justify-content: center;
-    align-items: center;
-  }
-}
+/* Промежуточный блок 376-767 удалён: вид как на 776px до 375px */

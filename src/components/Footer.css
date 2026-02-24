@@ -47,9 +47,13 @@
   color: #ffffff;
   margin: 0;
   padding: 0;
-  width: 368px;
-  height: 48px;
+  width: 100%;
+  max-width: 368px;
+  height: auto;
+  min-height: 0;
   box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .footer-contacts {
@@ -85,7 +89,8 @@
   font-weight: 400;
   line-height: 20px;
   color: #ffffff;
-  white-space: nowrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .footer-middle,
@@ -129,7 +134,8 @@
 }
 
 .footer-separator {
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: 1px;
   background-color: #ffffff;
   margin: 24px auto 0 auto;
@@ -141,13 +147,14 @@
   width: 100%;
   max-width: 1440px;
   margin: 24px auto 0 auto;
-  padding: 0 360px 48px 360px;
+  padding: 0 clamp(24px, 8vw, 104px) 48px clamp(24px, 8vw, 104px);
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 24px;
 }
 
 .footer-copyright {
@@ -187,12 +194,12 @@
   display: block;
 }
 
-/* 768px-1279px - все выглядит как на 776px - ДОЛЖЕН БЫТЬ ПЕРЕД другими tablet стилями */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
+/* 450px-1279px - планшет (450-775 как 776 но меньше) */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .footer-container {
-    width: 776px !important;
-    max-width: 100% !important;
-    padding: 32px 56px 0 56px !important;
+    width: 100% !important;
+    max-width: 776px !important;
+    padding: 24px clamp(32px, 8vw, 56px) 0 clamp(32px, 8vw, 56px) !important;
     box-sizing: border-box !important;
   }
 
@@ -262,38 +269,18 @@
   }
 }
 
-/* Tablet styles (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .footer-container {
-    padding: 48px 40px 32px 40px;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .footer-separator {
-    padding: 0 40px;
-  }
-
-  .footer-bottom {
-    padding: 24px 40px 32px 40px;
-    flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
-  }
-}
-
-/* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+/* Mobile: ниже 450px — как 375, масштабировано */
+@media screen and (max-width: 449px) {
   .footer-section {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .footer-container {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    padding: 32px 24px 0 24px !important; /* Отступы: 32px сверху, 24px по бокам */
+    padding: clamp(24px, 6vw, 32px) clamp(20px, 5vw, 24px) 0 clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
@@ -538,28 +525,83 @@
   }
 }
 
-/* Mobile styles (up to 767px, но не 375px) */
-@media (max-width: 767px) and (min-width: 376px) {
-  .footer-container {
-    padding: 40px 20px 32px 20px;
-    flex-direction: column;
-    gap: 32px;
+/* Ниже 776px: сохраняем позиции, без наезжания текста */
+@media screen and (max-width: 776px) {
+  .footer-section {
+    width: 100%;
+    overflow-x: hidden;
   }
 
-  .footer-logo {
-    width: 150px;
-    height: 50px;
+  .footer-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 32px clamp(16px, 5vw, 32px) 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-container-top {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 28px !important;
+  }
+
+  .footer-left {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .footer-description {
+    max-width: 100% !important;
+    min-height: 0 !important;
+  }
+
+  .footer-contacts {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-top: 8px !important;
+    width: 100% !important;
+  }
+
+  .footer-contact-text {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .footer-middle,
+  .footer-right {
+    width: 100% !important;
+    min-width: 0 !important;
   }
 
   .footer-separator {
-    padding: 0 20px;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .footer-bottom {
-    padding: 20px 20px 32px 20px;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: clamp(16px, 5vw, 32px) !important;
+    padding-right: clamp(16px, 5vw, 32px) !important;
+    padding-bottom: 32px !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+  }
+
+  .footer-copyright {
+    flex-shrink: 0 !important;
+  }
+
+  .footer-social-icons {
+    flex-wrap: wrap !important;
   }
 }
+
+/* Промежуточный блок 376-767 удалён: вид как на 776px до 375px */
 

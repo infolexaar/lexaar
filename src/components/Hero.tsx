@@ -5,13 +5,22 @@ import LGIcon from "../assets/icons/LG.svg";
 import arrowIcon from "../assets/icons/arrow.svg";
 import ContactModal from "./ContactModal";
 import Header from "./Header";
+import { useLanguage } from "../contexts/LanguageContext";
 import { trackButtonClick, trackFacebookEvent } from "../utils/analytics";
-import { BENEFITS, COMPANY_INFO } from "../constants";
+import { COMPANY_INFO } from "../constants";
 import "./Hero.css";
 
 const Hero = () => {
+  const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSmsShaking, setIsSmsShaking] = useState(false);
+  const benefits = [
+    t.home.hero.benefit1,
+    t.home.hero.benefit2,
+    t.home.hero.benefit3,
+    t.home.hero.benefit4,
+    t.home.hero.benefit5,
+  ];
 
   const handleSmsClick = () => {
     setIsSmsShaking(true);
@@ -26,7 +35,6 @@ const Hero = () => {
     window.location.href = `sms:${phoneNumber}`;
   };
 
-  const benefits = BENEFITS;
   return (
     <div
       className="w-screen relative overflow-x-hidden"
@@ -36,7 +44,7 @@ const Hero = () => {
         minHeight: "100vh",
       }}
     >
-      <section className="relative w-full min-h-screen flex items-start">
+      <section className="relative w-full min-h-screen flex items-start" id="top">
         {/* Background Image - Full Width */}
         <div className="absolute inset-0 z-0 w-full h-full">
           <img
@@ -56,17 +64,16 @@ const Hero = () => {
           <div className="w-full lg:w-auto">
             {/* Main heading */}
             <h2 className="hero-heading">
-              Mobila la comandă.
+              {t.home.hero.heading1}
               <br />
-              Design profesionist.
+              {t.home.hero.heading2}
               <br />
-              Execuție premium.
+              {t.home.hero.heading3}
             </h2>
 
             <div style={{ marginBottom: "32px" }}>
               <p className="hero-description">
-                Noi ne ocupăm de măsurători, proiectare, fabricație și montajul
-                gratuit — tu doar te bucuri de rezultatul final.
+                {t.home.hero.description}
               </p>
             </div>
 
@@ -83,7 +90,7 @@ const Hero = () => {
                 setIsModalOpen(true);
               }}
             >
-              <span>Solicită oferta</span>
+              <span>{t.home.hero.ctaButton}</span>
               <img
                 src={arrowIcon}
                 alt="arrow"

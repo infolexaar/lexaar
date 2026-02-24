@@ -57,7 +57,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
         </button>
 
         {/* Logo */}
-        <Link to="/" className="header-logo-wrapper" onClick={closeMenu}>
+        <Link
+          to="/"
+          className="header-logo-wrapper"
+          onClick={() => {
+            closeMenu();
+            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          }}
+        >
           <img
             src={Logo}
             alt="LexAar Bucătării"

@@ -16,7 +16,9 @@
 
 .gallery-modal-content {
   position: relative;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
+  max-height: 100vh;
   height: 900px;
   display: flex;
   align-items: center;
@@ -24,6 +26,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: auto;
 }
 
 /* Кнопка закрытия */
@@ -102,19 +105,25 @@
 
 /* Основной контейнер 1120x583 */
 .gallery-modal-main-container {
-  width: 1120px;
-  height: 583px;
+  width: 100%;
+  max-width: 1120px;
+  height: auto;
+  min-height: 583px;
   display: flex;
   align-items: flex-start;
   gap: 24px;
   box-sizing: border-box;
   margin: 0 auto;
+  position: relative;
 }
+
 
 /* Левая часть - фотки */
 .gallery-modal-images-section {
-  width: 688px;
-  height: 584px;
+  width: 100%;
+  max-width: 688px;
+  height: auto;
+  min-height: 584px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -124,7 +133,8 @@
 
 /* Основная фотка 688x462 */
 .gallery-modal-main-image-wrapper {
-  width: 688px;
+  width: 100%;
+  max-width: 688px;
   height: 462px;
   border-radius: 12px;
   overflow: hidden;
@@ -136,6 +146,8 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  image-rendering: high-quality;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Галерея миниатюр 508x97 */
@@ -171,15 +183,19 @@
 
 /* Правая часть - информация */
 .gallery-modal-info-section {
-  width: 408px;
-  height: 334px;
+  width: 100%;
+  max-width: 408px;
+  height: auto;
+  min-height: 334px;
   box-sizing: border-box;
   flex-shrink: 0;
 }
 
 .gallery-modal-info-content {
-  width: 408px;
-  height: 334px;
+  width: 100%;
+  max-width: 408px;
+  height: auto;
+  min-height: 334px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -202,7 +218,8 @@
 }
 
 .gallery-modal-info-line {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   height: 1px;
   background-color: #cdccc3;
   margin: 12px 0;
@@ -234,7 +251,8 @@
 }
 
 .gallery-modal-info-button {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   height: 48px;
   background-color: #bf1a1a;
   color: #ffffff;
@@ -252,4 +270,209 @@
 
 .gallery-modal-info-button:hover {
   background-color: #a01515;
+}
+
+/* Планшет */
+@media screen and (max-width: 1279px) {
+  .gallery-modal-content {
+    padding: 24px 16px;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .gallery-modal-main-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .gallery-modal-close {
+    right: 16px;
+    top: 16px;
+  }
+
+  .gallery-modal-nav-left {
+    left: 16px;
+  }
+
+  .gallery-modal-nav-right {
+    right: 16px;
+  }
+}
+
+/* ─── Мобильный ≤ 449px — идентично ПК по стилю, адаптировано по размерам ─── */
+@media screen and (max-width: 449px) {
+  /* Тот же тёмно-серый фон, что и на ПК */
+  .gallery-modal-overlay {
+    background-color: #616161;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .gallery-modal-content {
+    padding: 0;
+    height: auto;
+    min-height: 100dvh;
+    max-height: none;
+    overflow-y: visible;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  /* Крест: зафиксирован 26px от верха и справа, 28×28, серый квадрат, белая X */
+  .gallery-modal-close {
+    position: fixed;
+    top: 26px;
+    right: 26px;
+    width: 28px;
+    height: 28px;
+    background: rgba(80, 80, 80, 0.85);
+    border-radius: 6px;
+    padding: 0;
+    z-index: 1100;
+  }
+
+  .gallery-modal-close-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+  }
+
+  /* Основной контейнер: без фона, max 379px, отступ сверху = 26 (верх) + 28 (крест) + 26 (зазор) = 80px */
+  .gallery-modal-main-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 379px;
+    margin: 80px auto 32px;
+    padding: 0 26px;
+    box-sizing: border-box;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+    gap: 0;
+    position: static;
+  }
+
+  /* Блок с фото: ширина 327px (379 - 2×26), без лишних отступов */
+  .gallery-modal-images-section {
+    width: 100%;
+    max-width: 327px;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    min-height: unset;
+  }
+
+  /* Основная картинка: 327×395 */
+  .gallery-modal-main-image-wrapper {
+    width: 100%;
+    max-width: 327px;
+    height: 395px;
+    min-height: 395px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* Галерея миниатюр: 12px ниже фото, 104×61, скролл при >3 */
+  .gallery-modal-thumbnails {
+    width: 100%;
+    max-width: 327px;
+    height: 61px;
+    margin-top: 12px;
+    padding: 0;
+    gap: 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .gallery-modal-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-modal-thumbnail {
+    width: 104px;
+    min-width: 104px;
+    height: 61px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border-width: 2px;
+    overflow: hidden;
+  }
+
+  .gallery-modal-thumbnail.active {
+    border-color: #bf1a1a;
+  }
+
+  /* Инфо-блок: 16px ниже галереи, РАМКА как на ПК — полупрозрачный стекло-эффект */
+  .gallery-modal-info-section {
+    width: 100%;
+    max-width: 327px;
+    margin-top: 16px;
+    padding: 0;
+    min-height: unset;
+  }
+
+  .gallery-modal-info-content {
+    width: 100%;
+    max-width: 100%;
+    min-height: unset;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border-radius: 12px;
+  }
+
+  .gallery-modal-info-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .gallery-modal-info-line {
+    background-color: #cdccc3;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .gallery-modal-info-description {
+    font-size: 14px;
+    line-height: 20px;
+    color: #e8e7e3;
+    margin: 0;
+  }
+
+  .gallery-modal-info-cta-text {
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .gallery-modal-info-button {
+    max-width: 100%;
+    width: 100%;
+    height: 48px;
+    margin-top: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #bf1a1a;
+    color: #ffffff;
+  }
+
+  .gallery-modal-nav-left,
+  .gallery-modal-nav-right {
+    display: none;
+  }
 }

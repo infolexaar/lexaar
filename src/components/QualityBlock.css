@@ -20,7 +20,8 @@
 }
 
 .quality-block-content {
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: 404px;
   display: flex;
   flex-direction: column;
@@ -37,8 +38,10 @@
   padding: 0;
   margin-bottom: 16px;
   text-align: left;
-  width: 1027px;
-  height: 128px;
+  width: 100%;
+  max-width: 1027px;
+  height: auto;
+  min-height: 128px;
   box-sizing: border-box;
 }
 
@@ -52,6 +55,10 @@
   padding: 0;
   margin-bottom: 44px;
   text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .quality-block-cards {
@@ -107,12 +114,16 @@
   padding: 0;
   text-align: center;
   width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 /* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
 
 /* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 449px) {
   .quality-block-section {
     width: 375px !important;
     max-width: 100% !important;
@@ -224,87 +235,13 @@
   }
 }
 
-/* Tablet styles (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* 450px-1279px - планшет (450-775 как 776 но меньше) */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .quality-block-container {
-    height: auto;
-    min-height: 524px;
-    padding: 60px 40px;
-  }
-
-  .quality-block-content {
-    width: 100%;
-    height: auto;
-  }
-
-  .quality-block-title {
-    font-size: 36px;
-    line-height: 48px;
-  }
-
-  .quality-block-subtitle {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  .quality-block-cards {
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-  }
-
-  .quality-block-card {
-    width: calc(50% - 8px);
-    max-width: 296px;
-    height: 196px;
-  }
-}
-
-/* Mobile styles (up to 767px) */
-@media (max-width: 767px) {
-  .quality-block-container {
-    height: auto;
-    min-height: 524px;
-    padding: 60px 20px;
-  }
-
-  .quality-block-content {
-    width: 100%;
-    height: auto;
-  }
-
-  .quality-block-title {
-    font-size: 28px;
-    line-height: 36px;
-    margin-bottom: 12px;
-  }
-
-  .quality-block-subtitle {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 32px;
-  }
-
-  .quality-block-cards {
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .quality-block-card {
-    width: 100%;
-    max-width: 296px;
-    height: 196px;
-  }
-}
-
-/* 776px - точные размеры по дизайну - ДОЛЖЕН БЫТЬ В КОНЦЕ */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
-  .quality-block-container {
-    width: 776px !important;
-    max-width: 100% !important;
+    width: 100% !important;
+    max-width: 776px !important;
     height: 620px !important;
-    padding: 32px 56px !important;
+    padding: 24px clamp(32px, 8vw, 56px) !important;
     box-sizing: border-box !important;
   }
 

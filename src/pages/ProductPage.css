@@ -1,0 +1,16 @@
+/* Отступы main на странице продукта для малых экранов */
+.product-page-main {
+  margin-top: 82px;
+}
+
+@media screen and (max-width: 776px) {
+  .product-page-main {
+    margin-top: 72px;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .product-page-main {
+    margin-top: 64px;
+  }
+}

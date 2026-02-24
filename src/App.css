@@ -5,3 +5,17 @@
   margin: 0;
   padding: 0;
 }
+
+/* Плавное появление контента при смене страницы */
+.page-transition {
+  animation: pageFadeIn 0.25s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,6 +1,7 @@
 .blog-page {
   width: 100%;
   background-color: #ffffff;
+  margin-top: 82px;
 }
 
 /* Blog Section */
@@ -14,7 +15,7 @@
 .blog-container {
   width: 1440px;
   max-width: 100%;
-  min-height: 1752px;
+  min-height: 0;
   padding: 60px 104px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -33,23 +34,26 @@
 /* Blog Grid */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
   gap: 24px;
   margin-bottom: 48px;
-  justify-content: start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Blog Card */
 .blog-card {
-  width: 400px;
-  height: 410.67px;
+  width: 100%;
+  min-height: 0;
+  height: auto;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  border-radius: 0;
+  border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .blog-card:hover {
@@ -59,10 +63,11 @@
 
 .blog-card-image-wrapper {
   position: relative;
-  width: 400px;
-  height: 266.67px;
+  width: 100%;
+  aspect-ratio: 400 / 266.67;
   overflow: hidden;
   border-radius: 12px;
+  flex-shrink: 0;
 }
 
 .blog-card-image {
@@ -71,6 +76,7 @@
   object-fit: cover;
   transition: transform 0.3s ease;
   border-radius: 12px;
+  display: block;
 }
 
 .blog-card:hover .blog-card-image {
@@ -131,8 +137,10 @@
 
 /* Pagination */
 .blog-pagination {
-  width: 1232px;
-  height: 56px;
+  width: 100%;
+  max-width: 1232px;
+  height: auto;
+  min-height: 56px;
   margin: 0 auto;
   margin-top: auto;
   padding-top: 0;
@@ -228,116 +236,64 @@
   cursor: not-allowed;
 }
 
-/* Responsive Design */
-@media (max-width: 1279px) {
+/* ========== 1220px и ниже — гибкая сетка ========== */
+@media screen and (max-width: 1220px) {
   .blog-container {
-    width: 100%;
-    max-width: 1279px;
-    padding: 52px 56px;
-    min-height: 1522px;
+    max-width: 100%;
+    padding: 48px clamp(24px, 5vw, 56px);
   }
 
   .blog-title {
-    font-size: 36px;
-    margin-bottom: 42px;
+    font-size: clamp(28px, 3.2vw, 38px);
+    margin-bottom: 36px;
   }
 
   .blog-grid {
-    grid-template-columns: repeat(3, 348px);
-    gap: 21px;
-    margin-bottom: 42px;
-  }
-
-  .blog-card {
-    width: 348px;
-    height: 357px;
-  }
-
-  .blog-card-image-wrapper {
-    width: 348px;
-    height: 232px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
   }
 
   .blog-card-title {
-    font-size: 21px;
+    font-size: clamp(18px, 2vw, 22px);
   }
 
-  .blog-pagination {
-    width: 1167px;
-    height: 49px;
+  .blog-card-description {
+    font-size: 15px;
   }
 }
 
-/* Tablet styles (776px) */
-@media (max-width: 776px) {
+/* ========== 776px — планшет: 2 колонки, компактнее ========== */
+@media screen and (max-width: 776px) {
+  .blog-page {
+    margin-top: 72px;
+  }
+
+  .blog-section {
+    padding: 40px 0;
+  }
+
   .blog-container {
-    padding: 40px 56px;
-  }
-
-  .blog-pagination {
-    width: 664px;
-  }
-}
-
-/* Mobile styles (375px) */
-@media (max-width: 375px) {
-  .blog-container {
-    padding: 32px 24px;
-  }
-
-  .blog-pagination {
-    width: 327px;
-  }
-}
-
-@media (max-width: 1500px) {
-  .blog-container {
-    max-width: 100%;
-    padding: 0 104px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 968px) {
-  .blog-container {
-    padding: 0 56px;
+    padding: 32px clamp(20px, 5vw, 32px);
   }
 
   .blog-title {
-    font-size: 42px;
+    font-size: 28px;
+    margin-bottom: 28px;
   }
 
   .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .blog-card-image-wrapper {
-    height: 280px;
-  }
-}
-
-@media (max-width: 640px) {
-  .blog-container {
-    padding: 0 24px;
-  }
-
-  .blog-title {
-    font-size: 36px;
+    gap: 20px;
     margin-bottom: 32px;
   }
 
-  .blog-card-content {
-    padding: 20px;
+  .blog-card-image-wrapper,
+  .blog-card-image {
+    border-radius: 10px;
   }
 
   .blog-card-title {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .blog-card-description {
@@ -345,18 +301,91 @@
   }
 
   .blog-pagination {
-    flex-wrap: wrap;
-    gap: 8px;
+    max-width: 100%;
+  }
+}
+
+/* ========== 449px — мобильный: 1 колонка ========== */
+@media screen and (max-width: 449px) {
+  .blog-page {
+    margin-top: 64px;
   }
 
-  .blog-pagination-number {
-    min-width: 36px;
-    height: 36px;
+  .blog-section {
+    padding: 28px 0;
+  }
+
+  .blog-container {
+    padding: 24px 16px;
+  }
+
+  .blog-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .blog-card {
+    border-radius: 10px;
+  }
+
+  .blog-card-image-wrapper,
+  .blog-card-image {
+    border-radius: 8px;
+  }
+
+  .blog-card-content {
+    padding: 12px 0 0 0;
+  }
+
+  .blog-card-title {
+    font-size: 18px;
+  }
+
+  .blog-card-description {
     font-size: 14px;
+    -webkit-line-clamp: 2;
   }
 
-  .blog-pagination-next {
-    padding: 8px 16px;
+  .blog-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 0;
+  }
+
+  .pagination-numbers {
+    position: static;
+    transform: none;
+  }
+
+  .pagination-next {
+    position: static;
+  }
+}
+
+/* ========== 375px — узкая мобила ========== */
+@media screen and (max-width: 375px) {
+  .blog-container {
+    padding: 20px 14px;
+  }
+
+  .blog-title {
+    font-size: 22px;
+  }
+
+  .blog-card-title {
+    font-size: 17px;
+  }
+
+  .pagination-button {
+    width: 28px;
+    height: 28px;
     font-size: 14px;
   }
 }

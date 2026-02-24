@@ -9,7 +9,7 @@
 .gallery-block-container {
   width: 100%;
   max-width: 1440px;
-  min-height: 1730.67px;
+  min-height: 0;
   margin: 0 auto;
   padding: 60px 104px;
   box-sizing: border-box;
@@ -30,18 +30,20 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
   gap: 32px 16px;
   width: 100%;
   margin-bottom: 48px;
-  justify-content: start;
+  box-sizing: border-box;
 }
 
 .gallery-item {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 326.67px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  min-height: 0;
   cursor: pointer;
   transition: transform 0.2s ease;
   box-sizing: border-box;
@@ -52,8 +54,8 @@
 }
 
 .gallery-item-image {
-  width: 400px;
-  height: 266.67px;
+  width: 100%;
+  aspect-ratio: 400 / 266.67;
   border-radius: 12px;
   overflow: hidden;
   background-color: #f5f5f5;
@@ -67,6 +69,8 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  image-rendering: high-quality;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .gallery-item-placeholder {
@@ -94,7 +98,8 @@
 }
 
 .gallery-pagination {
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: 56px;
   margin: 0 auto;
   margin-top: auto;
@@ -191,169 +196,143 @@
   cursor: not-allowed;
 }
 
-/* Responsive Design for 1279px */
-@media (max-width: 1279px) {
+/* Планшет: 777–1279 — сетка 2 колонки */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .gallery-block-container {
-    width: 100%;
-    max-width: 1279px;
-    padding: 52px 56px;
-  }
-
-  .gallery-pagination {
-    width: 1167px;
-  }
-}
-
-/* Tablet styles (776px) */
-@media (max-width: 776px) {
-  .gallery-block-container {
-    width: 100%;
-    max-width: 776px;
-    padding: 40px 56px;
-    min-height: auto;
-  }
-
-  .gallery-pagination {
-    width: 664px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 32px clamp(24px, 6vw, 56px) !important;
+    min-height: auto !important;
   }
 
   .gallery-block-title {
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 24px;
+    font-size: clamp(28px, 4vw, 32px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 24px !important;
   }
 
   .gallery-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-    padding-bottom: 8px;
-    margin-bottom: 24px;
-  }
-
-  .gallery-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .gallery-grid::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .gallery-grid::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px 16px !important;
+    overflow: visible !important;
+    overflow-x: unset !important;
+    overflow-y: unset !important;
+    -webkit-overflow-scrolling: unset !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 32px !important;
   }
 
   .gallery-item {
-    width: 280px;
-    min-width: 280px;
-    height: auto;
-    flex-shrink: 0;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
   }
 
   .gallery-item-image {
-    width: 280px;
-    height: 186px;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 400 / 266.67 !important;
+    min-height: 0 !important;
   }
 
   .gallery-item-title {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: clamp(16px, 2vw, 18px) !important;
+    line-height: 1.3 !important;
   }
 
   .gallery-pagination {
-    width: 100%;
-    max-width: 728px;
-    height: auto;
-    min-height: 56px;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 56px !important;
   }
 }
 
-/* Mobile styles (375px) */
-@media (max-width: 375px) {
+/* Мобильная: ≤449 — сетка 1 колонка */
+@media (max-width: 449px) {
   .gallery-block-container {
-    width: 100%;
-    max-width: 375px;
-    padding: 32px 24px;
-    min-height: auto;
-  }
-
-  .gallery-pagination {
-    width: 327px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 16px !important;
+    min-height: auto !important;
   }
 
   .gallery-block-title {
-    font-size: 28px;
-    line-height: 36px;
-    margin-bottom: 20px;
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 20px !important;
   }
 
   .gallery-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none !important; /* Скрываем скролл для Firefox */
-    -ms-overflow-style: none !important; /* Скрываем скролл для IE/Edge */
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-  }
-
-  .gallery-grid::-webkit-scrollbar {
-    display: none !important; /* Скрываем скролл для Chrome/Safari */
-    width: 0 !important;
-    height: 0 !important;
-    background: transparent !important;
-  }
-
-  .gallery-grid::-webkit-scrollbar-track {
-    display: none !important;
-  }
-
-  .gallery-grid::-webkit-scrollbar-thumb {
-    display: none !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    overflow: visible !important;
+    overflow-x: unset !important;
+    overflow-y: unset !important;
+    -webkit-overflow-scrolling: unset !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 24px !important;
   }
 
   .gallery-item {
-    width: 240px;
-    min-width: 240px;
-    height: auto;
-    flex-shrink: 0;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
   }
 
   .gallery-item-image {
-    width: 240px;
-    height: 160px;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 400 / 266.67 !important;
+    min-height: 0 !important;
   }
 
   .gallery-item-title {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 16px !important;
+    line-height: 1.35 !important;
   }
 
   .gallery-pagination {
-    width: 100%;
-    max-width: 335px;
-    height: auto;
-    min-height: 48px;
-    flex-wrap: wrap;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 48px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 
   .pagination-button {
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 14px !important;
   }
 
   .pagination-next {
-    font-size: 12px;
+    font-size: 12px !important;
+  }
+}
+
+/* Ниже 776px (но выше 449px): контейнер на всю ширину, сетка 2 колонки */
+@media screen and (min-width: 450px) and (max-width: 776px) {
+  .gallery-block-container {
+    max-width: 100% !important;
+    padding-left: clamp(16px, 5vw, 24px) !important;
+    padding-right: clamp(16px, 5vw, 24px) !important;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px 10px !important;
+  }
+
+  .gallery-item-title {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
   }
 }
 

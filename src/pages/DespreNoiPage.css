@@ -1,6 +1,7 @@
 .despre-noi-page {
   width: 100%;
   background-color: #ffffff;
+  margin-top: 82px;
 }
 
 /* Intro Section */
@@ -13,7 +14,8 @@
 .despre-noi-intro-container {
   width: 1440px;
   max-width: 100%;
-  height: 248px;
+  height: auto;
+  min-height: 120px;
   padding: 60px 104px 0;
   display: flex;
   flex-direction: column;
@@ -48,7 +50,8 @@
 .despre-noi-main-container {
   width: 1440px;
   max-width: 100%;
-  height: 1032px;
+  min-height: 0;
+  height: auto;
   padding: 60px 104px;
   display: flex;
   flex-direction: column;
@@ -72,13 +75,15 @@
   position: relative;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .despre-noi-mission-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: 12px;
 }
 
 .despre-noi-mission-content {
@@ -155,18 +160,82 @@
   margin: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 1279px) {
+/* ========== 1220px и ниже — гибкие колонки ========== */
+@media screen and (max-width: 1220px) {
   .despre-noi-intro-container {
-    width: 100%;
-    max-width: 1279px;
-    height: auto;
-    min-height: 216px;
-    padding: 52px 56px 0;
+    max-width: 100%;
+    padding: 48px clamp(24px, 5vw, 56px) 0;
   }
 
   .despre-noi-intro-title {
-    font-size: 36px;
+    font-size: clamp(28px, 3.2vw, 38px);
+  }
+
+  .despre-noi-intro-text {
+    font-size: clamp(16px, 1.6vw, 20px);
+  }
+
+  .despre-noi-main-container {
+    max-width: 100%;
+    padding: 48px clamp(24px, 5vw, 56px);
+  }
+
+  .despre-noi-mission-section {
+    grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+    gap: 20px;
+  }
+
+  .despre-noi-mission-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 604 / 416;
+    min-height: 220px;
+  }
+
+  .despre-noi-mission-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .despre-noi-mission-title {
+    font-size: clamp(24px, 2.5vw, 30px);
+  }
+
+  .despre-noi-mission-text {
+    font-size: 16px;
+  }
+
+  .despre-noi-advantages-title {
+    font-size: clamp(24px, 2.5vw, 30px);
+    margin-bottom: 24px;
+  }
+
+  .despre-noi-advantages-section {
+    margin-top: 28px;
+  }
+
+  .despre-noi-advantage-title {
+    font-size: 18px;
+  }
+
+  .despre-noi-advantage-description {
+    font-size: 15px;
+  }
+}
+
+/* ========== 776px — планшет: одна колонка, картинка сверху ========== */
+@media screen and (max-width: 776px) {
+  .despre-noi-page {
+    margin-top: 72px;
+  }
+
+  .despre-noi-intro-container {
+    padding: 28px clamp(20px, 5vw, 32px) 0;
+  }
+
+  .despre-noi-intro-title {
+    font-size: 28px;
   }
 
   .despre-noi-intro-text {
@@ -174,48 +243,45 @@
   }
 
   .despre-noi-main-container {
-    width: 100%;
-    max-width: 1279px;
-    height: auto;
-    min-height: 898px;
-    padding: 52px 56px;
+    padding: 32px clamp(20px, 5vw, 32px);
   }
 
   .despre-noi-mission-section {
-    grid-template-columns: 525px 1fr;
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .despre-noi-mission-image-wrapper {
-    width: 525px;
-    height: 362px;
+    order: -1;
+    width: 100%;
+    aspect-ratio: 604 / 416;
+    min-height: 0;
   }
 
   .despre-noi-mission-content {
-    width: 100%;
-    max-width: 525px;
+    gap: 20px;
   }
 
   .despre-noi-mission-title {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .despre-noi-mission-text {
     font-size: 15px;
-    gap: 14px;
+    gap: 12px;
   }
 
   .despre-noi-advantages-title {
-    font-size: 30px;
-    margin-bottom: 28px;
+    font-size: 26px;
+    margin-bottom: 20px;
   }
 
   .despre-noi-advantages-section {
-    margin-top: 31px;
+    margin-top: 24px;
   }
 
   .despre-noi-advantages-list {
-    gap: 21px;
+    gap: 20px;
   }
 
   .despre-noi-advantage-title {
@@ -223,66 +289,22 @@
   }
 
   .despre-noi-advantage-description {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 1500px) {
-  .despre-noi-intro-container,
-  .despre-noi-main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding-left: 104px;
-    padding-right: 104px;
-  }
-}
-
-@media (max-width: 968px) {
-  .despre-noi-mission-section {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .despre-noi-mission-image-wrapper {
-    width: 100%;
-    height: 300px;
-    order: -1;
+/* ========== 449px — мобильный ========== */
+@media screen and (max-width: 449px) {
+  .despre-noi-page {
+    margin-top: 64px;
   }
 
   .despre-noi-intro-container {
-    padding: 60px 24px 0;
-    height: auto;
-    min-height: 248px;
-  }
-
-  .despre-noi-main-container {
-    padding: 60px 24px;
-    height: auto;
-    min-height: 1032px;
+    padding: 20px 16px 0;
   }
 
   .despre-noi-intro-title {
-    font-size: 32px;
-  }
-
-  .despre-noi-intro-text {
-    font-size: 18px;
-  }
-
-  .despre-noi-mission-title,
-  .despre-noi-advantages-title {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 640px) {
-  .despre-noi-intro-container {
-    padding: 60px 20px 0;
-    height: auto;
-  }
-
-  .despre-noi-intro-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .despre-noi-intro-text {
@@ -290,21 +312,76 @@
   }
 
   .despre-noi-main-container {
-    padding: 60px 20px;
-    height: auto;
+    padding: 24px 16px;
   }
 
-  .despre-noi-mission-title,
+  .despre-noi-mission-section {
+    gap: 20px;
+  }
+
+  .despre-noi-mission-image-wrapper {
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+  }
+
+  .despre-noi-mission-title {
+    font-size: 22px;
+  }
+
+  .despre-noi-mission-text {
+    font-size: 15px;
+  }
+
   .despre-noi-advantages-title {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .despre-noi-advantages-section {
+    margin-top: 20px;
+  }
+
+  .despre-noi-advantages-list {
+    gap: 16px;
   }
 
   .despre-noi-advantage-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .despre-noi-advantage-description {
+    font-size: 14px;
+  }
+}
+
+/* ========== 375px — узкая мобила ========== */
+@media screen and (max-width: 375px) {
+  .despre-noi-intro-container {
+    padding: 16px 14px 0;
+  }
+
+  .despre-noi-intro-title {
+    font-size: 22px;
+  }
+
+  .despre-noi-main-container {
+    padding: 20px 14px;
+  }
+
+  .despre-noi-mission-title {
+    font-size: 20px;
+  }
+
+  .despre-noi-advantages-title {
+    font-size: 20px;
+  }
+
+  .despre-noi-advantage-title {
     font-size: 15px;
+  }
+
+  .despre-noi-advantage-description {
+    font-size: 14px;
   }
 }
 

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { initAnalyticsAfterConsent } from "../utils/analytics";
 import { initFirebaseAnalytics } from "../config/firebase";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const CookieConsent: React.FC = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [isBlurred, setIsBlurred] = useState(false);
 
@@ -28,15 +30,11 @@ const CookieConsent: React.FC = () => {
   };
 
   const handleReject = () => {
-    // Показываем сообщение об отказе и перенаправляем
-    alert(
-      "Pentru a utiliza site-ul, trebuie să acceptați utilizarea cookie-urilor."
-    );
+    alert(t.cookieConsent.mustAcceptAlert);
   };
 
   const handlePrivacyPolicy = () => {
-    // Здесь можно добавить ссылку на политику конфиденциальности
-    alert("Politica de confidențialitate va fi disponibilă în curând.");
+    alert(t.cookieConsent.privacyAlert);
   };
 
   if (!isVisible) return null;
@@ -97,24 +95,21 @@ const CookieConsent: React.FC = () => {
 
             {/* Title */}
             <h2 className="text-xl font-bold text-gray-900 text-center mb-4">
-              Utilizarea Cookie-urilor
+              {t.cookieConsent.title}
             </h2>
 
             {/* Message */}
             <p className="text-gray-700 text-sm leading-relaxed mb-6 text-center">
-              Utilizăm cookie-uri pentru a ne asigura că vă oferim cea mai bună
-              experiență pe site-ul nostru. Dacă continuați să utilizați acest
-              site, vom presupune că sunteți mulțumit de acest lucru.
+              {t.cookieConsent.text}
             </p>
 
             {/* Privacy policy link */}
             <p className="text-gray-600 text-xs text-center mb-6">
-              Pentru mai multe informații, consultați{" "}
               <button
                 onClick={handlePrivacyPolicy}
                 className="text-[#BF1A1A] hover:underline font-medium"
               >
-                Politica de confidențialitate
+                {t.cookieConsent.privacyLink}
               </button>
             </p>
 
@@ -124,13 +119,13 @@ const CookieConsent: React.FC = () => {
                 onClick={handleReject}
                 className="flex-1 px-4 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
               >
-                Refuz
+                {t.cookieConsent.reject}
               </button>
               <button
                 onClick={handleAccept}
                 className="flex-1 px-4 py-3 bg-[#BF1A1A] text-white rounded-lg font-medium hover:bg-red-700 transition-colors"
               >
-                De acord
+                {t.cookieConsent.accept}
               </button>
             </div>
           </div>

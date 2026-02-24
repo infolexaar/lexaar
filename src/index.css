@@ -9,6 +9,16 @@
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+  }
+
+  /* Якорные ссылки (#section) прокручивают блок к верху экрана, а не в центр */
+  [id] {
+    scroll-margin-top: 0;
+  }
+
   html,
   body {
     width: 100%;
@@ -23,6 +33,22 @@
   #root {
     width: 100%;
     height: 100vh;
+  }
+
+  /* Многоязычный текст: перенос длинных слов, чтобы не ломать вёрстку (RU/EN/RO) */
+  .text-multilang,
+  [lang] h1, [lang] h2, [lang] h3, [lang] h4,
+  [lang] .hero-heading, [lang] .hero-description,
+  [lang] .block2-title, [lang] .category-title,
+  [lang] .form-block-title, [lang] .form-block-description,
+  [lang] .process-block-title, [lang] .process-block-card-title, [lang] .process-block-card-description,
+  [lang] .quality-block-title, [lang] .quality-block-subtitle, [lang] .quality-block-card-text,
+  [lang] .color-block-main-title, [lang] .color-block-subtitle, [lang] .color-block-list-item,
+  [lang] .reviews-block-title, [lang] .footer-description {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
   }
 }
 
@@ -104,4 +130,85 @@
     animation: pulse-waves 2s ease-out infinite;
     animation-delay: 1s;
   }
+}
+
+/* Русский язык: чуть меньший размер текста, чтобы не обрезался и не сдвигал вёрстку */
+[lang="ru"] .reviews-block-title {
+  font-size: 44px;
+  line-height: 56px;
+}
+[lang="ru"] .reviews-block-quote {
+  font-size: 14px;
+  line-height: 22px;
+}
+[lang="ru"] .reviews-block-author {
+  font-size: 17px;
+  line-height: 22px;
+  margin-top: 12px;
+}
+[lang="ru"] .hero-benefits-panel span {
+  font-size: 14px !important;
+  line-height: 22px !important;
+}
+[lang="ru"] .hero-benefits-mobile span {
+  font-size: 13px !important;
+  line-height: 19px !important;
+}
+[lang="ru"] .cta-block-text {
+  font-size: 14px;
+  line-height: 22px;
+}
+[lang="ru"] .cta-block-button {
+  font-size: 14px;
+  line-height: 22px;
+}
+[lang="ru"] .contact-section-title {
+  font-size: 38px;
+  line-height: 50px;
+}
+[lang="ru"] .contact-section-description {
+  font-size: 21px;
+  line-height: 28px;
+}
+[lang="ru"] .contact-section-form-title {
+  font-size: 18px;
+  line-height: 22px;
+}
+[lang="ru"] .hero-heading {
+  font-size: 54px;
+  line-height: 72px;
+}
+[lang="ru"] .hero-description {
+  font-size: 15px;
+  line-height: 22px;
+}
+[lang="ru"] .block2-title,
+[lang="ru"] .process-block-title,
+[lang="ru"] .quality-block-title {
+  font-size: 44px;
+  line-height: 56px;
+}
+[lang="ru"] .form-block-title {
+  font-size: 38px;
+  line-height: 50px;
+}
+[lang="ru"] .form-block-description,
+[lang="ru"] .quality-block-subtitle,
+[lang="ru"] .color-block-subtitle {
+  font-size: 18px;
+  line-height: 22px;
+}
+[lang="ru"] .process-block-card-title,
+[lang="ru"] .process-block-card-description,
+[lang="ru"] .quality-block-card-text {
+  font-size: 14px;
+  line-height: 22px;
+}
+[lang="ru"] .color-block-main-title {
+  font-size: 26px;
+  line-height: 36px;
+}
+[lang="ru"] .footer-description {
+  font-size: 15px;
+  line-height: 22px;
 }

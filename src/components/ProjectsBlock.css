@@ -28,7 +28,8 @@
   padding: 0;
   margin-bottom: 32px;
   text-align: left;
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: auto;
   box-sizing: border-box;
   align-self: flex-start;
@@ -40,7 +41,8 @@
 
 .projects-block-projects {
   position: relative;
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   flex: 1;
   display: flex;
   align-items: center;
@@ -53,7 +55,8 @@
   display: flex;
   flex-direction: row;
   gap: 16px;
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: 448px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -137,14 +140,14 @@
   top: 157px;
 }
 
-/* 768px-1279px - все выглядит как на 776px - ДОЛЖЕН БЫТЬ ПЕРЕД мобильными */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
+/* 450px-1279px - планшет (450-775 как 776 но меньше) */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .projects-block-container {
-    width: 776px !important;
-    max-width: 100% !important;
+    width: 100% !important;
+    max-width: 776px !important;
     height: auto !important;
     min-height: auto !important;
-    padding: 32px 56px !important;
+    padding: 24px clamp(32px, 8vw, 56px) !important;
     box-sizing: border-box !important;
   }
 
@@ -198,144 +201,99 @@
   }
 }
 
-/* Tablet styles (776px) - старый медиа-запрос для совместимости */
-@media (max-width: 776px) and (max-width: 767px) {
+/* Mobile styles (375px) — по дизайну: одна карточка по центру, по бокам виден край соседних */
+@media (max-width: 449px) {
+  .projects-block-section {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .projects-block-container {
     width: 100%;
-    max-width: 776px;
-    height: auto;
-    min-height: auto;
-    padding: 40px 56px;
+    max-width: 100%;
+    padding: 32px 24px 40px;
+    box-sizing: border-box;
   }
 
   .projects-block-title {
-    width: 664px;
-    font-size: 32px;
-    line-height: 40px;
+    width: 100%;
+    max-width: 327px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
     margin-bottom: 24px;
-    height: auto;
+    color: #1a1911;
+  }
+
+  .projects-block-title-accent {
+    color: #c19d3d;
+    font-size: 28px;
+    font-weight: 500;
   }
 
   .projects-block-projects {
-    width: 664px;
+    width: 100%;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .projects-block-projects::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .projects-block-projects::-webkit-scrollbar-track {
+    display: none;
+    width: 0;
+    height: 0;
     background: transparent;
   }
 
+  .projects-block-projects::-webkit-scrollbar-track,
   .projects-block-projects::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-  }
-
-  .projects-block-cards-container {
-    width: 664px;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    padding-bottom: 8px;
-    flex-wrap: nowrap;
-  }
-
-  .projects-block-card {
-    width: 280px;
-    min-width: 280px;
-    height: auto;
-    flex-shrink: 0;
-  }
-
-  .projects-block-image-wrapper {
-    width: 280px;
-    height: 280px;
-  }
-
-  .projects-block-title-text {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  .projects-block-button {
-    width: 32px;
-    height: 32px;
     display: none;
   }
-}
-
-/* Mobile styles (375px) */
-@media (max-width: 375px) {
-  .projects-block-container {
-    width: 100%;
-    max-width: 375px;
-    padding: 32px 24px;
-  }
-
-  .projects-block-title {
-    width: 327px;
-    font-size: 28px;
-    line-height: 36px;
-    margin-bottom: 20px;
-  }
-
-  .projects-block-projects {
-    width: 327px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none !important; /* Скрываем скролл для Firefox */
-    -ms-overflow-style: none !important; /* Скрываем скролл для IE/Edge */
-  }
-
-  .projects-block-projects::-webkit-scrollbar {
-    display: none !important; /* Скрываем скролл для Chrome/Safari */
-    width: 0 !important;
-    height: 0 !important;
-    background: transparent !important;
-  }
-
-  .projects-block-projects::-webkit-scrollbar-track {
-    display: none !important;
-  }
-
-  .projects-block-projects::-webkit-scrollbar-thumb {
-    display: none !important;
-  }
 
   .projects-block-cards-container {
-    width: 327px;
+    width: max-content;
+    min-width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
     gap: 12px;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
     flex-wrap: nowrap;
   }
 
+  /* Одна карточка по центру с «подглядыванием» соседних: карточка 272px, при ширине контента ~327px видна одна целиком */
   .projects-block-card {
-    width: 240px;
-    min-width: 240px;
-    height: auto;
+    width: 272px;
+    min-width: 272px;
     flex-shrink: 0;
+    height: auto;
   }
 
   .projects-block-image-wrapper {
-    width: 240px;
-    height: 240px;
+    width: 272px;
+    height: 272px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .projects-block-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .projects-block-title-text {
     font-size: 16px;
+    font-weight: 500;
     line-height: 22px;
+    color: #1a1911;
   }
 
   .projects-block-button {

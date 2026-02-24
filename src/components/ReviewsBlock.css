@@ -12,6 +12,7 @@
   height: 616px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -25,23 +26,35 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: 496px;
   z-index: 0;
+  pointer-events: none; /* клики проходят к контенту */
+}
+.reviews-block-background > * {
+  pointer-events: auto;
+    border-radius: 12px;
 }
 
 .reviews-block-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  z-index: 0;
 }
 
 .reviews-block-content {
   position: relative;
   z-index: 1;
-  width: 1232px;
+  width: 100%;
+  max-width: 1232px;
   height: 496px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,6 +62,8 @@
 }
 
 .reviews-block-title {
+  position: relative;
+  z-index: 3;
   font-family: "Inter", system-ui, sans-serif;
   font-size: 50px;
   font-weight: 500;
@@ -65,6 +80,8 @@
 }
 
 .reviews-block-cards {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -73,10 +90,13 @@
   margin-right: 60px;
   margin-top: 179px;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .reviews-block-card {
-  width: 360px;
+  flex: 1;
+  max-width: 360px;
+  min-width: 280px;
   height: 176px;
   position: relative;
   border-radius: 12px;
@@ -128,23 +148,218 @@
   margin-top: 16px;
 }
 
-/* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
-
-/* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+/* Планшет: 376px - 1279px — один и тот же вид как на 776px (заголовок снаружи, карточки 1+2) */
+@media screen and (min-width: 776px) and (max-width: 1279px) {
   .reviews-block-section {
-    width: 375px !important;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .reviews-block-container {
+    width: 100% !important;
+    max-width: 776px !important;
+    height: auto !important;
+    min-height: 500px !important;
+    padding: 32px 56px 32px !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .reviews-block-content {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .reviews-block-title {
+    position: relative !important;
+    width: 100% !important;
+    font-size: 35px !important;
+    line-height: 1.2 !important;
+    margin: 0 0 32px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    color: #1a1911 !important;
+  }
+
+  .reviews-block-background {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 664px !important;
+    height: 356px !important;
+    margin: 0 auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .reviews-block-image {
+    position: absolute !important;
+    border-radius: 12px !important;
+  }
+
+  .reviews-block-cards {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-content: space-between !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .reviews-block-card:nth-child(1) {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: calc(50% - 6px) !important;
+    flex: 0 0 auto !important;
+  }
+
+  .reviews-block-card:nth-child(2),
+  .reviews-block-card:nth-child(3) {
+    width: calc(50% - 6px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: calc(50% - 6px) !important;
+    flex: 0 0 auto !important;
+  }
+
+  .reviews-block-quote {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  .reviews-block-author {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    margin-top: 12px !important;
+  }
+}
+
+/* 450px-775px: тот же вид что 776, но меньше */
+@media screen and (min-width: 450px) and (max-width: 775px) {
+  .reviews-block-section {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .reviews-block-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 420px !important;
+    padding: 24px 32px 24px !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .reviews-block-content {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .reviews-block-title {
+    position: relative !important;
+    width: 100% !important;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin: 0 0 24px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    color: #1a1911 !important;
+  }
+
+  .reviews-block-background {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    margin: 0 auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .reviews-block-cards {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-content: space-between !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .reviews-block-card:nth-child(1) {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: calc(50% - 5px) !important;
+    flex: 0 0 auto !important;
+  }
+
+  .reviews-block-card:nth-child(2),
+  .reviews-block-card:nth-child(3) {
+    width: calc(50% - 5px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: calc(50% - 5px) !important;
+    flex: 0 0 auto !important;
+  }
+
+  .reviews-block-quote {
+    font-size: 13px !important;
+    line-height: 18px !important;
+  }
+
+  .reviews-block-author {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    margin-top: 10px !important;
+  }
+}
+
+/* Mobile: ниже 450px — как 375, масштабировано под экран */
+@media screen and (max-width: 449px) {
+  .reviews-block-section {
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .reviews-block-container {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    height: 484px !important; /* Размер блока 375x484 */
+    height: auto !important;
     min-height: 484px !important;
-    max-height: 484px !important;
-    padding: 32px 24px !important; /* Отступы: 32px сверху/снизу, 24px по бокам */
+    padding: clamp(24px, 6vw, 32px) clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
     position: relative !important;
     display: block !important;
@@ -156,43 +371,42 @@
     top: auto !important;
     left: auto !important;
     transform: none !important;
-    width: 327px !important; /* 375 - 24*2 */
+    width: 100% !important;
+    max-width: 100% !important;
     height: 356px !important;
-    max-width: 327px !important;
-    max-height: 356px !important;
-    min-width: 327px !important;
     min-height: 356px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     border-radius: 12px !important;
-    overflow: hidden !important; /* Важно: скрываем переполнение карточек */
+    overflow: hidden !important;
     z-index: 0 !important;
-    margin: 0 auto !important; /* Центрируем */
-    margin-top: 32px !important; /* Отступ 32px после заголовка */
+    margin: 0 auto !important;
+    margin-top: 32px !important;
   }
 
-  /* Карточки внутри reviews-block-background */
   .reviews-block-background .reviews-block-cards {
     position: absolute !important;
-    top: 123px !important; /* От верха контейнера фотки */
+    top: 123px !important;
     left: 0 !important;
     z-index: 2 !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     gap: 16px !important;
-    width: 327px !important; /* Ширина контейнера фотки */
-    max-width: 327px !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     margin: 0 !important;
-    padding: 0 30px !important; /* Отступы по бокам для центрирования первой/последней карточки */
+    padding: 0 clamp(16px, 4vw, 30px) !important;
     box-sizing: border-box !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    scrollbar-width: none !important; /* Скрываем scrollbar в Firefox */
-    -ms-overflow-style: none !important; /* Скрываем scrollbar в IE/Edge */
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
 
   .reviews-block-background .reviews-block-cards::-webkit-scrollbar {
-    display: none !important; /* Скрываем scrollbar в Chrome/Safari */
+    display: none !important;
   }
 
   .reviews-block-image {
@@ -216,17 +430,16 @@
     margin: 0 !important;
   }
 
-  /* Заголовок позиционируем относительно контейнера, наверху блока */
   .reviews-block-title {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    font-size: 24px !important;
+    font-size: clamp(20px, 5.5vw, 24px) !important;
     font-weight: 500 !important;
     line-height: 32px !important;
-    margin: 0 auto !important; /* Центрируем */
+    margin: 0 auto !important;
     padding: 0 !important;
     text-align: center !important;
     z-index: 3 !important;
@@ -234,33 +447,31 @@
     display: block !important;
   }
 
-  /* Карточки должны быть внутри контейнера фотки (reviews-block-background), скроллятся горизонтально */
   .reviews-block-cards {
     position: absolute !important;
-    top: 123px !important; /* От верха контейнера фотки */
+    top: 123px !important;
     left: 0 !important;
     z-index: 2 !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     gap: 16px !important;
-    width: 327px !important; /* Ширина контейнера фотки */
-    max-width: 327px !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     margin: 0 !important;
-    padding: 0 30px !important; /* Отступы по бокам для центрирования первой/последней карточки */
+    padding: 0 clamp(16px, 4vw, 30px) !important;
     box-sizing: border-box !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    scrollbar-width: none !important; /* Скрываем scrollbar в Firefox */
-    -ms-overflow-style: none !important; /* Скрываем scrollbar в IE/Edge */
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
 
   .reviews-block-cards::-webkit-scrollbar {
-    display: none !important; /* Скрываем scrollbar в Chrome/Safari */
+    display: none !important;
   }
 
-  /* Все карточки: 266x224px */
   .reviews-block-card {
     width: 266px !important;
     height: 224px !important;
@@ -274,14 +485,6 @@
     overflow: hidden !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     flex-shrink: 0 !important;
-  }
-
-  .reviews-block-card {
-    box-sizing: border-box !important;
-    position: relative !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
 
   .reviews-block-card-overlay {
@@ -308,249 +511,54 @@
   .reviews-block-quote {
     font-family: "Inter", system-ui, sans-serif !important;
     font-size: 16px !important;
-    font-weight: 400 !important; /* Regular */
+    font-weight: 400 !important;
     line-height: 24px !important;
     color: #ffffff !important;
     margin: 0 !important;
     padding: 0 !important;
     flex: 1 !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 6 !important;
+    -webkit-box-orient: vertical !important;
   }
 
   .reviews-block-author {
     font-family: "Inter", system-ui, sans-serif !important;
     font-size: 16px !important;
-    font-weight: 400 !important; /* Regular */
+    font-weight: 400 !important;
     line-height: 24px !important;
     color: #ffffff !important;
     margin: 0 !important;
     padding: 0 !important;
-    margin-top: 16px !important;
-  }
-}
-
-/* Tablet styles (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .reviews-block-container {
-    height: auto;
-    min-height: 616px;
-    padding: 40px 20px;
-  }
-
-  .reviews-block-background {
-    width: 100%;
-    max-width: 1232px;
-    height: auto;
-    min-height: 496px;
-  }
-
-  .reviews-block-content {
-    width: 100%;
-    height: auto;
-    min-height: 496px;
-  }
-
-  .reviews-block-title {
-    font-size: 36px;
-    line-height: 48px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-
-  .reviews-block-cards {
-    flex-direction: column;
-    gap: 16px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 40px;
-    align-items: center;
-  }
-
-  .reviews-block-card {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    min-height: 176px;
-  }
-}
-
-/* 776px - точные размеры по дизайну - ДОЛЖЕН БЫТЬ ПЕРЕД мобильными */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
-  .reviews-block-container {
-    width: 776px !important;
-    max-width: 100% !important;
-    height: 500px !important;
-    max-height: 500px !important;
-    min-height: 500px !important;
-    padding: 32px 56px !important;
-    padding-bottom: 32px !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    display: block !important;
-    overflow: hidden !important;
-  }
-
-  .reviews-block-background {
-    position: absolute !important;
-    top: 99px !important; /* 32px (padding) + ~35px (заголовок) + 32px (отступ) */
-    left: 56px !important;
-    transform: none !important;
-    width: 664px !important; /* 776 - 56*2 */
-    height: 356px !important;
-    max-height: 356px !important;
-    min-height: 356px !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    z-index: 0 !important;
-    margin: 0 !important;
-  }
-
-  .reviews-block-image {
-    width: 100% !important;
-    height: 356px !important;
-    max-height: 356px !important;
-    object-fit: cover !important;
-  }
-
-  .reviews-block-content {
-    position: absolute !important;
-    top: 99px !important; /* То же что и фон - позиционируем относительно контейнера */
-    left: 56px !important; /* То же что и фон */
-    width: 664px !important;
-    height: 356px !important;
-    max-width: 664px !important;
-    max-height: 356px !important;
-    min-width: 664px !important;
-    min-height: 356px !important;
-    box-sizing: border-box !important;
-    z-index: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* Заголовок позиционируем относительно контейнера, вне фона */
-  .reviews-block-content .reviews-block-title {
-    position: absolute !important;
-    top: -67px !important; /* Выносим заголовок выше content */
-    left: 0 !important;
-    width: 664px !important;
-    font-size: 35px !important;
-    font-weight: 500 !important;
-    line-height: normal !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: center !important;
-    z-index: 3 !important;
-    color: #1a1911 !important;
-    display: block !important;
-  }
-
-  /* Карточки должны быть видны */
-  .reviews-block-cards {
-    position: relative !important;
-    z-index: 2 !important;
-  }
-
-  .reviews-block-cards {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 16px !important;
-    width: 100% !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Первые две карточки - 304x200 */
-  .reviews-block-card:nth-child(1),
-  .reviews-block-card:nth-child(2) {
-    width: 304px !important;
-    height: 200px !important;
-    max-width: 304px !important;
-    min-width: 304px !important;
-    max-height: 200px !important;
-    min-height: 200px !important;
+    margin-top: 8px !important;
     flex-shrink: 0 !important;
   }
-
-  /* Третья карточка - 616x128 */
-  .reviews-block-card:nth-child(3) {
-    width: 616px !important;
-    height: 128px !important;
-    max-width: 616px !important;
-    min-width: 616px !important;
-    max-height: 128px !important;
-    min-height: 128px !important;
-    flex-shrink: 0 !important;
-  }
-
-  .reviews-block-card {
-    box-sizing: border-box !important;
-  }
-
-  .reviews-block-quote {
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    line-height: 24px !important;
-  }
-
-  .reviews-block-author {
-    font-size: 20px !important;
-    font-weight: 500 !important;
-    line-height: 24px !important;
-    margin-top: 16px !important;
-  }
 }
 
-/* Mobile styles (up to 767px) */
-@media (max-width: 767px) {
-  .reviews-block-container {
-    height: auto;
-    min-height: 616px;
-    padding: 40px 20px;
+/* EN / RU: уменьшить шрифт в карточках Reviews */
+html[lang="en"] .reviews-block-quote,
+html[lang="ru"] .reviews-block-quote {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+html[lang="en"] .reviews-block-author,
+html[lang="ru"] .reviews-block-author {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 449px) {
+  html[lang="en"] .reviews-block-quote,
+  html[lang="ru"] .reviews-block-quote {
+    font-size: 12px !important;
+    line-height: 17px !important;
   }
 
-  .reviews-block-background {
-    width: 100%;
-    max-width: 1232px;
-    height: auto;
-    min-height: 496px;
-  }
-
-  .reviews-block-content {
-    width: 100%;
-    height: auto;
-    max-width: 496px;
-  }
-
-  .reviews-block-title {
-    font-size: 28px;
-    line-height: 36px;
-    margin-top: 40px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .reviews-block-cards {
-    flex-direction: column;
-    gap: 16px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 40px;
-    align-items: center;
-  }
-
-  .reviews-block-card {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    min-height: 176px;
+  html[lang="en"] .reviews-block-author,
+  html[lang="ru"] .reviews-block-author {
+    font-size: 13px !important;
+    line-height: 18px !important;
   }
 }

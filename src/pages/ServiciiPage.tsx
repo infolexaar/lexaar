@@ -93,7 +93,7 @@ const ServiciiPage: React.FC = () => {
   return (
     <div className="overflow-x-hidden">
       <Header onOpenModal={handleOpenModal} />
-      <main className="servicii-page" style={{ marginTop: "82px" }}>
+      <main className="servicii-page">
         {/* Hero Section */}
         <section className="servicii-hero">
           <div className="servicii-hero-container">
@@ -110,17 +110,8 @@ const ServiciiPage: React.FC = () => {
               className={`servicii-service-block ${
                 service.imagePosition === "right" ? "servicii-service-block-reverse" : ""
               }`}
-              style={{
-                height: `${service.blockHeight}px`,
-              }}
             >
-              <div
-                className="servicii-service-image-wrapper"
-                style={{
-                  width: `${service.imageWidth}px`,
-                  height: `${service.imageHeight}px`,
-                }}
-              >
+              <div className="servicii-service-image-wrapper">
                 <img
                   src={service.image}
                   alt={service.title}

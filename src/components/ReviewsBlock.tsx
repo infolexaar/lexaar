@@ -22,7 +22,7 @@ const ReviewsBlock: React.FC = () => {
   ];
 
   return (
-    <section className="reviews-block-section">
+    <section className="reviews-block-section" id="recenzii">
       <div className="reviews-block-container">
         {/* Content */}
         <div className="reviews-block-content">

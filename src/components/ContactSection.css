@@ -7,8 +7,8 @@
 }
 
 .contact-section-container {
-  width: 1232px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1232px;
   height: 616px;
   margin-left: auto;
   margin-right: auto;
@@ -21,7 +21,7 @@
 }
 
 /* Убеждаемся, что контейнер масштабируется на всех размерах */
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1279px) {
   .contact-section-container {
     max-width: 100%;
   }
@@ -44,6 +44,7 @@
   object-fit: cover;
   object-position: center center;
   display: block;
+  border-radius: 14px;
 }
 
 .contact-section-overlay {
@@ -65,8 +66,9 @@
   flex-direction: column;
   justify-content: flex-start;
   z-index: 2;
-  width: 692px;
+  max-width: 692px;
   color: white;
+  min-width: 0;
 }
 
 .contact-section-title {
@@ -79,9 +81,12 @@
   padding: 0;
   margin-bottom: 24px;
   text-align: left;
-  width: 692px;
-  height: 168px;
+  max-width: 692px;
+  min-height: 112px;
   box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-section-description {
@@ -93,9 +98,12 @@
   margin: 0;
   padding: 0;
   text-align: left;
-  width: 692px;
-  height: 64px;
+  max-width: 692px;
+  min-height: 32px;
   box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-section-form-wrapper {
@@ -150,9 +158,12 @@
   margin-bottom: 16px;
   text-align: left;
   flex-shrink: 0;
-  width: 274px;
-  min-height: 48px;
+  max-width: 274px;
+  min-height: 24px;
   box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-section-success {
@@ -192,6 +203,9 @@
   font-weight: 600;
   color: #111827;
   margin: 0 0 8px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-section-success-message {
@@ -199,6 +213,9 @@
   font-size: 14px;
   color: #6b7280;
   margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-section-form {
@@ -230,11 +247,13 @@
   text-align: left;
   width: auto;
   min-width: 98px;
-  height: 16px;
+  min-height: 16px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  white-space: nowrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-section-required {
@@ -288,8 +307,9 @@
 
 .contact-section-button {
   width: 274px;
-  height: 40px;
-  padding: 0;
+  min-height: 40px;
+  height: auto;
+  padding: 8px 16px;
   background: rgba(191, 26, 26, 0.4);
   color: white;
   border: none;
@@ -306,6 +326,11 @@
   transition: all 0.2s ease;
   margin-top: 0;
   flex-shrink: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .contact-section-button:hover:not(:disabled) {
@@ -333,13 +358,13 @@
   }
 }
 
-/* 768px-1279px - все выглядит как на 776px - ПЕРЕД мобильными */
-@media screen and (max-width: 1279px) and (min-width: 768px) {
+/* 450px-1279px - планшет (450-775 как 776 но меньше, 776-1279 как 776) */
+@media screen and (min-width: 450px) and (max-width: 1279px) {
   .contact-section-container {
-    width: 776px !important;
-    max-width: 100% !important;
+    width: 100% !important;
+    max-width: 776px !important;
     height: 452px !important;
-    padding: 32px 56px !important;
+    padding: 24px clamp(32px, 8vw, 56px) !important;
     box-sizing: border-box !important;
   }
 
@@ -474,19 +499,20 @@
   }
 }
 
-/* Mobile styles (375px) */
-@media screen and (max-width: 375px) {
+/* Mobile: ниже 450px — как 375, масштабировано */
+@media screen and (max-width: 449px) {
   .contact-section {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .contact-section-container {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    height: 496px !important;
-    padding: 24px !important; /* Отступы со всех сторон 24px */
+    height: auto !important;
+    min-height: 496px !important;
+    padding: clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
     position: relative !important;
     overflow: hidden !important;
@@ -681,62 +707,4 @@
   }
 }
 
-/* Мобильные устройства - вертикальная раскладка (но не 375px) */
-@media screen and (max-width: 767px) and (min-width: 376px) {
-  .contact-section-container {
-    height: auto;
-    min-height: auto;
-    padding: 40px 20px;
-    flex-direction: column;
-  }
-
-  .contact-section-background {
-    position: relative;
-    top: 0;
-    height: 300px;
-  }
-
-  .contact-section-text {
-    position: relative;
-    left: auto;
-    top: auto;
-    bottom: auto;
-    width: 100%;
-    max-width: 100%;
-    padding: 40px 20px 20px;
-    color: #1a1911;
-  }
-
-  .contact-section-title {
-    font-size: 28px;
-    line-height: 36px;
-    margin-bottom: 16px;
-    color: #1a1911;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .contact-section-description {
-    font-size: 16px;
-    line-height: 24px;
-    color: #3e3d38;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .contact-section-form-wrapper {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 400px;
-    margin-top: 20px;
-  }
-
-  .contact-section-form-content {
-    padding: 32px 20px;
-  }
-}
+/* Промежуточный блок 376-767 удалён: вид как на 776px до 375px */
