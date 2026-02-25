@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CTABlock from "../components/CTABlock";
@@ -9,16 +9,25 @@ import ContactModal from "../components/ContactModal";
 import { useLanguage } from "../contexts/LanguageContext";
 import "./BlogPage.css";
 
-// Blog images
-import blogImage1 from "../assets/blog/Image-1.svg";
-import blogImage2 from "../assets/blog/Image-2.svg";
-import blogImage3 from "../assets/blog/Image-3.svg";
-import blogImage4 from "../assets/blog/Image-4.svg";
-import blogImage5 from "../assets/blog/Image-5.svg";
-import blogImage6 from "../assets/blog/Image-6.svg";
-import blogImage7 from "../assets/blog/Image-7.svg";
-import blogImage8 from "../assets/blog/Image-8.svg";
-import blogImage9 from "../assets/blog/Image.svg";
+// Blog images (Image-0 → post 1, Image-1 → post 2, ..., Image-8 → post 9, image-9 → post 10, ...)
+import blogImage1 from "../assets/blog/Image-0.svg";
+import blogImage2 from "../assets/blog/Image-1.svg";
+import blogImage3 from "../assets/blog/Image-2.svg";
+import blogImage4 from "../assets/blog/Image-3.svg";
+import blogImage5 from "../assets/blog/Image-4.svg";
+import blogImage6 from "../assets/blog/Image-5.svg";
+import blogImage7 from "../assets/blog/Image-6.svg";
+import blogImage8 from "../assets/blog/Image-7.svg";
+import blogImage9 from "../assets/blog/Image-8.svg";
+import blogImage10 from "../assets/blog/image-9.png";
+import blogImage11 from "../assets/blog/image-10.png";
+import blogImage12 from "../assets/blog/Image-11.png";
+import blogImage13 from "../assets/blog/Image-12.png";
+import blogImage14 from "../assets/blog/Image-13.png";
+import blogImage15 from "../assets/blog/Image-14.png";
+import blogImage16 from "../assets/blog/image-15.png";
+import blogImage17 from "../assets/blog/Image-16.png";
+import blogImage18 from "../assets/blog/Image-17.png";
 import arrowIcon from "../assets/blog/Icons.svg";
 
 interface BlogPost {
@@ -30,8 +39,8 @@ interface BlogPost {
 
 const BlogPage: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
   const { t } = useLanguage();
 
   const handleOpenModal = () => {
@@ -48,9 +57,18 @@ const BlogPage: React.FC = () => {
     7: blogImage7,
     8: blogImage8,
     9: blogImage9,
+    10: blogImage10,
+    11: blogImage11,
+    12: blogImage12,
+    13: blogImage13,
+    14: blogImage14,
+    15: blogImage15,
+    16: blogImage16,
+    17: blogImage17,
+    18: blogImage18,
   };
 
-  const allPosts: BlogPost[] = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((id) => {
+  const allPosts: BlogPost[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((id) => {
     const key = String(id);
     const post = t.blog.posts[key];
     return {
@@ -63,11 +81,12 @@ const BlogPage: React.FC = () => {
 
   const postsPerPage = 9;
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
+  const currentPage = Math.min(totalPages, Math.max(1, Number(searchParams.get("page")) || 1));
   const startIndex = (currentPage - 1) * postsPerPage;
   const currentPosts = allPosts.slice(startIndex, startIndex + postsPerPage);
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    setSearchParams({ page: String(page) });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

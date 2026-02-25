@@ -478,7 +478,7 @@
   }
 
   .footer-bottom {
-    width: 375px !important;
+    width: 100% !important;
     max-width: 100% !important;
     margin: 24px auto 0 auto !important;
     padding: 0 24px 32px 24px !important; /* Отступы: 24px по бокам, 32px снизу */

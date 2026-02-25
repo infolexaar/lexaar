@@ -11,16 +11,25 @@ import "./BlogPostPage.css";
 
 // Иконка стрелки назад не нужна, используем SVG
 
-// Импорт изображений блога
-import blogImage1 from "../assets/blog/Image-1.svg";
-import blogImage2 from "../assets/blog/Image-2.svg";
-import blogImage3 from "../assets/blog/Image-3.svg";
-import blogImage4 from "../assets/blog/Image-4.svg";
-import blogImage5 from "../assets/blog/Image-5.svg";
-import blogImage6 from "../assets/blog/Image-6.svg";
-import blogImage7 from "../assets/blog/Image-7.svg";
-import blogImage8 from "../assets/blog/Image-8.svg";
-import blogImage9 from "../assets/blog/Image.svg";
+// Импорт изображений блога (Image-0 → post 1, ..., Image-8 → post 9, image-9 → post 10, ...)
+import blogImage1 from "../assets/blog/Image-0.svg";
+import blogImage2 from "../assets/blog/Image-1.svg";
+import blogImage3 from "../assets/blog/Image-2.svg";
+import blogImage4 from "../assets/blog/Image-3.svg";
+import blogImage5 from "../assets/blog/Image-4.svg";
+import blogImage6 from "../assets/blog/Image-5.svg";
+import blogImage7 from "../assets/blog/Image-6.svg";
+import blogImage8 from "../assets/blog/Image-7.svg";
+import blogImage9 from "../assets/blog/Image-8.svg";
+import blogImage10 from "../assets/blog/image-9.png";
+import blogImage11 from "../assets/blog/image-10.png";
+import blogImage12 from "../assets/blog/Image-11.png";
+import blogImage13 from "../assets/blog/Image-12.png";
+import blogImage14 from "../assets/blog/Image-13.png";
+import blogImage15 from "../assets/blog/Image-14.png";
+import blogImage16 from "../assets/blog/image-15.png";
+import blogImage17 from "../assets/blog/Image-16.png";
+import blogImage18 from "../assets/blog/Image-17.png";
 
 interface BlogPost {
   id: number;
@@ -41,7 +50,7 @@ const BlogPostPage: React.FC = () => {
   };
 
   const handleBack = () => {
-    navigate("/blog");
+    navigate(-1);
   };
 
   const imageById: Record<number, string> = {
@@ -54,12 +63,21 @@ const BlogPostPage: React.FC = () => {
     7: blogImage7,
     8: blogImage8,
     9: blogImage9,
+    10: blogImage10,
+    11: blogImage11,
+    12: blogImage12,
+    13: blogImage13,
+    14: blogImage14,
+    15: blogImage15,
+    16: blogImage16,
+    17: blogImage17,
+    18: blogImage18,
   };
 
   const postData = postId ? t.blog.posts[postId] : null;
   const id = postId ? Number(postId) : 0;
   const post: BlogPost | null =
-    id >= 1 && id <= 9 && postData
+    id >= 1 && id <= 18 && postData
       ? {
           id,
           title: postData.title,
@@ -215,20 +233,27 @@ const BlogPostPage: React.FC = () => {
         <div className="blog-post-container">
           <div className="blog-post-nav">
             <div className="blog-post-nav-content">
-              <button className="blog-post-back-button" onClick={handleBack}>
+              <button
+                type="button"
+                className="blog-post-back-button"
+                onClick={handleBack}
+                aria-label={t.blog.back}
+              >
                 <svg
                   viewBox="0 0 12 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden
                 >
                   <path
                     d="M10 2L2 10L10 18"
-                    stroke="#858480"
+                    stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
+                <span className="blog-post-back-button-label">{t.blog.back}</span>
               </button>
               <h1 className="blog-post-title">{post.title}</h1>
             </div>

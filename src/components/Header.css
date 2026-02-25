@@ -302,11 +302,15 @@
     max-width: 100% !important;
     height: 64px !important;
     box-sizing: border-box !important;
+    position: relative !important;
   }
 
   .header-logo-wrapper {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
     flex-shrink: 0 !important;
-    margin: 0 auto !important; /* Центрируем логотип */
   }
 
   .header-logo-image {

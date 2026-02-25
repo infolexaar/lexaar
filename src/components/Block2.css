@@ -277,7 +277,7 @@
   .categories-grid {
     display: flex !important;
     flex-direction: row !important;
-    width: 327px !important; /* 375 - 24*2 = 327 */
+    width: 100% !important;
     height: 340px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;

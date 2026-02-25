@@ -6,6 +6,19 @@
   padding: 0;
 }
 
+/* Ускорение рендера секций ниже первого экрана */
+.block2-section,
+.quality-block-section,
+.reviews-block-section,
+.projects-block-section,
+.process-block-section,
+.form-block-section,
+.contact-section,
+.footer-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
+}
+
 /* Плавное появление контента при смене страницы */
 .page-transition {
   animation: pageFadeIn 0.25s ease-out;

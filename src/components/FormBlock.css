@@ -40,7 +40,8 @@
 /* Mobile styles (375px) */
 @media (max-width: 449px) {
   .form-block-content {
-    width: 327px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 

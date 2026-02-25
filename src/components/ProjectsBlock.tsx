@@ -3,10 +3,6 @@ import GalleryModal from "./GalleryModal";
 import image1 from "../assets/projects/Image.svg";
 import image2 from "../assets/projects/Image-1.svg";
 import image3 from "../assets/projects/Image-2.svg";
-// Импорт изображений карусели для товара "Bucătărie Industrial Grey"
-import carousel1 from "../assets/categories/bucatarii/itemimg/carousel1.svg";
-import carousel2 from "../assets/categories/bucatarii/itemimg/carousel2.svg";
-import carousel3 from "../assets/categories/bucatarii/itemimg/carousel3.svg";
 import { useLanguage } from "../contexts/LanguageContext";
 import "./ProjectsBlock.css";
 
@@ -17,7 +13,6 @@ const ProjectsBlock: React.FC = () => {
       id: 1,
       image: image1,
       title: t.home.projectsBlock.project1Title,
-      carouselImages: [carousel1, carousel2, carousel3],
       description: t.home.projectsBlock.project1Description,
     },
     {

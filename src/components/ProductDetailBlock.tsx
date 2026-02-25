@@ -3,21 +3,56 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import "./ProductDetailBlock.css";
 
-import image1 from "../assets/categories/bucatarii/1.svg";
-import image2 from "../assets/categories/bucatarii/2.svg";
-import image3 from "../assets/categories/bucatarii/3.svg";
-import image4 from "../assets/categories/bucatarii/4.svg";
-import image5 from "../assets/categories/bucatarii/5.svg";
-import image6 from "../assets/categories/bucatarii/6.svg";
-import image7 from "../assets/categories/bucatarii/7.svg";
-import image8 from "../assets/categories/bucatarii/8.svg";
-import image9 from "../assets/categories/bucatarii/9.svg";
-import image10 from "../assets/categories/bucatarii/10.svg";
-import image11 from "../assets/categories/bucatarii/11.svg";
-import image12 from "../assets/categories/bucatarii/12.svg";
+// Bucătărie Urban Wood (item 1)
+import image1 from "../assets/categories/bucatarii/BucătărieUrbanWood/1.svg";
+import urbanWoodCarousel1 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel1.svg";
+import urbanWoodCarousel2 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel2.svg";
+import urbanWoodCarousel3 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel3.svg";
 
-import carousel2 from "../assets/categories/bucatarii/itemimg/carousel2.svg";
-import carousel3 from "../assets/categories/bucatarii/itemimg/carousel3.svg";
+// Arctic Line (2) — Nordic Home (3) — Loft Beige (4) — Amber Touch (5) — Walnut Flow (6)
+import image2 from "../assets/categories/bucatarii/arcticline/Image.png";
+import arcticline1 from "../assets/categories/bucatarii/arcticline/Image-1.png";
+import arcticline2 from "../assets/categories/bucatarii/arcticline/Image-2.png";
+
+import image3 from "../assets/categories/bucatarii/nordichome/Image.png";
+import nordichome1 from "../assets/categories/bucatarii/nordichome/2.png";
+import nordichome2 from "../assets/categories/bucatarii/nordichome/20250729_103300 1.png";
+
+import image4 from "../assets/categories/bucatarii/loftbeige/Image.png";
+import loftbeige1 from "../assets/categories/bucatarii/loftbeige/IMG_4381 1.png";
+import loftbeige2 from "../assets/categories/bucatarii/loftbeige/IMG_4382 1.png";
+
+import image5 from "../assets/categories/bucatarii/ambertouch/Image.png";
+import ambertouch1 from "../assets/categories/bucatarii/ambertouch/IMG-20230614-WA0006 1.png";
+import ambertouch2 from "../assets/categories/bucatarii/ambertouch/IMG-20230615-WA0002 1.png";
+
+import image6 from "../assets/categories/bucatarii/walnutflow/Image.png";
+import walnutflow1 from "../assets/categories/bucatarii/walnutflow/20211014_155205 1.png";
+import walnutflow2 from "../assets/categories/bucatarii/walnutflow/20211014_155628 1.png";
+
+// Industrial Grey (7) — Soft Contrast (8) — Marble Line (9) — Concrete Mood (10) — Sand Gloss (11) — Forest Light (12)
+import image7 from "../assets/categories/bucatarii/industrialgrey/Image.png";
+import industrialgrey1 from "../assets/categories/bucatarii/industrialgrey/Image-1.png";
+import industrialgrey2 from "../assets/categories/bucatarii/industrialgrey/Image-2.png";
+
+import image8 from "../assets/categories/bucatarii/softcontrast/Image.png";
+import softcontrast1 from "../assets/categories/bucatarii/softcontrast/Image-1.png";
+import softcontrast2 from "../assets/categories/bucatarii/softcontrast/Image-2.png";
+
+import image9 from "../assets/categories/bucatarii/marbieline/Image.png";
+import marbieline1 from "../assets/categories/bucatarii/marbieline/Image-1.png";
+import marbieline2 from "../assets/categories/bucatarii/marbieline/Image-2.png";
+
+import image10 from "../assets/categories/bucatarii/concretemood/Image.png";
+import concretemood1 from "../assets/categories/bucatarii/concretemood/Image-1.png";
+
+import image11 from "../assets/categories/bucatarii/sandgaloss/Image.png";
+import sandgaloss1 from "../assets/categories/bucatarii/sandgaloss/Image-1.png";
+
+import image12 from "../assets/categories/bucatarii/forestlight/Image.png";
+import forestlight1 from "../assets/categories/bucatarii/forestlight/Image-1.png";
+import forestlight2 from "../assets/categories/bucatarii/forestlight/Image-2.png";
+
 
 interface ProductItem {
   id: number;
@@ -31,11 +66,19 @@ const BUCATARII_IMAGES = [
   image1, image2, image3, image4, image5, image6,
   image7, image8, image9, image10, image11, image12,
 ];
-// carousel2 и carousel3 содержат JPEG 3024x4032 — отличное качество
-// carousel1 — только 560x420, поэтому используем image7 + carousel2/3 для item 7
 const BUCATARII_CAROUSEL: Record<number, string[]> = {
-  1: [image1, carousel2, carousel3],
-  7: [image7, carousel2, carousel3],
+  1: [urbanWoodCarousel1, urbanWoodCarousel2, urbanWoodCarousel3],
+  2: [arcticline1, arcticline2],
+  3: [nordichome1, nordichome2],
+  4: [loftbeige1, loftbeige2],
+  5: [ambertouch1, ambertouch2],
+  6: [walnutflow1, walnutflow2],
+  7: [industrialgrey1, industrialgrey2],
+  8: [softcontrast1, softcontrast2],
+  9: [marbieline1, marbieline2],
+  10: [concretemood1],
+  11: [sandgaloss1],
+  12: [forestlight1, forestlight2],
 };
 
 const PATURI_IMAGES = [image1, image2, image3];
