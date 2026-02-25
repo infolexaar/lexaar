@@ -148,19 +148,20 @@ const Hero = () => {
 
         {/* SMS Button - Fixed for all resolutions */}
         <div
-          className="fixed z-50 flex items-center justify-center w-24 h-24"
+          className="hero-sms-fab fixed z-50 flex items-center justify-center w-24 h-24"
           style={{
             bottom: "35px",
             right: "24px",
           }}
         >
           {/* Wave animations */}
-          <div className="absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves"></div>
-          <div className="absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves-delay-1"></div>
-          <div className="absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves-delay-2"></div>
+          <div className="hero-sms-fab-wave absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves" />
+          <div className="hero-sms-fab-wave absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves-delay-1" />
+          <div className="hero-sms-fab-wave absolute inset-0 rounded-full border-2 border-[#BF1A1A] animate-pulse-waves-delay-2" />
 
           <button
-            className={`w-24 h-24 p-0 m-0 transition-transform duration-150 animate-pulse-gentle relative z-10 ${
+            type="button"
+            className={`hero-sms-fab-button w-24 h-24 p-0 m-0 transition-transform duration-150 animate-pulse-gentle relative z-10 ${
               isSmsShaking ? "animate-shake" : ""
             }`}
             onClick={handleSmsClick}

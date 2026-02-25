@@ -4,7 +4,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import "./ReviewsBlock.css";
 
 const ReviewsBlock: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const reviews = [
     {
@@ -22,7 +22,7 @@ const ReviewsBlock: React.FC = () => {
   ];
 
   return (
-    <section className="reviews-block-section" id="recenzii">
+    <section className="reviews-block-section" id="recenzii" data-lang={language}>
       <div className="reviews-block-container">
         {/* Content */}
         <div className="reviews-block-content">

@@ -335,3 +335,46 @@
   }
 }
 
+/* SMS FAB: prevent accidental drag on touch */
+.hero-sms-fab-button {
+  touch-action: manipulation;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-sms-fab,
+.hero-sms-fab-wave {
+  touch-action: manipulation;
+  pointer-events: none;
+}
+
+.hero-sms-fab .hero-sms-fab-button {
+  pointer-events: auto;
+}
+
+/* SMS FAB: smaller on mobile */
+@media screen and (max-width: 768px) {
+  .hero-sms-fab {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    bottom: 28px !important;
+    right: 20px !important;
+  }
+
+  .hero-sms-fab-button {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+  }
+
+  .hero-sms-fab-button img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+}
+

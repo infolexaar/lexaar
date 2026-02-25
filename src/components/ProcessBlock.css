@@ -16,6 +16,8 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .process-block-header {
@@ -63,6 +65,8 @@
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .process-block-number-circle {
@@ -99,6 +103,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .process-block-card-title {
@@ -127,6 +133,7 @@
   word-wrap: break-word;
   word-break: break-word;
   min-width: 0;
+  overflow: hidden;
 }
 
 /* Старый медиа-запрос для 1279px удален - теперь используется единый стиль для 768px-1279px */
@@ -287,6 +294,8 @@
     max-width: 100% !important;
     height: auto !important;
     min-height: auto !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
     padding: clamp(24px, 6vw, 32px) clamp(20px, 5vw, 24px) !important;
     box-sizing: border-box !important;
     display: flex !important;
@@ -325,17 +334,18 @@
   .process-block-card {
     width: 100% !important;
     height: auto !important;
-    min-height: 180px !important;
+    min-height: 0 !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    overflow: visible !important;
     background-color: #fbf8f4 !important;
     border-radius: 12px !important;
     padding: 24px !important;
+    padding-top: 116px !important; /* место под круг с номером */
     box-sizing: border-box !important;
     position: relative !important;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05) !important;
-    display: flex !important;
-    flex-direction: column !important;
+    display: block !important;
     flex-shrink: 0 !important;
   }
 
@@ -365,11 +375,13 @@
   }
 
   .process-block-card-content {
-    position: absolute !important;
-    left: 24px !important;
-    right: 24px !important;
-    top: 116px !important; /* 24px (padding) + 72px (круг) + 20px (отступ) */
-    bottom: 24px !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    min-width: 0 !important;
+    overflow: visible !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
@@ -384,6 +396,9 @@
     color: #1a1911 !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    min-width: 0 !important;
   }
 
   .process-block-card-description {
@@ -394,5 +409,8 @@
     color: #3e3d38 !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    min-width: 0 !important;
   }
 }

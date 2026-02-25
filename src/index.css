@@ -44,7 +44,7 @@
   [lang] .process-block-title, [lang] .process-block-card-title, [lang] .process-block-card-description,
   [lang] .quality-block-title, [lang] .quality-block-subtitle, [lang] .quality-block-card-text,
   [lang] .color-block-main-title, [lang] .color-block-subtitle, [lang] .color-block-list-item,
-  [lang] .reviews-block-title, [lang] .footer-description {
+  [lang] .reviews-block-title, [lang] .reviews-block-quote, [lang] .reviews-block-author, [lang] .footer-description {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
