@@ -502,6 +502,7 @@
     z-index: 2 !important;
     padding: 24px !important;
     height: 100% !important;
+    min-width: 0 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
@@ -518,8 +519,13 @@
     padding: 0 !important;
     flex: 1 !important;
     min-height: 0 !important;
+    min-width: 0 !important;
+    width: 100% !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
 
   .reviews-block-author {
