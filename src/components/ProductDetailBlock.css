@@ -231,6 +231,7 @@
 .product-detail-info-button {
   width: 222px;
   height: 48px;
+  min-height: 44px;
   background-color: #bf1a1a;
   color: #ffffff;
   border: none;
@@ -243,6 +244,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .product-detail-info-button:hover {

@@ -49,14 +49,27 @@
   justify-content: flex-start;
   margin: 0;
   padding: 0;
+  gap: 0;
+}
+
+.projects-block-scroll-wrapper {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-block-scroll-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .projects-block-cards-container {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  width: 100%;
-  max-width: 1232px;
+  width: max-content;
   height: 448px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -133,11 +146,13 @@
 .projects-block-button-left {
   left: 12px;
   top: 157px;
+  flex-shrink: 0;
 }
 
 .projects-block-button-right {
   right: 12px;
   top: 157px;
+  flex-shrink: 0;
 }
 
 /* 450px-1279px - планшет (450-775 как 776 но меньше) */
@@ -162,6 +177,10 @@
 
   .projects-block-projects {
     width: 664px !important;
+    overflow: visible !important;
+  }
+
+  .projects-block-scroll-wrapper {
     overflow: visible !important;
   }
 
@@ -242,6 +261,12 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+
+  .projects-block-scroll-wrapper {
+    overflow: visible !important;
+    flex: none;
+    width: max-content;
   }
 
   .projects-block-projects::-webkit-scrollbar {

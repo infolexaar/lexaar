@@ -20,7 +20,7 @@ const ProductPage: React.FC = () => {
     <div className="overflow-x-hidden">
       <Header onOpenModal={handleOpenModal} />
       <main className="product-page-main">
-        <ProductDetailBlock />
+        <ProductDetailBlock onOpenModal={handleOpenModal} />
         <CTABlock />
         <FormBlock />
         <MapSection />

@@ -4,10 +4,9 @@ import { useLanguage } from "../contexts/LanguageContext";
 import "./GalleryBlock.css";
 
 // Bucătărie Urban Wood (item 1)
-import bucatarii1 from "../assets/categories/bucatarii/BucătărieUrbanWood/1.svg";
-import urbanWoodCarousel1 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel1.svg";
-import urbanWoodCarousel2 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel2.svg";
-import urbanWoodCarousel3 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel3.svg";
+import bucatarii1 from "../assets/categories/bucatarii/BucătărieUrbanWood/Image.png";
+import urbanWoodCarousel1 from "../assets/categories/bucatarii/BucătărieUrbanWood/Image 1.png";
+import urbanWoodCarousel2 from "../assets/categories/bucatarii/BucătărieUrbanWood/Image 2.png";
 
 // Arctic Line (2), Nordic Home (3), Loft Beige (4), Amber Touch (5), Walnut Flow (6)
 import bucatarii2 from "../assets/categories/bucatarii/arcticline/Image.png";
@@ -15,7 +14,7 @@ import arcticline1 from "../assets/categories/bucatarii/arcticline/Image-1.png";
 import arcticline2 from "../assets/categories/bucatarii/arcticline/Image-2.png";
 
 import bucatarii3 from "../assets/categories/bucatarii/nordichome/Image.png";
-import nordichome1 from "../assets/categories/bucatarii/nordichome/2.png";
+import nordichome1 from "../assets/categories/bucatarii/nordichome/20250729_153104 1.png";
 import nordichome2 from "../assets/categories/bucatarii/nordichome/20250729_103300 1.png";
 
 import bucatarii4 from "../assets/categories/bucatarii/loftbeige/Image.png";
@@ -53,6 +52,8 @@ import bucatarii12 from "../assets/categories/bucatarii/forestlight/Image.png";
 import forestlight1 from "../assets/categories/bucatarii/forestlight/Image-1.png";
 import forestlight2 from "../assets/categories/bucatarii/forestlight/Image-2.png";
 
+import paturiImage from "../assets/categories/main/paturi.svg";
+import dulapImage from "../assets/categories/main/dulap.svg";
 
 interface GalleryBlockProps {
   categoryName: string;
@@ -73,23 +74,24 @@ const BUCATARII_IMAGES = [
   bucatarii9, bucatarii10, bucatarii11, bucatarii12,
 ];
 
+/* Карусель: Image (0) + Image-1 (1) + Image-2 (2) где есть */
 const BUCATARII_CAROUSEL: Record<number, string[]> = {
-  1: [urbanWoodCarousel1, urbanWoodCarousel2, urbanWoodCarousel3],
-  2: [arcticline1, arcticline2],
-  3: [nordichome1, nordichome2],
-  4: [loftbeige1, loftbeige2],
-  5: [ambertouch1, ambertouch2],
-  6: [walnutflow1, walnutflow2],
-  7: [industrialgrey1, industrialgrey2],
-  8: [softcontrast1, softcontrast2],
-  9: [marbieline1, marbieline2],
-  10: [concretemood1],
-  11: [sandgaloss1],
-  12: [forestlight1, forestlight2],
+  1: [bucatarii1, urbanWoodCarousel1, urbanWoodCarousel2],
+  2: [bucatarii2, arcticline1, arcticline2],
+  3: [bucatarii3, nordichome1, nordichome2],
+  4: [bucatarii4, loftbeige1, loftbeige2],
+  5: [bucatarii5, ambertouch1, ambertouch2],
+  6: [bucatarii6, walnutflow1, walnutflow2],
+  7: [bucatarii7, industrialgrey1, industrialgrey2],
+  8: [bucatarii8, softcontrast1, softcontrast2],
+  9: [bucatarii9, marbieline1, marbieline2],
+  10: [bucatarii10, concretemood1],
+  11: [bucatarii11, sandgaloss1],
+  12: [bucatarii12, forestlight1, forestlight2],
 };
 
-const PATURI_IMAGES = [bucatarii1, bucatarii2, bucatarii3];
-const DULAPURI_IMAGES = [bucatarii1, bucatarii2, bucatarii3];
+const PATURI_IMAGES = [paturiImage, paturiImage, paturiImage];
+const DULAPURI_IMAGES = [dulapImage, dulapImage, dulapImage];
 
 const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName, categorySlug }) => {
   const navigate = useNavigate();

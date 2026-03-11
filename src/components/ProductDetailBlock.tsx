@@ -4,10 +4,9 @@ import { useLanguage } from "../contexts/LanguageContext";
 import "./ProductDetailBlock.css";
 
 // Bucătărie Urban Wood (item 1)
-import image1 from "../assets/categories/bucatarii/BucătărieUrbanWood/1.svg";
-import urbanWoodCarousel1 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel1.svg";
-import urbanWoodCarousel2 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel2.svg";
-import urbanWoodCarousel3 from "../assets/categories/bucatarii/BucătărieUrbanWood/carousel3.svg";
+import image1 from "../assets/categories/bucatarii/BucătărieUrbanWood/Image.png";
+import urbanWoodCarousel1 from "../assets/categories/bucatarii/BucătărieUrbanWood/Image 1.png";
+import urbanWoodCarousel2 from "../assets/categories/bucatarii/BucătărieUrbanWood/Image 2.png";
 
 // Arctic Line (2) — Nordic Home (3) — Loft Beige (4) — Amber Touch (5) — Walnut Flow (6)
 import image2 from "../assets/categories/bucatarii/arcticline/Image.png";
@@ -15,7 +14,7 @@ import arcticline1 from "../assets/categories/bucatarii/arcticline/Image-1.png";
 import arcticline2 from "../assets/categories/bucatarii/arcticline/Image-2.png";
 
 import image3 from "../assets/categories/bucatarii/nordichome/Image.png";
-import nordichome1 from "../assets/categories/bucatarii/nordichome/2.png";
+import nordichome1 from "../assets/categories/bucatarii/nordichome/20250729_153104 1.png";
 import nordichome2 from "../assets/categories/bucatarii/nordichome/20250729_103300 1.png";
 
 import image4 from "../assets/categories/bucatarii/loftbeige/Image.png";
@@ -53,6 +52,8 @@ import image12 from "../assets/categories/bucatarii/forestlight/Image.png";
 import forestlight1 from "../assets/categories/bucatarii/forestlight/Image-1.png";
 import forestlight2 from "../assets/categories/bucatarii/forestlight/Image-2.png";
 
+import paturiImage from "../assets/categories/main/paturi.svg";
+import dulapImage from "../assets/categories/main/dulap.svg";
 
 interface ProductItem {
   id: number;
@@ -66,25 +67,30 @@ const BUCATARII_IMAGES = [
   image1, image2, image3, image4, image5, image6,
   image7, image8, image9, image10, image11, image12,
 ];
+/* Карусель: Image (0) + Image-1 (1) + Image-2 (2) где есть */
 const BUCATARII_CAROUSEL: Record<number, string[]> = {
-  1: [urbanWoodCarousel1, urbanWoodCarousel2, urbanWoodCarousel3],
-  2: [arcticline1, arcticline2],
-  3: [nordichome1, nordichome2],
-  4: [loftbeige1, loftbeige2],
-  5: [ambertouch1, ambertouch2],
-  6: [walnutflow1, walnutflow2],
-  7: [industrialgrey1, industrialgrey2],
-  8: [softcontrast1, softcontrast2],
-  9: [marbieline1, marbieline2],
-  10: [concretemood1],
-  11: [sandgaloss1],
-  12: [forestlight1, forestlight2],
+  1: [image1, urbanWoodCarousel1, urbanWoodCarousel2],
+  2: [image2, arcticline1, arcticline2],
+  3: [image3, nordichome1, nordichome2],
+  4: [image4, loftbeige1, loftbeige2],
+  5: [image5, ambertouch1, ambertouch2],
+  6: [image6, walnutflow1, walnutflow2],
+  7: [image7, industrialgrey1, industrialgrey2],
+  8: [image8, softcontrast1, softcontrast2],
+  9: [image9, marbieline1, marbieline2],
+  10: [image10, concretemood1],
+  11: [image11, sandgaloss1],
+  12: [image12, forestlight1, forestlight2],
 };
 
-const PATURI_IMAGES = [image1, image2, image3];
-const DULAPURI_IMAGES = [image1, image2, image3];
+const PATURI_IMAGES = [paturiImage, paturiImage, paturiImage];
+const DULAPURI_IMAGES = [dulapImage, dulapImage, dulapImage];
 
-const ProductDetailBlock: React.FC = () => {
+interface ProductDetailBlockProps {
+  onOpenModal?: () => void;
+}
+
+const ProductDetailBlock: React.FC<ProductDetailBlockProps> = ({ onOpenModal }) => {
   const { t } = useLanguage();
   const { category, itemId } = useParams<{ category: string; itemId: string }>();
   const navigate = useNavigate();
@@ -221,8 +227,12 @@ const ProductDetailBlock: React.FC = () => {
                   </p>
                 </div>
                 <button
+                  type="button"
                   className="product-detail-info-button"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  onClick={() => {
+                    onOpenModal?.();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
                   {t.cta.button}
                 </button>

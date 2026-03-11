@@ -68,9 +68,17 @@ export interface Translations {
       project1Title: string;
       project2Title: string;
       project3Title: string;
+      project4Title: string;
+      project5Title: string;
+      project6Title: string;
+      project7Title: string;
       project1Description: string;
       project2Description: string;
       project3Description: string;
+      project4Description: string;
+      project5Description: string;
+      project6Description: string;
+      project7Description: string;
     };
   };
   // Services Page
@@ -325,12 +333,24 @@ export const translations: Record<Language, Translations> = {
         project1Title: "Bucătărie Industrial Grey",
         project2Title: "Bucătărie Marble Line",
         project3Title: "Bucătărie Urban Wood",
+        project4Title: "Proiect recent",
+        project5Title: "Proiect recent",
+        project6Title: "Proiect recent",
+        project7Title: "Proiect recent",
         project1Description:
           "Bucătărie modernă cu design minimalist, combinație elegantă de lemn natural și antracit, perfect echilibrată între stil și funcționalitate.",
         project2Description:
           "Suprafețe de marmură albă și finisaje lucioase creează o atmosferă de lux rafinat, ideală pentru bucătăriile moderne.",
         project3Description:
           "Lemnul natural în tonuri calde îmbină estetica rustică cu funcționalitatea contemporană, oferind un spațiu primitor.",
+        project4Description:
+          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+        project5Description:
+          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+        project6Description:
+          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+        project7Description:
+          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
       },
   },
   services: {
@@ -888,21 +908,61 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
           description:
             "Design elegant, cu linii curate şi finisaje mate, această bucătărie îmbină funcționalitatea cu rafinamentul contemporan. Fronturile gri antracit oferă un aspect sofisticat și ușor de întreţinut, iar accentele din lemn adaugă căldură și echilibru vizual. Blatul și peretele din spate sunt realizate din material cu textură de marmură gri, conferind un plus de eleganță și rezistență în timp. Iluminarea minimalistă pe șină pune în valoare fiecare detaliu al mobilierului. Ideală pentru spații moderne, această bucătărie oferă o combinație perfectă între estetică și funcționalitate.",
         },
-        { title: "Bucătărie Arctic Line" },
-        { title: "Bucătărie Nordic Home" },
-        { title: "Bucătărie Loft Beige" },
-        { title: "Bucătărie Amber Touch" },
-        { title: "Bucătărie Walnut Flow" },
+        {
+          title: "Bucătărie Arctic Line",
+          description:
+            "Design minimalist și luminos, definit de fronturi albe mate combinate cu accente grafit și o insulă centrală practică. Liniile curate și iluminarea discretă creează un spațiu aerisit și modern, ideal pentru interioare contemporane. Materialele rezistente și organizarea ergonomică oferă un echilibru perfect între estetică și confort zilnic.",
+        },
+        {
+          title: "Bucătărie Nordic Home",
+          description:
+            "O bucătărie caldă și primitoare, unde nuanțele naturale de lemn se îmbină armonios cu suprafețele albe și lumina generoasă. Designul inspirat din stilul scandinav oferă funcționalitate, simplitate și o atmosferă relaxantă, perfectă pentru spații deschise și viață de familie.",
+        },
+        {
+          title: "Bucătărie Loft Beige",
+          description:
+            "Eleganță discretă prin tonuri bej mate și iluminare ambientală integrată. Fronturile fără mânere și finisajele uniforme creează un aspect rafinat și modern, în timp ce accentele calde adaugă confort vizual. Ideală pentru interioare sofisticate și spații luminoase.",
+        },
+        {
+          title: "Bucătărie Amber Touch",
+          description:
+            "Un design spectaculos cu insulă generoasă și accente calde de lemn, completate de un contrast elegant cu blatul și backsplash-ul închis. Zona de bar adaugă funcționalitate și stil, transformând bucătăria într-un spațiu perfect pentru socializare și gătit.",
+        },
+        {
+          title: "Bucătărie Walnut Flow",
+          description:
+            "Textura bogată a lemnului nuc se combină cu suprafețe moderne și un blat masiv cu prezență vizuală puternică. Designul transmite căldură și stabilitate, fiind ideal pentru interioare premium care pun accent pe materiale naturale și detalii sofisticate.",
+        },
         {
           title: "Bucătărie Industrial Grey",
           description:
-            "Bucătărie modernă cu design minimalist, combinație elegantă de lemn natural și antracit, perfect echilibrată între stil și funcționalitate.",
+            "Stil industrial autentic, caracterizat de tonuri închise, texturi brute și iluminare direcționată. Contrastul dintre lemn și suprafețele mate creează profunzime și personalitate, oferind un spațiu modern, masculin și extrem de practic.",
         },
-        { title: "Bucătărie Soft Contrast" },
-        { title: "Bucătărie Marble Line" },
-        { title: "Bucătărie Concrete Mood" },
-        { title: "Bucătărie Sand Gloss" },
-        { title: "Bucătărie Forest Light" },
+        {
+          title: "Bucătărie Soft Contrast",
+          description:
+            "O combinație echilibrată între fronturi deschise și accente naturale de lemn, ce oferă un aspect calm și elegant. Designul suspendat și liniile minimaliste creează senzația de spațiu și ordine, fiind ideal pentru interioare moderne și rafinate.",
+        },
+        {
+          title: "Bucătărie Marble Line",
+          description:
+            "Fronturi albe lucioase completate de un backsplash cu textură de marmură ce devine elementul central al designului. Aspectul curat și luminos oferă eleganță atemporală, iar materialele durabile asigură funcționalitate pe termen lung.",
+        },
+        {
+          title: "Bucătărie Concrete Mood",
+          description:
+            "Un design îndrăzneț cu finisaje ce imită betonul și electrocasnice integrate perfect. Contrastul dintre texturile industriale și suprafețele minimaliste creează o atmosferă modernă, ideală pentru interioare urbane cu personalitate.",
+        },
+        {
+          title: "Bucătărie Sand Gloss",
+          description:
+            "Fronturi lucioase în tonuri nisipii ce reflectă lumina și creează o atmosferă caldă și elegantă. Configurația ergonomică și spațiile bine optimizate transformă bucătăria într-un loc confortabil, potrivit pentru utilizare zilnică și design rafinat.",
+        },
+        {
+          title: "Bucătărie Forest Light",
+          description:
+            "Un mix armonios între lemn natural și suprafețe deschise, completat de un backsplash cu textură expresivă. Iluminarea integrată evidențiază materialele și creează o atmosferă relaxantă, perfectă pentru interioare moderne cu accente naturale.",
+        },
       ],
       paturi: [
         { title: "Pat Modern" },
@@ -1004,12 +1064,24 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
         project1Title: "Kitchen Industrial Grey",
         project2Title: "Kitchen Marble Line",
         project3Title: "Kitchen Urban Wood",
+        project4Title: "Recent project",
+        project5Title: "Recent project",
+        project6Title: "Recent project",
+        project7Title: "Recent project",
         project1Description:
           "Modern kitchen with minimalist design, elegant combination of natural wood and anthracite, perfectly balanced between style and functionality.",
         project2Description:
           "White marble surfaces and glossy finishes create an atmosphere of refined luxury, ideal for modern kitchens.",
         project3Description:
           "Natural wood in warm tones blends rustic aesthetics with contemporary functionality, offering a welcoming space.",
+        project4Description:
+          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+        project5Description:
+          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+        project6Description:
+          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+        project7Description:
+          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
       },
   },
   services: {
@@ -1567,21 +1639,61 @@ A careful assessment of quality before ordering helps you make the right choice 
           description:
             "Elegant design with clean lines and matte finishes, this kitchen combines functionality with contemporary refinement. The anthracite grey fronts offer a sophisticated and easy-to-maintain appearance, while wood accents add warmth and visual balance. The worktop and back wall are made of grey marble-textured material, adding elegance and lasting durability. Minimalist track lighting highlights every furniture detail. Ideal for modern spaces, this kitchen offers a perfect combination of aesthetics and functionality.",
         },
-        { title: "Kitchen Arctic Line" },
-        { title: "Kitchen Nordic Home" },
-        { title: "Kitchen Loft Beige" },
-        { title: "Kitchen Amber Touch" },
-        { title: "Kitchen Walnut Flow" },
+        {
+          title: "Kitchen Arctic Line",
+          description:
+            "Minimalist and bright design, defined by matte white fronts combined with graphite accents and a practical central island. Clean lines and discreet lighting create an airy, modern space, ideal for contemporary interiors. Durable materials and ergonomic organization offer the perfect balance between aesthetics and everyday comfort.",
+        },
+        {
+          title: "Kitchen Nordic Home",
+          description:
+            "A warm and welcoming kitchen where natural wood tones blend harmoniously with white surfaces and generous light. Scandinavian-inspired design offers functionality, simplicity and a relaxing atmosphere, perfect for open spaces and family life.",
+        },
+        {
+          title: "Kitchen Loft Beige",
+          description:
+            "Understated elegance through matte beige tones and integrated ambient lighting. Handleless fronts and uniform finishes create a refined, modern look, while warm accents add visual comfort. Ideal for sophisticated interiors and bright spaces.",
+        },
+        {
+          title: "Kitchen Amber Touch",
+          description:
+            "A striking design with a generous island and warm wood accents, complemented by an elegant contrast with the dark worktop and backsplash. The bar area adds functionality and style, turning the kitchen into the perfect space for entertaining and cooking.",
+        },
+        {
+          title: "Kitchen Walnut Flow",
+          description:
+            "The rich texture of walnut wood combines with modern surfaces and a substantial worktop with strong visual presence. The design conveys warmth and stability, ideal for premium interiors that emphasise natural materials and refined details.",
+        },
         {
           title: "Kitchen Industrial Grey",
           description:
-            "Modern kitchen with minimalist design, elegant combination of natural wood and anthracite, perfectly balanced between style and functionality.",
+            "Authentic industrial style, characterised by dark tones, raw textures and directed lighting. The contrast between wood and matte surfaces creates depth and character, offering a modern, masculine and highly practical space.",
         },
-        { title: "Kitchen Soft Contrast" },
-        { title: "Kitchen Marble Line" },
-        { title: "Kitchen Concrete Mood" },
-        { title: "Kitchen Sand Gloss" },
-        { title: "Kitchen Forest Light" },
+        {
+          title: "Kitchen Soft Contrast",
+          description:
+            "A balanced combination of light fronts and natural wood accents for a calm, elegant look. Floating design and minimalist lines create a sense of space and order, ideal for modern, refined interiors.",
+        },
+        {
+          title: "Kitchen Marble Line",
+          description:
+            "Glossy white fronts paired with a marble-textured backsplash that becomes the focal point of the design. The clean, bright look offers timeless elegance, while durable materials ensure long-term functionality.",
+        },
+        {
+          title: "Kitchen Concrete Mood",
+          description:
+            "A bold design with concrete-look finishes and seamlessly integrated appliances. The contrast between industrial textures and minimalist surfaces creates a modern atmosphere, ideal for urban interiors with character.",
+        },
+        {
+          title: "Kitchen Sand Gloss",
+          description:
+            "Glossy fronts in sandy tones that reflect light and create a warm, elegant atmosphere. Ergonomic layout and well-optimised space turn the kitchen into a comfortable place suited to daily use and refined design.",
+        },
+        {
+          title: "Kitchen Forest Light",
+          description:
+            "A harmonious mix of natural wood and light surfaces, paired with an expressive textured backsplash. Integrated lighting highlights the materials and creates a relaxing atmosphere, perfect for modern interiors with natural accents.",
+        },
       ],
       paturi: [
         { title: "Bed Modern" },
@@ -1683,12 +1795,24 @@ A careful assessment of quality before ordering helps you make the right choice 
         project1Title: "Кухня Industrial Grey",
         project2Title: "Кухня Marble Line",
         project3Title: "Кухня Urban Wood",
+        project4Title: "Недавний проект",
+        project5Title: "Недавний проект",
+        project6Title: "Недавний проект",
+        project7Title: "Недавний проект",
         project1Description:
           "Современная кухня с минималистичным дизайном, элегантное сочетание натурального дерева и антрацита, идеальный баланс стиля и функциональности.",
         project2Description:
           "Белый мрамор и глянцевые поверхности создают атмосферу изысканной роскоши, идеальную для современных кухонь.",
         project3Description:
           "Натуральное дерево в тёплых тонах сочетает деревенскую эстетику с современной функциональностью, создавая уютное пространство.",
+        project4Description:
+          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+        project5Description:
+          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+        project6Description:
+          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+        project7Description:
+          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
       },
   },
   services: {
@@ -2246,21 +2370,61 @@ A careful assessment of quality before ordering helps you make the right choice 
           description:
             "Элегантный дизайн с чёткими линиями и матовыми покрытиями — эта кухня сочетает функциональность с современным изяществом. Антрацитово-серые фасады создают утончённый и простой в уходе вид, а деревянные акценты добавляют тепло и визуальный баланс. Столешница и стеновая панель выполнены из материала с текстурой серого мрамора, придавая элегантность и долговечность. Минималистичное трековое освещение подчёркивает каждую деталь мебели. Идеально для современных интерьеров — кухня предлагает сочетание эстетики и функциональности.",
         },
-        { title: "Кухня Arctic Line" },
-        { title: "Кухня Nordic Home" },
-        { title: "Кухня Loft Beige" },
-        { title: "Кухня Amber Touch" },
-        { title: "Кухня Walnut Flow" },
+        {
+          title: "Кухня Arctic Line",
+          description:
+            "Минималистичный и светлый дизайн с матовыми белыми фасадами в сочетании с графитовыми акцентами и практичным центральным островом. Чистые линии и сдержанное освещение создают воздушное современное пространство, идеальное для современных интерьеров. Прочные материалы и эргономичная организация обеспечивают идеальный баланс эстетики и повседневного комфорта.",
+        },
+        {
+          title: "Кухня Nordic Home",
+          description:
+            "Тёплая и уютная кухня, где природные оттенки дерева гармонично сочетаются с белыми поверхностями и обилием света. Дизайн в скандинавском стиле даёт функциональность, простоту и расслабляющую атмосферу — идеально для открытых пространств и семейной жизни.",
+        },
+        {
+          title: "Кухня Loft Beige",
+          description:
+            "Сдержанная элегантность в матовых бежевых тонах с интегрированным ambient-освещением. Фасады без ручек и ровная отделка создают изысканный современный вид, тёплые акценты добавляют визуальный комфорт. Идеально для изысканных интерьеров и светлых пространств.",
+        },
+        {
+          title: "Кухня Amber Touch",
+          description:
+            "Яркий дизайн с просторным островом и тёплыми деревянными акцентами в сочетании с контрастной тёмной столешницей и фартуком. Барная зона добавляет функциональность и стиль, превращая кухню в идеальное пространство для общения и готовки.",
+        },
+        {
+          title: "Кухня Walnut Flow",
+          description:
+            "Богатая текстура ореха сочетается с современными поверхностями и массивной столешницей с выразительным видом. Дизайн передаёт тепло и основательность — идеально для премиальных интерьеров с акцентом на натуральные материалы и продуманные детали.",
+        },
         {
           title: "Кухня Industrial Grey",
           description:
-            "Современная кухня с минималистичным дизайном, элегантное сочетание натурального дерева и антрацита, идеальный баланс стиля и функциональности.",
+            "Настоящий индустриальный стиль: тёмные тона, грубые текстуры и направленный свет. Контраст дерева и матовых поверхностей создаёт глубину и характер — современное, мужское и очень практичное пространство.",
         },
-        { title: "Кухня Soft Contrast" },
-        { title: "Кухня Marble Line" },
-        { title: "Кухня Concrete Mood" },
-        { title: "Кухня Sand Gloss" },
-        { title: "Кухня Forest Light" },
+        {
+          title: "Кухня Soft Contrast",
+          description:
+            "Сбалансированное сочетание светлых фасадов и природных деревянных акцентов создаёт спокойный и элегантный вид. Подвесные элементы и минималистичные линии дают ощущение простора и порядка — идеально для современных изысканных интерьеров.",
+        },
+        {
+          title: "Кухня Marble Line",
+          description:
+            "Глянцевые белые фасады в сочетании с фартуком под мрамор, который становится центром композиции. Чистый светлый вид даёт вневременную элегантность, а долговечные материалы обеспечивают функциональность на годы.",
+        },
+        {
+          title: "Кухня Concrete Mood",
+          description:
+            "Смелый дизайн с отделкой под бетон и встроенной техникой. Контраст индустриальных текстур и минималистичных поверхностей создаёт современную атмосферу — идеально для городских интерьеров с характером.",
+        },
+        {
+          title: "Кухня Sand Gloss",
+          description:
+            "Глянцевые фасады в песочных тонах отражают свет и создают тёплую элегантную атмосферу. Эргономичная планировка и продуманные зоны делают кухню комфортным местом для ежедневного использования и изысканного дизайна.",
+        },
+        {
+          title: "Кухня Forest Light",
+          description:
+            "Гармоничное сочетание натурального дерева и светлых поверхностей с выразительным фактурным фартуком. Встроенное освещение подчёркивает материалы и создаёт расслабляющую атмосферу — идеально для современных интерьеров с природными акцентами.",
+        },
       ],
       paturi: [
         { title: "Кровать Модерн" },
