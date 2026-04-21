@@ -1,5 +1,7 @@
 import { useState } from "react";
-import headerImage from "../assets/header.jpg";
+import headerImage4096 from "../assets/header.jpg";
+import headerImage1920 from "../assets/optimized/header-1920.jpg";
+import headerImage1280 from "../assets/optimized/header-1280.jpg";
 import checkmarkIcon from "../assets/icons/checkmark.svg";
 import LGIcon from "../assets/icons/LG.svg";
 import arrowIcon from "../assets/icons/arrow.svg";
@@ -48,7 +50,11 @@ const Hero = () => {
         {/* Background Image - Full Width */}
         <div className="absolute inset-0 z-0 w-full h-full">
           <img
-            src={headerImage} decoding="async" fetchPriority="high"
+            src={headerImage1920}
+            srcSet={`${headerImage1280} 1280w, ${headerImage1920} 1920w, ${headerImage4096} 4096w`}
+            sizes="100vw"
+            decoding="async"
+            fetchPriority="high"
             alt="Modern Kitchen Interior"
             className="w-full h-full object-cover"
           />

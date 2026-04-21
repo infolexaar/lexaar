@@ -54,6 +54,7 @@ import forestlight2 from "../assets/categories/bucatarii/forestlight/Image-2.png
 
 import paturiImage from "../assets/categories/main/paturi.svg";
 import dulapImage from "../assets/categories/main/dulap.svg";
+import ComingSoonOverlay from "./ComingSoonOverlay";
 
 interface GalleryBlockProps {
   categoryName: string;
@@ -66,6 +67,7 @@ interface GalleryItem {
   image: string;
   carouselImages?: string[];
   description?: string;
+  comingSoon?: boolean;
 }
 
 const BUCATARII_IMAGES = [
@@ -115,12 +117,14 @@ const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName, categorySlug 
           id: i + 1,
           title: item.title,
           image: PATURI_IMAGES[i],
+          comingSoon: true,
         }));
       case "dulapuri-si-comode":
         return t.categories.dulapuri.map((item, i) => ({
           id: i + 1,
           title: item.title,
           image: DULAPURI_IMAGES[i],
+          comingSoon: true,
         }));
       default:
         return [];
@@ -142,6 +146,7 @@ const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName, categorySlug 
   }, [allItems, currentPage]);
 
   const handleItemClick = (item: GalleryItem) => {
+    if (item.comingSoon) return;
     navigate(`/category/${categorySlug}/${item.id}`);
   };
 
@@ -205,17 +210,18 @@ const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName, categorySlug 
           {currentItems.map((item) => (
             <div
               key={item.id}
-              className="gallery-item"
+              className={`gallery-item ${item.comingSoon ? "is-coming-soon" : ""}`}
               onClick={() => handleItemClick(item)}
             >
               <div className="gallery-item-image">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="gallery-item-img"
+                  className={`gallery-item-img ${item.comingSoon ? "is-coming-soon" : ""}`}
                   loading="lazy"
                   decoding="async"
                 />
+                {item.comingSoon && <ComingSoonOverlay />}
               </div>
               <h3 className="gallery-item-title">{item.title}</h3>
             </div>

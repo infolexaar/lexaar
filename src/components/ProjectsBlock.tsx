@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import GalleryModal from "./GalleryModal";
 import { useLanguage } from "../contexts/LanguageContext";
+import ComingSoonOverlay from "./ComingSoonOverlay";
 import "./ProjectsBlock.css";
 
 const CARD_WIDTH = 400;
@@ -59,6 +60,7 @@ const ProjectsBlock: React.FC = () => {
       title: t.home.projectsBlock.project4Title,
       description: t.home.projectsBlock.project4Description,
       carouselImages: [proj6_1, proj6_2, proj6_3],
+      comingSoon: true,
     },
     {
       id: 5,
@@ -66,6 +68,7 @@ const ProjectsBlock: React.FC = () => {
       title: t.home.projectsBlock.project5Title,
       description: t.home.projectsBlock.project5Description,
       carouselImages: [proj7_1, proj7_2, proj7_3],
+      comingSoon: true,
     },
     {
       id: 6,
@@ -73,6 +76,7 @@ const ProjectsBlock: React.FC = () => {
       title: t.home.projectsBlock.project6Title,
       description: t.home.projectsBlock.project6Description,
       carouselImages: [proj1_1, proj1_2],
+      comingSoon: true,
     },
     {
       id: 7,
@@ -80,6 +84,7 @@ const ProjectsBlock: React.FC = () => {
       title: t.home.projectsBlock.project7Title,
       description: t.home.projectsBlock.project7Description,
       carouselImages: [proj2_1, proj2_2, proj2_3],
+      comingSoon: true,
     },
   ];
 
@@ -191,14 +196,20 @@ const ProjectsBlock: React.FC = () => {
                 <div key={project.id} className="projects-block-card">
                   <div
                     className="projects-block-image-wrapper"
-                    onClick={() => openProject(project)}
-                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      if (project.comingSoon) return;
+                      openProject(project);
+                    }}
+                    style={{
+                      cursor: project.comingSoon ? "default" : "pointer",
+                    }}
                   >
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="projects-block-image"
+                      className={`projects-block-image ${project.comingSoon ? "is-coming-soon" : ""}`}
                     />
+                    {project.comingSoon && <ComingSoonOverlay />}
                   </div>
                   <p className="projects-block-title-text">{project.title}</p>
                 </div>

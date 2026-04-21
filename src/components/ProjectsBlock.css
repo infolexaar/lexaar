@@ -94,6 +94,7 @@
   border-radius: 12px;
   margin-bottom: 16px;
   flex-shrink: 0;
+  position: relative;
 }
 
 .projects-block-image {
@@ -101,6 +102,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.projects-block-image.is-coming-soon {
+  filter: blur(3px);
+  transform: scale(1.03);
 }
 
 .projects-block-title-text {
