@@ -209,7 +209,9 @@ const ProjectsBlock: React.FC = () => {
                       alt={project.title}
                       className={`projects-block-image ${project.comingSoon ? "is-coming-soon" : ""}`}
                     />
-                    {project.comingSoon && <ComingSoonOverlay className="coming-soon-overlay--projects" />}
+                    {project.comingSoon && (
+                      <ComingSoonOverlay className="coming-soon-overlay--projects" showMobileBadge />
+                    )}
                   </div>
                   <p className="projects-block-title-text">{project.title}</p>
                 </div>
