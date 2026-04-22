@@ -51,6 +51,15 @@
 }
 
 @media (max-width: 449px) {
+  .coming-soon-overlay {
+    place-items: end center;
+  }
+
+  .coming-soon-overlay__content {
+    padding-bottom: 18px;
+    max-width: min(280px, 92%);
+  }
+
   .coming-soon-overlay__icon {
     width: 64px;
     height: 64px;
