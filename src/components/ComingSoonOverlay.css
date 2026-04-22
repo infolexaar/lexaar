@@ -51,15 +51,6 @@
 }
 
 @media (max-width: 449px) {
-  .coming-soon-overlay {
-    place-items: end center;
-  }
-
-  .coming-soon-overlay__content {
-    padding-bottom: 18px;
-    max-width: min(280px, 92%);
-  }
-
   .coming-soon-overlay__icon {
     width: 64px;
     height: 64px;
@@ -71,6 +62,18 @@
 
   .coming-soon-overlay__subtitle {
     font-size: 11px;
+  }
+}
+
+/* Projects block: on mobile place overlay lower inside image */
+@media (max-width: 449px) {
+  .coming-soon-overlay--projects {
+    place-items: end center;
+  }
+
+  .coming-soon-overlay--projects .coming-soon-overlay__content {
+    padding-bottom: 22px;
+    max-width: min(280px, 92%);
   }
 }
 
