@@ -267,6 +267,9 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    scroll-padding-right: 24px;
   }
 
   .projects-block-scroll-wrapper {
@@ -304,6 +307,7 @@
     min-width: 272px;
     flex-shrink: 0;
     height: auto;
+    scroll-snap-align: start;
   }
 
   .projects-block-image-wrapper {
