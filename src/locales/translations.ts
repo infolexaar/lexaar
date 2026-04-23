@@ -443,7 +443,7 @@ export const translations: Record<Language, Translations> = {
           "Pentru noi, mobilierul nu e doar funcțional – e parte din personalitatea ta și din povestea casei tale. De aceea începem fiecare proiect printr-o discuție sinceră, ca să înțelegem exact ce îți dorești și cum trăiești în spațiul tău.\n\nNe ghidăm după câteva principii simple: calitate fără compromisuri, comunicare clară și respect pentru timpul și bugetul tău. Nu lucrăm pe bandă – fiecare piesă este gândită special pentru tine, cu măsuri exacte și finisaje atent lucrate.\n\nCeea ce ne motivează sunt oamenii: bucuria clienților când își văd spațiul transformat și încrederea cu care ne recomandă mai departe. Aceasta este energia care ne face să ridicăm ștacheta la fiecare proiect.",
       },
       advantages: {
-        title: "De ce să alegi Mobilia",
+        title: "De ce să alegi  LexAar",
         consultation: {
           title: "Consultanță gratuită și personalizată",
           description:
@@ -1174,7 +1174,7 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
           "For us, furniture is not just functional – it's part of your personality and your home's story. That's why we start every project with an honest discussion, to understand exactly what you want and how you live in your space.\n\nWe are guided by a few simple principles: uncompromising quality, clear communication, and respect for your time and budget. We don't work on an assembly line – each piece is specially designed for you, with exact measurements and carefully crafted finishes.\n\nWhat motivates us are people: the joy of clients when they see their space transformed and the trust with which they recommend us further. This is the energy that makes us raise the bar with every project.",
       },
       advantages: {
-        title: "Why choose Mobilia",
+        title: "Why choose LexAar",
         consultation: {
           title: "Free and personalized consultation",
           description:
@@ -1905,7 +1905,7 @@ A careful assessment of quality before ordering helps you make the right choice 
           "Для нас мебель – это не просто функциональность, это часть вашей личности и истории вашего дома. Поэтому мы начинаем каждый проект с честного обсуждения, чтобы понять точно, что вы хотите и как вы живете в своем пространстве.\n\nНами руководят несколько простых принципов: бескомпромиссное качество, четкая коммуникация и уважение к вашему времени и бюджету. Мы не работаем на конвейере – каждое изделие специально разработано для вас, с точными размерами и тщательно обработанной отделкой.\n\nНас мотивируют люди: радость клиентов, когда они видят свое пространство преображенным, и доверие, с которым они рекомендуют нас дальше. Это энергия, которая заставляет нас поднимать планку с каждым проектом.",
       },
       advantages: {
-        title: "Почему выбрать Mobilia",
+        title: "Почему выбрать LexAar",
         consultation: {
           title: "Бесплатная и персонализированная консультация",
           description:
