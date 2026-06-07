@@ -52,7 +52,22 @@ import bucatarii12 from "../assets/categories/bucatarii/forestlight/Image.png";
 import forestlight1 from "../assets/categories/bucatarii/forestlight/Image-1.png";
 import forestlight2 from "../assets/categories/bucatarii/forestlight/Image-2.png";
 
-import paturiImage from "../assets/categories/main/paturi.svg";
+// Paturi (1–3)
+import paturi1 from "../assets/categories/paturi/Pat matrimonial tapițat cu somieră inclusă/viber_image_2026-05-27_16-37-46-543 3.png";
+import paturi1c1 from "../assets/categories/paturi/Pat matrimonial tapițat cu somieră inclusă/viber_image_2026-05-27_16-38-31-686 3.png";
+import paturi1c2 from "../assets/categories/paturi/Pat matrimonial tapițat cu somieră inclusă/viber_image_2026-05-27_16-38-31-686 5.png";
+import paturi1c3 from "../assets/categories/paturi/Pat matrimonial tapițat cu somieră inclusă/viber_image_2026-05-27_16-38-31-893 3.png";
+
+import paturi2 from "../assets/categories/paturi/Pat matrimonial tapițat cu tăblie decorativă/viber_image_2026-05-27_16-37-46-543 2.png";
+import paturi2c1 from "../assets/categories/paturi/Pat matrimonial tapițat cu tăblie decorativă/viber_image_2026-05-27_16-38-31-686 2.png";
+import paturi2c2 from "../assets/categories/paturi/Pat matrimonial tapițat cu tăblie decorativă/viber_image_2026-05-27_16-38-31-686 6.png";
+import paturi2c3 from "../assets/categories/paturi/Pat matrimonial tapițat cu tăblie decorativă/viber_image_2026-05-27_16-38-31-893 2.png";
+
+import paturi3 from "../assets/categories/paturi/Pat tapițat matrimonial cu design modern/viber_image_2026-05-27_16-37-46-543 1.png";
+import paturi3c1 from "../assets/categories/paturi/Pat tapițat matrimonial cu design modern/viber_image_2026-05-27_16-38-31-686 1.png";
+import paturi3c2 from "../assets/categories/paturi/Pat tapițat matrimonial cu design modern/viber_image_2026-05-27_16-38-31-686 4.png";
+import paturi3c3 from "../assets/categories/paturi/Pat tapițat matrimonial cu design modern/viber_image_2026-05-27_16-38-31-893 1.png";
+
 import dulapImage from "../assets/categories/main/dulap.svg";
 import ComingSoonOverlay from "./ComingSoonOverlay";
 
@@ -92,7 +107,14 @@ const BUCATARII_CAROUSEL: Record<number, string[]> = {
   12: [bucatarii12, forestlight1, forestlight2],
 };
 
-const PATURI_IMAGES = [paturiImage, paturiImage, paturiImage];
+const PATURI_IMAGES = [paturi1, paturi2, paturi3];
+
+const PATURI_CAROUSEL: Record<number, string[]> = {
+  1: [paturi1, paturi1c1, paturi1c2, paturi1c3],
+  2: [paturi2, paturi2c1, paturi2c2, paturi2c3],
+  3: [paturi3, paturi3c1, paturi3c2, paturi3c3],
+};
+
 const DULAPURI_IMAGES = [dulapImage, dulapImage, dulapImage];
 
 const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName, categorySlug }) => {
@@ -116,8 +138,9 @@ const GalleryBlock: React.FC<GalleryBlockProps> = ({ categoryName, categorySlug 
         return t.categories.paturi.map((item, i) => ({
           id: i + 1,
           title: item.title,
+          description: item.description,
           image: PATURI_IMAGES[i],
-          comingSoon: true,
+          carouselImages: PATURI_CAROUSEL[i + 1],
         }));
       case "dulapuri-si-comode":
         return t.categories.dulapuri.map((item, i) => ({

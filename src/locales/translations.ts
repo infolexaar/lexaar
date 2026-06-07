@@ -330,27 +330,27 @@ export const translations: Record<Language, Translations> = {
       },
       projectsBlock: {
         title: "Proiecte recente",
-        project1Title: "Bucătărie Industrial Grey",
-        project2Title: "Bucătărie Marble Line",
-        project3Title: "Bucătărie Urban Wood",
-        project4Title: "Proiect recent",
-        project5Title: "Proiect recent",
-        project6Title: "Proiect recent",
-        project7Title: "Proiect recent",
+        project1Title: "Bucătărie Sand Gloss",
+        project2Title: "Bucătărie Forest Light",
+        project3Title: "Bucătărie Industrial Grey",
+        project4Title: "Bucătărie Marble Line",
+        project5Title: "Bucătărie Concrete Mood",
+        project6Title: "Bucătărie Soft Contrast",
+        project7Title: "Bucătărie Arctic Line",
         project1Description:
-          "Bucătărie modernă cu design minimalist, combinație elegantă de lemn natural și antracit, perfect echilibrată între stil și funcționalitate.",
+          "Fronturi lucioase în tonuri nisipii ce reflectă lumina și creează o atmosferă caldă și elegantă. Configurația ergonomică și spațiile bine optimizate transformă bucătăria într-un loc confortabil, potrivit pentru utilizare zilnică și design rafinat.",
         project2Description:
-          "Suprafețe de marmură albă și finisaje lucioase creează o atmosferă de lux rafinat, ideală pentru bucătăriile moderne.",
+          "Un mix armonios între lemn natural și suprafețe deschise, completat de un backsplash cu textură expresivă. Iluminarea integrată evidențiază materialele și creează o atmosferă relaxantă, perfectă pentru interioare moderne cu accente naturale.",
         project3Description:
-          "Lemnul natural în tonuri calde îmbină estetica rustică cu funcționalitatea contemporană, oferind un spațiu primitor.",
+          "Stil industrial autentic, caracterizat de tonuri închise, texturi brute și iluminare direcționată. Contrastul dintre lemn și suprafețele mate creează profunzime și personalitate, oferind un spațiu modern, masculin și extrem de practic.",
         project4Description:
-          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+          "Fronturi albe lucioase completate de un backsplash cu textură de marmură ce devine elementul central al designului. Aspectul curat și luminos oferă eleganță atemporală, iar materialele durabile asigură funcționalitate pe termen lung.",
         project5Description:
-          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+          "Un design îndrăzneț cu finisaje ce imită betonul și electrocasnice integrate perfect. Contrastul dintre texturile industriale și suprafețele minimaliste creează o atmosferă modernă, ideală pentru interioare urbane cu personalitate.",
         project6Description:
-          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+          "O combinație echilibrată între fronturi deschise și accente naturale de lemn, ce oferă un aspect calm și elegant. Designul suspendat și liniile minimaliste creează senzația de spațiu și ordine, fiind ideal pentru interioare moderne și rafinate.",
         project7Description:
-          "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+          "Design minimalist și luminos, definit de fronturi albe mate combinate cu accente grafit și o insulă centrală practică. Liniile curate și iluminarea discretă creează un spațiu aerisit și modern, ideal pentru interioare contemporane. Materialele rezistente și organizarea ergonomică oferă un echilibru perfect între estetică și confort zilnic.",
       },
   },
   services: {
@@ -965,9 +965,21 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
         },
       ],
       paturi: [
-        { title: "Pat Modern" },
-        { title: "Pat Classic" },
-        { title: "Pat Premium" },
+        {
+          title: "Pat matrimonial tapițat cu somieră inclusă",
+          description:
+            "Pat matrimonial cu structură robustă și tăblie tapițată într-un stil minimalist și elegant. Echipat cu somieră rezistentă din lamele elastice, asigură susținerea optimă a saltelei și un confort sporit în timpul odihnei. Designul modern și finisajele premium îl transformă într-o piesă centrală pentru orice dormitor contemporan.",
+        },
+        {
+          title: "Pat matrimonial tapițat cu tăblie decorativă",
+          description:
+            "Pat modern cu tăblie înaltă, decorată cu detalii verticale care adaugă eleganță și personalitate spațiului. Tapițeria catifelată și formele bine proporționate creează o atmosferă caldă și primitoare. Designul său contemporan se integrează perfect în dormitoare moderne, oferind atât confort, cât și un aspect sofisticat.",
+        },
+        {
+          title: "Pat tapițat matrimonial cu design modern",
+          description:
+            "Pat matrimonial elegant, tapițat integral în material textil premium, cu linii curate și un aspect contemporan. Tăblia înaltă oferă confort suplimentar și completează armonios designul dormitorului. Construcția solidă și finisajele atent realizate asigură durabilitate și un aspect rafinat. Ideal pentru amenajări moderne, unde confortul și estetica sunt la fel de importante.",
+        },
       ],
       dulapuri: [
         { title: "Dulap Modern" },
@@ -1061,27 +1073,27 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
       },
       projectsBlock: {
         title: "Recent projects",
-        project1Title: "Kitchen Industrial Grey",
-        project2Title: "Kitchen Marble Line",
-        project3Title: "Kitchen Urban Wood",
-        project4Title: "Recent project",
-        project5Title: "Recent project",
-        project6Title: "Recent project",
-        project7Title: "Recent project",
+        project1Title: "Kitchen Sand Gloss",
+        project2Title: "Kitchen Forest Light",
+        project3Title: "Kitchen Industrial Grey",
+        project4Title: "Kitchen Marble Line",
+        project5Title: "Kitchen Concrete Mood",
+        project6Title: "Kitchen Soft Contrast",
+        project7Title: "Kitchen Arctic Line",
         project1Description:
-          "Modern kitchen with minimalist design, elegant combination of natural wood and anthracite, perfectly balanced between style and functionality.",
+          "Glossy fronts in sandy tones that reflect light and create a warm, elegant atmosphere. Ergonomic layout and well-optimised space turn the kitchen into a comfortable place suited to daily use and refined design.",
         project2Description:
-          "White marble surfaces and glossy finishes create an atmosphere of refined luxury, ideal for modern kitchens.",
+          "A harmonious mix of natural wood and light surfaces, paired with an expressive textured backsplash. Integrated lighting highlights the materials and creates a relaxing atmosphere, perfect for modern interiors with natural accents.",
         project3Description:
-          "Natural wood in warm tones blends rustic aesthetics with contemporary functionality, offering a welcoming space.",
+          "Authentic industrial style, characterised by dark tones, raw textures and directed lighting. The contrast between wood and matte surfaces creates depth and character, offering a modern, masculine and highly practical space.",
         project4Description:
-          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+          "Glossy white fronts paired with a marble-textured backsplash that becomes the focal point of the design. The clean, bright look offers timeless elegance, while durable materials ensure long-term functionality.",
         project5Description:
-          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+          "A bold design with concrete-look finishes and seamlessly integrated appliances. The contrast between industrial textures and minimalist surfaces creates a modern atmosphere, ideal for urban interiors with character.",
         project6Description:
-          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+          "A balanced combination of light fronts and natural wood accents for a calm, elegant look. Floating design and minimalist lines create a sense of space and order, ideal for modern, refined interiors.",
         project7Description:
-          "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+          "Minimalist and bright design, defined by matte white fronts combined with graphite accents and a practical central island. Clean lines and discreet lighting create an airy, modern space, ideal for contemporary interiors. Durable materials and ergonomic organization offer the perfect balance between aesthetics and everyday comfort.",
       },
   },
   services: {
@@ -1696,9 +1708,21 @@ A careful assessment of quality before ordering helps you make the right choice 
         },
       ],
       paturi: [
-        { title: "Bed Modern" },
-        { title: "Bed Classic" },
-        { title: "Bed Premium" },
+        {
+          title: "Upholstered Double Bed with Slatted Base Included",
+          description:
+            "A double bed with a robust structure and upholstered headboard in a minimalist, elegant style. Equipped with a durable slatted base, it ensures optimal mattress support and enhanced comfort during rest. Modern design and premium finishes make it a centrepiece for any contemporary bedroom.",
+        },
+        {
+          title: "Upholstered Double Bed with Decorative Headboard",
+          description:
+            "A modern bed with a tall headboard decorated with vertical details that add elegance and personality to the space. Soft upholstery and well-proportioned shapes create a warm, welcoming atmosphere. Its contemporary design integrates perfectly into modern bedrooms, offering both comfort and a sophisticated look.",
+        },
+        {
+          title: "Modern Upholstered Double Bed",
+          description:
+            "An elegant double bed, fully upholstered in premium fabric with clean lines and a contemporary look. The tall headboard provides extra comfort and harmoniously completes the bedroom design. Solid construction and carefully crafted finishes ensure durability and a refined appearance. Ideal for modern interiors where comfort and aesthetics are equally important.",
+        },
       ],
       dulapuri: [
         { title: "Wardrobe Modern" },
@@ -1792,27 +1816,27 @@ A careful assessment of quality before ordering helps you make the right choice 
       },
       projectsBlock: {
         title: "Недавние проекты",
-        project1Title: "Кухня Industrial Grey",
-        project2Title: "Кухня Marble Line",
-        project3Title: "Кухня Urban Wood",
-        project4Title: "Недавний проект",
-        project5Title: "Недавний проект",
-        project6Title: "Недавний проект",
-        project7Title: "Недавний проект",
+        project1Title: "Кухня Sand Gloss",
+        project2Title: "Кухня Forest Light",
+        project3Title: "Кухня Industrial Grey",
+        project4Title: "Кухня Marble Line",
+        project5Title: "Кухня Concrete Mood",
+        project6Title: "Кухня Soft Contrast",
+        project7Title: "Кухня Arctic Line",
         project1Description:
-          "Современная кухня с минималистичным дизайном, элегантное сочетание натурального дерева и антрацита, идеальный баланс стиля и функциональности.",
+          "Глянцевые фасады в песочных тонах отражают свет и создают тёплую элегантную атмосферу. Эргономичная планировка и продуманные зоны делают кухню комфортным местом для ежедневного использования и изысканного дизайна.",
         project2Description:
-          "Белый мрамор и глянцевые поверхности создают атмосферу изысканной роскоши, идеальную для современных кухонь.",
+          "Гармоничное сочетание натурального дерева и светлых поверхностей с выразительным фактурным фартуком. Встроенное освещение подчёркивает материалы и создаёт расслабляющую атмосферу — идеально для современных интерьеров с природными акцентами.",
         project3Description:
-          "Натуральное дерево в тёплых тонах сочетает деревенскую эстетику с современной функциональностью, создавая уютное пространство.",
+          "Настоящий индустриальный стиль: тёмные тона, грубые текстуры и направленный свет. Контраст дерева и матовых поверхностей создаёт глубину и характер — современное, мужское и очень практичное пространство.",
         project4Description:
-          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+          "Глянцевые белые фасады в сочетании с фартуком под мрамор, который становится центром композиции. Чистый светлый вид даёт вневременную элегантность, а долговечные материалы обеспечивают функциональность на годы.",
         project5Description:
-          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+          "Смелый дизайн с отделкой под бетон и встроенной техникой. Контраст индустриальных текстур и минималистичных поверхностей создаёт современную атмосферу — идеально для городских интерьеров с характером.",
         project6Description:
-          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+          "Сбалансированное сочетание светлых фасадов и природных деревянных акцентов создаёт спокойный и элегантный вид. Подвесные элементы и минималистичные линии дают ощущение простора и порядка — идеально для современных изысканных интерьеров.",
         project7Description:
-          "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+          "Минималистичный и светлый дизайн с матовыми белыми фасадами в сочетании с графитовыми акцентами и практичным центральным островом. Чистые линии и сдержанное освещение создают воздушное современное пространство, идеальное для современных интерьеров. Прочные материалы и эргономичная организация обеспечивают идеальный баланс эстетики и повседневного комфорта.",
       },
   },
   services: {
@@ -2427,9 +2451,21 @@ A careful assessment of quality before ordering helps you make the right choice 
         },
       ],
       paturi: [
-        { title: "Кровать Модерн" },
-        { title: "Кровать Классик" },
-        { title: "Кровать Премиум" },
+        {
+          title: "Двуспальная кровать с обивкой и ламельным основанием",
+          description:
+            "Двуспальная кровать с прочной конструкцией и обитым изголовьем в минималистичном элегантном стиле. Оснащена прочным ламельным основанием, обеспечивающим оптимальную поддержку матраса и повышенный комфорт во время отдыха. Современный дизайн и премиальная отделка делают её центральным элементом любой современной спальни.",
+        },
+        {
+          title: "Двуспальная кровать с декоративным изголовьем",
+          description:
+            "Современная кровать с высоким изголовьем, украшенным вертикальными деталями, которые добавляют элегантности и индивидуальности пространству. Мягкая обивка и гармоничные пропорции создают тёплую и уютную атмосферу. Современный дизайн идеально вписывается в современные спальни, обеспечивая комфорт и изысканный внешний вид.",
+        },
+        {
+          title: "Современная двуспальная кровать с обивкой",
+          description:
+            "Элегантная двуспальная кровать, полностью обитая премиальной тканью, с чистыми линиями и современным видом. Высокое изголовье обеспечивает дополнительный комфорт и гармонично дополняет дизайн спальни. Прочная конструкция и тщательная отделка гарантируют долговечность и изысканный внешний вид. Идеально для современных интерьеров, где комфорт и эстетика одинаково важны.",
+        },
       ],
       dulapuri: [
         { title: "Шкаф Модерн" },

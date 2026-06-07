@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import GalleryModal from "./GalleryModal";
 import { useLanguage } from "../contexts/LanguageContext";
-import ComingSoonOverlay from "./ComingSoonOverlay";
 import "./ProjectsBlock.css";
 
 const CARD_WIDTH = 400;
@@ -9,82 +8,83 @@ const CARD_GAP = 16;
 const VISIBLE_CARDS = 3;
 const SCROLL_STEP = CARD_WIDTH + CARD_GAP;
 
-// Ordine carousel: 1=folder 3, 2=folder 4, 3=folder 5, 4=folder 6, 5=folder 7, 6=folder 1, 7=folder 2
-import proj3_1 from "../assets/projects/3/Image 10.png";
-import proj3_2 from "../assets/projects/3/Image 11.png";
-import proj3_3 from "../assets/projects/3/Image 12.png";
-import proj4_1 from "../assets/projects/4/Image 13.png";
-import proj4_2 from "../assets/projects/4/Image 14.png";
-import proj4_3 from "../assets/projects/4/Image 15.png";
-import proj5_1 from "../assets/projects/5/Image 16.png";
-import proj5_2 from "../assets/projects/5/Image 17.png";
-import proj6_1 from "../assets/projects/6/Image 18.png";
-import proj6_2 from "../assets/projects/6/Image 19.png";
-import proj6_3 from "../assets/projects/6/Image 20.png";
-import proj7_1 from "../assets/projects/7/Image 1.png";
-import proj7_2 from "../assets/projects/7/Image 2.png";
-import proj7_3 from "../assets/projects/7/Image 4.png";
-import proj1_1 from "../assets/projects/1/Image 5.png";
-import proj1_2 from "../assets/projects/1/Image 6.png";
-import proj2_1 from "../assets/projects/2/Image 7.png";
-import proj2_2 from "../assets/projects/2/Image 8.png";
-import proj2_3 from "../assets/projects/2/Image 9.png";
+import sandGlossMain from "../assets/categories/bucatarii/sandgaloss/Image.png";
+import sandGloss1 from "../assets/categories/bucatarii/sandgaloss/Image-1.png";
+
+import forestLightMain from "../assets/categories/bucatarii/forestlight/Image.png";
+import forestLight1 from "../assets/categories/bucatarii/forestlight/Image-1.png";
+import forestLight2 from "../assets/categories/bucatarii/forestlight/Image-2.png";
+
+import industrialGreyMain from "../assets/categories/bucatarii/industrialgrey/Image.png";
+import industrialGrey1 from "../assets/categories/bucatarii/industrialgrey/Image-1.png";
+import industrialGrey2 from "../assets/categories/bucatarii/industrialgrey/Image-2.png";
+
+import marbleLineMain from "../assets/categories/bucatarii/marbieline/Image.png";
+import marbleLine1 from "../assets/categories/bucatarii/marbieline/Image-1.png";
+import marbleLine2 from "../assets/categories/bucatarii/marbieline/Image-2.png";
+
+import concreteMoodMain from "../assets/categories/bucatarii/concretemood/Image.png";
+import concreteMood1 from "../assets/categories/bucatarii/concretemood/Image-1.png";
+
+import softContrastMain from "../assets/categories/bucatarii/softcontrast/Image.png";
+import softContrast1 from "../assets/categories/bucatarii/softcontrast/Image-1.png";
+import softContrast2 from "../assets/categories/bucatarii/softcontrast/Image-2.png";
+
+import arcticLineMain from "../assets/categories/bucatarii/arcticline/Image.png";
+import arcticLine1 from "../assets/categories/bucatarii/arcticline/Image-1.png";
+import arcticLine2 from "../assets/categories/bucatarii/arcticline/Image-2.png";
 
 const ProjectsBlock: React.FC = () => {
   const { t } = useLanguage();
   const projects = [
     {
       id: 1,
-      image: proj3_1,
+      image: sandGlossMain,
       title: t.home.projectsBlock.project1Title,
       description: t.home.projectsBlock.project1Description,
-      carouselImages: [proj3_1, proj3_2, proj3_3],
+      carouselImages: [sandGlossMain, sandGloss1],
     },
     {
       id: 2,
-      image: proj4_1,
+      image: forestLightMain,
       title: t.home.projectsBlock.project2Title,
       description: t.home.projectsBlock.project2Description,
-      carouselImages: [proj4_1, proj4_2, proj4_3],
+      carouselImages: [forestLightMain, forestLight1, forestLight2],
     },
     {
       id: 3,
-      image: proj5_1,
+      image: industrialGreyMain,
       title: t.home.projectsBlock.project3Title,
       description: t.home.projectsBlock.project3Description,
-      carouselImages: [proj5_1, proj5_2],
+      carouselImages: [industrialGreyMain, industrialGrey1, industrialGrey2],
     },
     {
       id: 4,
-      image: proj6_1,
+      image: marbleLineMain,
       title: t.home.projectsBlock.project4Title,
       description: t.home.projectsBlock.project4Description,
-      carouselImages: [proj6_1, proj6_2, proj6_3],
-      comingSoon: true,
+      carouselImages: [marbleLineMain, marbleLine1, marbleLine2],
     },
     {
       id: 5,
-      image: proj7_1,
+      image: concreteMoodMain,
       title: t.home.projectsBlock.project5Title,
       description: t.home.projectsBlock.project5Description,
-      carouselImages: [proj7_1, proj7_2, proj7_3],
-      comingSoon: true,
+      carouselImages: [concreteMoodMain, concreteMood1],
     },
     {
       id: 6,
-      image: proj1_1,
+      image: softContrastMain,
       title: t.home.projectsBlock.project6Title,
       description: t.home.projectsBlock.project6Description,
-      carouselImages: [proj1_1, proj1_2],
-      comingSoon: true,
+      carouselImages: [softContrastMain, softContrast1, softContrast2],
     },
     {
       id: 7,
-      image: proj2_1,
+      image: arcticLineMain,
       title: t.home.projectsBlock.project7Title,
       description: t.home.projectsBlock.project7Description,
-      carouselImages: [proj2_1, proj2_2, proj2_3],
-      comingSoon: true,
+      carouselImages: [arcticLineMain, arcticLine1, arcticLine2],
     },
   ];
 
@@ -196,22 +196,14 @@ const ProjectsBlock: React.FC = () => {
                 <div key={project.id} className="projects-block-card">
                   <div
                     className="projects-block-image-wrapper"
-                    onClick={() => {
-                      if (project.comingSoon) return;
-                      openProject(project);
-                    }}
-                    style={{
-                      cursor: project.comingSoon ? "default" : "pointer",
-                    }}
+                    onClick={() => openProject(project)}
+                    style={{ cursor: "pointer" }}
                   >
                     <img
                       src={project.image}
                       alt={project.title}
-                      className={`projects-block-image ${project.comingSoon ? "is-coming-soon" : ""}`}
+                      className="projects-block-image"
                     />
-                    {project.comingSoon && (
-                      <ComingSoonOverlay className="coming-soon-overlay--projects" showMobileBadge />
-                    )}
                   </div>
                   <p className="projects-block-title-text">{project.title}</p>
                 </div>
@@ -253,4 +245,3 @@ const ProjectsBlock: React.FC = () => {
 };
 
 export default ProjectsBlock;
-
