@@ -77,6 +77,8 @@ const Hero = () => {
               {t.home.hero.heading3}
             </h2>
 
+            <p className="hero-subtitle">{t.home.hero.subtitle}</p>
+
             <div style={{ marginBottom: "32px" }}>
               <p className="hero-description">
                 {t.home.hero.description}
@@ -129,7 +131,7 @@ const Hero = () => {
         {/* Benefits Panel - Desktop */}
         <div className="hero-benefits-panel">
           <div
-            className="flex flex-col justify-center w-[221px] h-[168px]"
+            className="flex flex-col justify-center w-[221px]"
             style={{ gap: "12px" }}
           >
             {benefits.map((benefit, index) => (

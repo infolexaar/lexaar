@@ -275,18 +275,18 @@ export const translations: Record<Language, Translations> = {
     home: {
       hero: {
         title: "Mobila la comandă",
-        subtitle: "Bucătării moderne",
+        subtitle: "Colaborări internaționale B2B în Europa",
         heading1: "Mobila la comandă.",
         heading2: "Design profesionist.",
         heading3: "Execuție premium.",
         description:
-          "Noi ne ocupăm de măsurători, proiectare, fabricație și montajul gratuit — tu doar te bucuri de rezultatul final.",
+          "Noi ne ocupăm de măsurători, proiectare 3D, fabricație și montajul gratuit — tu doar te bucuri de rezultatul final.",
         ctaButton: "Solicită oferta",
         benefit1: "10.000+ clienți mulțumiți",
         benefit2: "15+ ani experiență",
-        benefit3: "Proiectare 3D",
-        benefit4: "De 5 ani exportăm mobilier în Europa",
-        benefit5: "Montaj gratuit",
+        benefit3: "Export internațional",
+        benefit4: "Garanție 5 ani",
+        benefit5: "Parteneriate B2B",
       },
       block2: {
         title: "Descoperă colecțiile noastre",
@@ -1018,18 +1018,18 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
     home: {
       hero: {
         title: "Custom furniture",
-        subtitle: "Modern kitchens",
+        subtitle: "International B2B collaborations in Europe",
         heading1: "Custom furniture.",
         heading2: "Professional design.",
         heading3: "Premium execution.",
         description:
-          "We handle measurements, design, manufacturing and free installation — you just enjoy the final result.",
+          "We handle measurements, 3D design, manufacturing and free installation — you just enjoy the final result.",
         ctaButton: "Request offer",
         benefit1: "10,000+ satisfied clients",
         benefit2: "15+ years of experience",
-        benefit3: "3D design",
-        benefit4: "5 years exporting furniture to Europe",
-        benefit5: "Free installation",
+        benefit3: "International export",
+        benefit4: "5-year warranty",
+        benefit5: "B2B partnerships",
       },
       block2: {
         title: "Discover our collections",
@@ -1761,18 +1761,18 @@ A careful assessment of quality before ordering helps you make the right choice 
     home: {
       hero: {
         title: "Мебель на заказ",
-        subtitle: "Современные кухни",
+        subtitle: "Международное B2B-сотрудничество в Европе",
         heading1: "Мебель на заказ.",
         heading2: "Профессиональный дизайн.",
         heading3: "Премиальное исполнение.",
         description:
-          "Мы занимаемся замерами, проектированием, производством и бесплатной установкой — вы просто наслаждаетесь результатом.",
+          "Мы занимаемся замерами, 3D-проектированием, производством и бесплатной установкой — вы просто наслаждаетесь результатом.",
         ctaButton: "Запросить предложение",
         benefit1: "10 000+ довольных клиентов",
         benefit2: "15+ лет опыта",
-        benefit3: "3D-проектирование",
-        benefit4: "5 лет экспорта мебели в Европу",
-        benefit5: "Бесплатная установка",
+        benefit3: "Международный экспорт",
+        benefit4: "Гарантия 5 лет",
+        benefit5: "B2B-партнёрство",
       },
       block2: {
         title: "Откройте наши коллекции",
