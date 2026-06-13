@@ -6,6 +6,8 @@ export interface Translations {
     servicii: string;
     despreNoi: string;
     blog: string;
+    colectii: string;
+    proiecte: string;
     solicitOferta: string;
   };
   // Home Page
@@ -65,20 +67,7 @@ export interface Translations {
     };
     projectsBlock: {
       title: string;
-      project1Title: string;
-      project2Title: string;
-      project3Title: string;
-      project4Title: string;
-      project5Title: string;
-      project6Title: string;
-      project7Title: string;
-      project1Description: string;
-      project2Description: string;
-      project3Description: string;
-      project4Description: string;
-      project5Description: string;
-      project6Description: string;
-      project7Description: string;
+      viewAll: string;
     };
   };
   // Services Page
@@ -230,6 +219,15 @@ export interface Translations {
   categoryPage: {
     defaultCategoryName: string;
   };
+  projectsPage: {
+    title: string;
+    next: string;
+    notFound: string;
+    placeholderDescription: string;
+    defaultTitle: string;
+    videoLabel: string;
+    named: Record<string, { title?: string; description?: string }>;
+  };
   // Categories — items translated per language
   categories: {
     next: string;
@@ -270,6 +268,8 @@ export const translations: Record<Language, Translations> = {
       servicii: "Servicii",
       despreNoi: "Despre noi",
       blog: "Blog",
+      colectii: "Colecții",
+      proiecte: "Proiecte recente",
       solicitOferta: "Solicită ofertă",
     },
     home: {
@@ -330,27 +330,7 @@ export const translations: Record<Language, Translations> = {
       },
       projectsBlock: {
         title: "Proiecte recente",
-        project1Title: "Bucătărie Sand Gloss",
-        project2Title: "Bucătărie Forest Light",
-        project3Title: "Bucătărie Industrial Grey",
-        project4Title: "Bucătărie Marble Line",
-        project5Title: "Bucătărie Concrete Mood",
-        project6Title: "Bucătărie Soft Contrast",
-        project7Title: "Bucătărie Arctic Line",
-        project1Description:
-          "Fronturi lucioase în tonuri nisipii ce reflectă lumina și creează o atmosferă caldă și elegantă. Configurația ergonomică și spațiile bine optimizate transformă bucătăria într-un loc confortabil, potrivit pentru utilizare zilnică și design rafinat.",
-        project2Description:
-          "Un mix armonios între lemn natural și suprafețe deschise, completat de un backsplash cu textură expresivă. Iluminarea integrată evidențiază materialele și creează o atmosferă relaxantă, perfectă pentru interioare moderne cu accente naturale.",
-        project3Description:
-          "Stil industrial autentic, caracterizat de tonuri închise, texturi brute și iluminare direcționată. Contrastul dintre lemn și suprafețele mate creează profunzime și personalitate, oferind un spațiu modern, masculin și extrem de practic.",
-        project4Description:
-          "Fronturi albe lucioase completate de un backsplash cu textură de marmură ce devine elementul central al designului. Aspectul curat și luminos oferă eleganță atemporală, iar materialele durabile asigură funcționalitate pe termen lung.",
-        project5Description:
-          "Un design îndrăzneț cu finisaje ce imită betonul și electrocasnice integrate perfect. Contrastul dintre texturile industriale și suprafețele minimaliste creează o atmosferă modernă, ideală pentru interioare urbane cu personalitate.",
-        project6Description:
-          "O combinație echilibrată între fronturi deschise și accente naturale de lemn, ce oferă un aspect calm și elegant. Designul suspendat și liniile minimaliste creează senzația de spațiu și ordine, fiind ideal pentru interioare moderne și rafinate.",
-        project7Description:
-          "Design minimalist și luminos, definit de fronturi albe mate combinate cu accente grafit și o insulă centrală practică. Liniile curate și iluminarea discretă creează un spațiu aerisit și modern, ideal pentru interioare contemporane. Materialele rezistente și organizarea ergonomică oferă un echilibru perfect între estetică și confort zilnic.",
+        viewAll: "Vezi toate proiectele",
       },
   },
   services: {
@@ -897,6 +877,16 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
     categoryPage: {
       defaultCategoryName: "Categorie",
     },
+    projectsPage: {
+      title: "Proiecte LexAar",
+      next: "Următor",
+      notFound: "Proiectul nu a fost găsit.",
+      placeholderDescription:
+        "Proiect realizat de LexAar. Mobilier la comandă, adaptat spațiului și nevoilor clientului.",
+      defaultTitle: "Proiect LexAar",
+      videoLabel: "Video",
+      named: {},
+    },
     categories: {
       next: "Următor",
       productNotFound: "Produsul nu a fost găsit.",
@@ -1013,6 +1003,8 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
       servicii: "Services",
       despreNoi: "About us",
       blog: "Blog",
+      colectii: "Collections",
+      proiecte: "Recent projects",
       solicitOferta: "Request offer",
     },
     home: {
@@ -1073,27 +1065,7 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
       },
       projectsBlock: {
         title: "Recent projects",
-        project1Title: "Kitchen Sand Gloss",
-        project2Title: "Kitchen Forest Light",
-        project3Title: "Kitchen Industrial Grey",
-        project4Title: "Kitchen Marble Line",
-        project5Title: "Kitchen Concrete Mood",
-        project6Title: "Kitchen Soft Contrast",
-        project7Title: "Kitchen Arctic Line",
-        project1Description:
-          "Glossy fronts in sandy tones that reflect light and create a warm, elegant atmosphere. Ergonomic layout and well-optimised space turn the kitchen into a comfortable place suited to daily use and refined design.",
-        project2Description:
-          "A harmonious mix of natural wood and light surfaces, paired with an expressive textured backsplash. Integrated lighting highlights the materials and creates a relaxing atmosphere, perfect for modern interiors with natural accents.",
-        project3Description:
-          "Authentic industrial style, characterised by dark tones, raw textures and directed lighting. The contrast between wood and matte surfaces creates depth and character, offering a modern, masculine and highly practical space.",
-        project4Description:
-          "Glossy white fronts paired with a marble-textured backsplash that becomes the focal point of the design. The clean, bright look offers timeless elegance, while durable materials ensure long-term functionality.",
-        project5Description:
-          "A bold design with concrete-look finishes and seamlessly integrated appliances. The contrast between industrial textures and minimalist surfaces creates a modern atmosphere, ideal for urban interiors with character.",
-        project6Description:
-          "A balanced combination of light fronts and natural wood accents for a calm, elegant look. Floating design and minimalist lines create a sense of space and order, ideal for modern, refined interiors.",
-        project7Description:
-          "Minimalist and bright design, defined by matte white fronts combined with graphite accents and a practical central island. Clean lines and discreet lighting create an airy, modern space, ideal for contemporary interiors. Durable materials and ergonomic organization offer the perfect balance between aesthetics and everyday comfort.",
+        viewAll: "View all projects",
       },
   },
   services: {
@@ -1640,6 +1612,16 @@ A careful assessment of quality before ordering helps you make the right choice 
     categoryPage: {
       defaultCategoryName: "Category",
     },
+    projectsPage: {
+      title: "LexAar Projects",
+      next: "Next",
+      notFound: "Project not found.",
+      placeholderDescription:
+        "Project by LexAar. Custom furniture tailored to the space and client's needs.",
+      defaultTitle: "LexAar Project",
+      videoLabel: "Video",
+      named: {},
+    },
     categories: {
       next: "Next",
       productNotFound: "Product not found.",
@@ -1756,6 +1738,8 @@ A careful assessment of quality before ordering helps you make the right choice 
       servicii: "Услуги",
       despreNoi: "О нас",
       blog: "Блог",
+      colectii: "Коллекции",
+      proiecte: "Недавние проекты",
       solicitOferta: "Запросить предложение",
     },
     home: {
@@ -1816,27 +1800,7 @@ A careful assessment of quality before ordering helps you make the right choice 
       },
       projectsBlock: {
         title: "Недавние проекты",
-        project1Title: "Кухня Sand Gloss",
-        project2Title: "Кухня Forest Light",
-        project3Title: "Кухня Industrial Grey",
-        project4Title: "Кухня Marble Line",
-        project5Title: "Кухня Concrete Mood",
-        project6Title: "Кухня Soft Contrast",
-        project7Title: "Кухня Arctic Line",
-        project1Description:
-          "Глянцевые фасады в песочных тонах отражают свет и создают тёплую элегантную атмосферу. Эргономичная планировка и продуманные зоны делают кухню комфортным местом для ежедневного использования и изысканного дизайна.",
-        project2Description:
-          "Гармоничное сочетание натурального дерева и светлых поверхностей с выразительным фактурным фартуком. Встроенное освещение подчёркивает материалы и создаёт расслабляющую атмосферу — идеально для современных интерьеров с природными акцентами.",
-        project3Description:
-          "Настоящий индустриальный стиль: тёмные тона, грубые текстуры и направленный свет. Контраст дерева и матовых поверхностей создаёт глубину и характер — современное, мужское и очень практичное пространство.",
-        project4Description:
-          "Глянцевые белые фасады в сочетании с фартуком под мрамор, который становится центром композиции. Чистый светлый вид даёт вневременную элегантность, а долговечные материалы обеспечивают функциональность на годы.",
-        project5Description:
-          "Смелый дизайн с отделкой под бетон и встроенной техникой. Контраст индустриальных текстур и минималистичных поверхностей создаёт современную атмосферу — идеально для городских интерьеров с характером.",
-        project6Description:
-          "Сбалансированное сочетание светлых фасадов и природных деревянных акцентов создаёт спокойный и элегантный вид. Подвесные элементы и минималистичные линии дают ощущение простора и порядка — идеально для современных изысканных интерьеров.",
-        project7Description:
-          "Минималистичный и светлый дизайн с матовыми белыми фасадами в сочетании с графитовыми акцентами и практичным центральным островом. Чистые линии и сдержанное освещение создают воздушное современное пространство, идеальное для современных интерьеров. Прочные материалы и эргономичная организация обеспечивают идеальный баланс эстетики и повседневного комфорта.",
+        viewAll: "Смотреть все проекты",
       },
   },
   services: {
@@ -2382,6 +2346,16 @@ A careful assessment of quality before ordering helps you make the right choice 
     },
     categoryPage: {
       defaultCategoryName: "Категория",
+    },
+    projectsPage: {
+      title: "Проекты LexAar",
+      next: "Далее",
+      notFound: "Проект не найден.",
+      placeholderDescription:
+        "Проект LexAar. Мебель на заказ под ваше пространство и потребности.",
+      defaultTitle: "Проект LexAar",
+      videoLabel: "Видео",
+      named: {},
     },
     categories: {
       next: "Далее",

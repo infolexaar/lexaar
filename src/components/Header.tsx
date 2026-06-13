@@ -74,6 +74,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
 
         {/* Navigation Links */}
         <nav className="header-nav">
+          <Link to="/#colectii" className="header-nav-link">
+            {t.header.colectii}
+          </Link>
+          <Link to="/#proiecte" className="header-nav-link">
+            {t.header.proiecte}
+          </Link>
           <Link to="/servicii" className="header-nav-link">
             {t.header.servicii}
           </Link>
@@ -116,6 +122,20 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="header-mobile-nav">
+              <Link
+                to="/#colectii"
+                className="header-mobile-nav-link"
+                onClick={closeMenu}
+              >
+                {t.header.colectii}
+              </Link>
+              <Link
+                to="/#proiecte"
+                className="header-mobile-nav-link"
+                onClick={closeMenu}
+              >
+                {t.header.proiecte}
+              </Link>
               <Link
                 to="/servicii"
                 className="header-mobile-nav-link"
