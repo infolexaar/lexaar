@@ -8,6 +8,7 @@ export interface Translations {
     blog: string;
     colectii: string;
     proiecte: string;
+    contacte: string;
     solicitOferta: string;
   };
   // Home Page
@@ -129,6 +130,9 @@ export interface Translations {
   common: {
     contact: string;
     address: string;
+    addressShowroom: string;
+    addressProduction: string;
+    productionLabel: string;
     phone: string;
     email: string;
     workingHours: string;
@@ -269,7 +273,8 @@ export const translations: Record<Language, Translations> = {
       despreNoi: "Despre noi",
       blog: "Blog",
       colectii: "Colecții",
-      proiecte: "Proiecte recente",
+      proiecte: "Proiecte",
+      contacte: "Contacte",
       solicitOferta: "Solicită ofertă",
     },
     home: {
@@ -393,7 +398,10 @@ export const translations: Record<Language, Translations> = {
     },
     common: {
       contact: "Contacte",
-      address: "Strada Bucovina 9F, Stăuceni, Chișinău (Port Mall)",
+      address: "Strada Bucovinei 9F, Stăuceni, Chișinău",
+      addressShowroom: "Strada Bucovinei 9F, Stăuceni, Chișinău",
+      addressProduction: "Str. M. Sadoveanu 42/5, bl. 6 Chișinău",
+      productionLabel: "Secția de producere personală",
       phone: "+373 78 90 00 07",
       email: "lexlaar@gmail.com",
       workingHours: "Luni-Duminică: 10:00-19:00",
@@ -1004,7 +1012,8 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
       despreNoi: "About us",
       blog: "Blog",
       colectii: "Collections",
-      proiecte: "Recent projects",
+      proiecte: "Projects",
+      contacte: "Contacts",
       solicitOferta: "Request offer",
     },
     home: {
@@ -1128,7 +1137,10 @@ O evaluare atentă a calității înainte de comandă te ajută să faci o alege
     },
     common: {
       contact: "Contacts",
-      address: "Bucharest Street 19, Chisinau, Chisinau (Port Mall)",
+      address: "Strada Bucovinei 9F, Stăuceni, Chișinău",
+      addressShowroom: "Strada Bucovinei 9F, Stăuceni, Chișinău",
+      addressProduction: "Str. M. Sadoveanu 42/5, bl. 6 Chișinău",
+      productionLabel: "Own production facility",
       phone: "+373 78 90 00 07",
       email: "lexlaar@gmail.com",
       workingHours: "Mon-Sun: 10:00-19:00",
@@ -1739,7 +1751,8 @@ A careful assessment of quality before ordering helps you make the right choice 
       despreNoi: "О нас",
       blog: "Блог",
       colectii: "Коллекции",
-      proiecte: "Недавние проекты",
+      proiecte: "Проекты",
+      contacte: "Контакты",
       solicitOferta: "Запросить предложение",
     },
     home: {
@@ -1863,7 +1876,10 @@ A careful assessment of quality before ordering helps you make the right choice 
     },
     common: {
       contact: "Контакты",
-      address: "Улица Букурешть 19, Кишинёв, Кишинёв (Port Mall)",
+      address: "Strada Bucovinei 9F, Stăuceni, Chișinău",
+      addressShowroom: "Strada Bucovinei 9F, Stăuceni, Chișinău",
+      addressProduction: "Str. M. Sadoveanu 42/5, bl. 6 Chișinău",
+      productionLabel: "Собственное производство",
       phone: "+373 78 90 00 07",
       email: "lexlaar@gmail.com",
       workingHours: "Пн-Вс: 10:00-19:00",

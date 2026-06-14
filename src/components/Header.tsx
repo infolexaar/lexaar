@@ -80,6 +80,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
           <Link to="/#proiecte" className="header-nav-link">
             {t.header.proiecte}
           </Link>
+          <Link to="/#contacte" className="header-nav-link">
+            {t.header.contacte}
+          </Link>
           <Link to="/servicii" className="header-nav-link">
             {t.header.servicii}
           </Link>
@@ -135,6 +138,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
                 onClick={closeMenu}
               >
                 {t.header.proiecte}
+              </Link>
+              <Link
+                to="/#contacte"
+                className="header-mobile-nav-link"
+                onClick={closeMenu}
+              >
+                {t.header.contacte}
               </Link>
               <Link
                 to="/servicii"

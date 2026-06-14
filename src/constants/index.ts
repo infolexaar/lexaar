@@ -7,6 +7,21 @@ export const COMPANY_INFO = {
   address: "Strada Bucovinei 9F, Stăuceni, Chișinău",
 } as const;
 
+export const SOCIAL_LINKS = {
+  facebook: "https://www.facebook.com/lexaar.md/",
+  instagram: "https://www.instagram.com/lexaar.md/",
+} as const;
+
+export const getPhoneHref = () => COMPANY_INFO.phone.replace(/\s/g, "");
+
+export const getPhoneDigits = () => getPhoneHref().replace(/\D/g, "");
+
+export const MESSENGER_LINKS = {
+  whatsapp: () => `https://wa.me/${getPhoneDigits()}`,
+  viber: () => `viber://chat?number=${encodeURIComponent(getPhoneHref())}`,
+  messenger: () => `https://m.me/+${getPhoneDigits()}`,
+} as const;
+
 export const BENEFITS = [
   "10.000+ clienți mulțumiți",
   "15+ ani experiență",

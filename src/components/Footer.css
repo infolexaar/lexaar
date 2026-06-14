@@ -58,19 +58,29 @@
 
 .footer-contacts {
   display: flex;
-  flex-direction: row;
-  gap: 24px;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
   margin-top: 26px;
 }
 
 .footer-contact-item {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   text-decoration: none;
   transition: opacity 0.2s ease;
+}
+
+.footer-contact-item--stacked .footer-contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-contact-label {
+  font-weight: 500;
 }
 
 .footer-contact-item:hover {
@@ -390,7 +400,7 @@
   .footer-contact-item {
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     gap: 8px !important;
     text-decoration: none !important;
     width: 100% !important;

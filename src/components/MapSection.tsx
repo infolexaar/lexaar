@@ -6,11 +6,41 @@ import { useLanguage } from "../contexts/LanguageContext";
 const MapSection: React.FC = () => {
   const { t } = useLanguage();
 
-  const handleAddressClick = () => {
-    // Открываем карту в новом окне с указанной меткой
-    const mapUrl = "https://maps.app.goo.gl/b91ahGUeZL6JSJor9";
-    window.open(mapUrl, "_blank");
+  const openShowroomMap = () => {
+    window.open("https://maps.app.goo.gl/b91ahGUeZL6JSJor9", "_blank");
   };
+
+  const openProductionMap = () => {
+    window.open(
+      "https://www.google.com/maps/search/?api=1&query=Str.+M.+Sadoveanu+42%2F5+Chișinău",
+      "_blank"
+    );
+  };
+
+  const locationIcon = (
+    <svg
+      className="text-gray-600 mt-1 mr-3 flex-shrink-0"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+      />
+    </svg>
+  );
 
   return (
     <section className="py-16 bg-gray-50" id="harta">
@@ -45,13 +75,12 @@ const MapSection: React.FC = () => {
                 left: "38px",
                 top: "38px",
                 width: "420px",
-                height: "420px",
+                minHeight: "420px",
                 borderRadius: "14px",
                 padding: "53px 44px",
               }}
             >
-              {/* Контент внутри формы */}
-              <div style={{ width: "332px", height: "314px" }}>
+              <div style={{ width: "332px" }}>
                 {/* Заголовок Contacte */}
                 <h3
                   className="font-medium text-black"
@@ -76,42 +105,26 @@ const MapSection: React.FC = () => {
                   }}
                 ></div>
 
-                {/* Адрес */}
-                <div
-                  className="flex items-start"
-                  style={{ marginBottom: "24px" }}
-                >
-                  <svg
-                    className="text-gray-600 mt-1 mr-3 flex-shrink-0"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
+                <div className="flex items-start" style={{ marginBottom: "16px" }}>
+                  {locationIcon}
                   <button
-                    onClick={handleAddressClick}
+                    onClick={openShowroomMap}
                     className="text-gray-600 hover:text-purple-600 transition-colors duration-200 text-left"
-                    style={{
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      fontWeight: "300",
-                    }}
+                    style={{ fontSize: "16px", lineHeight: "24px", fontWeight: "300" }}
                   >
-                    {t.common.address}
+                    {t.common.addressShowroom}
+                  </button>
+                </div>
+
+                <div className="flex items-start" style={{ marginBottom: "24px" }}>
+                  {locationIcon}
+                  <button
+                    onClick={openProductionMap}
+                    className="text-gray-600 hover:text-purple-600 transition-colors duration-200 text-left"
+                    style={{ fontSize: "16px", lineHeight: "24px", fontWeight: "300" }}
+                  >
+                    <span className="block font-medium">{t.common.productionLabel}</span>
+                    {t.common.addressProduction}
                   </button>
                 </div>
 
@@ -247,34 +260,24 @@ const MapSection: React.FC = () => {
                 style={{ borderColor: "#E8E7E3" }}
               ></div>
 
-              {/* Адрес */}
-              <div className="flex items-start mb-6">
-                <svg
-                  className="text-gray-600 mt-1 mr-3 flex-shrink-0"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+              <div className="flex items-start mb-4">
+                {locationIcon}
                 <button
-                  onClick={handleAddressClick}
+                  onClick={openShowroomMap}
                   className="text-gray-600 hover:text-purple-600 transition-colors duration-200 text-left text-base leading-6 font-light"
                 >
-                  Strada Bucovina 9F, Stăuceni, Chișinău (Port Mall)
+                  {t.common.addressShowroom}
+                </button>
+              </div>
+
+              <div className="flex items-start mb-6">
+                {locationIcon}
+                <button
+                  onClick={openProductionMap}
+                  className="text-gray-600 hover:text-purple-600 transition-colors duration-200 text-left text-base leading-6 font-light"
+                >
+                  <span className="block font-medium">{t.common.productionLabel}</span>
+                  {t.common.addressProduction}
                 </button>
               </div>
 
@@ -296,7 +299,7 @@ const MapSection: React.FC = () => {
                   />
                 </svg>
                 <p className="text-gray-600 text-base leading-6 font-light">
-                  Luni-Duminică: 10:00-19:00
+                  {t.common.workingHours}
                 </p>
               </div>
 
